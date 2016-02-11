@@ -1,0 +1,8 @@
+Name: Seahawk Fitness
+
+Brief description: An application to help streamline registration for events, classes and personal training offered at the recreation center at UNCW, assisting in renting equipment from the recreation center and overall operations of the campus rec center.
+
+Specification of functional requirements:  Queries will be made to see if a users (students) time slot will fit a scheduled event into it without conflict as well as the instructor/trainers schedule. Queries will also be made to determine the status of rental equipment, whether it is available or currently rented as well as to who it is currently rented to. Data would be inserted retrieved and modified based on the acceptance of new students to the “university”, new instructors/trainers, classes that are currently being offered/ events held at the rec center and by Seahawks Adventures as well as new and old rental equipment being cycled in and out. 
+
+User interface specification: The user interface will be menu-based with sub menu options. It will start at a Login screen that will take a S_ID or I_ID and maybe a password. After logging into the app the user will land at a general directory page containing links to the hours, classes(group exercise), training, rentals, SeaHawk Adventures, and an Events schedule. When the user clicks on any of these given buttons/links they will be taken to a landing page for that page. Each page will then have other branches within it depending on the page and what is offered by the university. There will also be a management button on each page for administrative purposes that will cross check the id used to make sure that the proper users are able to make edits to the information provided by the app. 
+
