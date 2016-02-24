@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */; };
+		53D453721C7D084D00112593 /* Personal Training Rates.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D453711C7D084D00112593 /* Personal Training Rates.png */; };
+		53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E876A31C73C48C00A564DC /* AppDelegate.swift */; };
+		53E876A61C73C48C00A564DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E876A51C73C48C00A564DC /* ViewController.swift */; };
+		53E876A91C73C48C00A564DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E876A71C73C48C00A564DC /* Main.storyboard */; };
+		53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */; };
+		53E876AE1C73C48C00A564DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E876AD1C73C48C00A564DC /* Assets.xcassets */; };
+		53E876B11C73C48C00A564DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */; };
+		53E876BC1C73C48D00A564DC /* SeaHawk_FitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E876BB1C73C48D00A564DC /* SeaHawk_FitnessTests.swift */; };
+		53E876C71C73C48D00A564DC /* SeaHawk_FitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E876C61C73C48D00A564DC /* SeaHawk_FitnessUITests.swift */; };
+		53F127461C74F72A00E205A2 /* eventsScheduleButton_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F127391C74F72A00E205A2 /* eventsScheduleButton_menu.png */; };
+		53F127471C74F72A00E205A2 /* groupExerciseButton_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F1273A1C74F72A00E205A2 /* groupExerciseButton_menu.png */; };
+		53F127481C74F72A00E205A2 /* hoursButton_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F1273B1C74F72A00E205A2 /* hoursButton_menu.png */; };
+		53F127491C74F72A00E205A2 /* personalTrainingButton_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F1273C1C74F72A00E205A2 /* personalTrainingButton_menu.png */; };
+		53F1274A1C74F72A00E205A2 /* rentalsButton_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F1273D1C74F72A00E205A2 /* rentalsButton_menu.png */; };
+		53F1274B1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F1273E1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png */; };
+		53F1274C1C74F72A00E205A2 /* SeahawkFitness_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F1273F1C74F72A00E205A2 /* SeahawkFitness_menu.png */; };
+		53F1274D1C74F72A00E205A2 /* shAdventuresButton_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 53F127401C74F72A00E205A2 /* shAdventuresButton_menu.png */; };
+		53F1274E1C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127411C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg */; };
+		53F1274F1C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127421C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg */; };
+		53F127501C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127431C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg */; };
+		53F127511C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */; };
+		53F127521C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53E876B81C73C48D00A564DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53E876981C73C48C00A564DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53E8769F1C73C48C00A564DC;
+			remoteInfo = "SeaHawk Fitness";
+		};
+		53E876C31C73C48D00A564DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53E876981C73C48C00A564DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53E8769F1C73C48C00A564DC;
+			remoteInfo = "SeaHawk Fitness";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SeahawkFitness_menu_blackTrim.png; path = Images/SeahawkFitness_menu_blackTrim.png; sourceTree = SOURCE_ROOT; };
+		53D453711C7D084D00112593 /* Personal Training Rates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Personal Training Rates.png"; path = "Images/Personal Training Rates.png"; sourceTree = SOURCE_ROOT; };
+		53E876A01C73C48C00A564DC /* SeaHawk Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeaHawk Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53E876A31C73C48C00A564DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53E876A51C73C48C00A564DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		53E876A81C73C48C00A564DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53E876AB1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SeaHawk_Fitness.xcdatamodel; sourceTree = "<group>"; };
+		53E876AD1C73C48C00A564DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53E876B01C73C48C00A564DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53E876B21C73C48C00A564DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53E876B71C73C48D00A564DC /* SeaHawk FitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SeaHawk FitnessTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53E876BB1C73C48D00A564DC /* SeaHawk_FitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaHawk_FitnessTests.swift; sourceTree = "<group>"; };
+		53E876BD1C73C48D00A564DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53E876C21C73C48D00A564DC /* SeaHawk FitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SeaHawk FitnessUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53E876C61C73C48D00A564DC /* SeaHawk_FitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaHawk_FitnessUITests.swift; sourceTree = "<group>"; };
+		53E876C81C73C48D00A564DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F127391C74F72A00E205A2 /* eventsScheduleButton_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventsScheduleButton_menu.png; path = Images/eventsScheduleButton_menu.png; sourceTree = SOURCE_ROOT; };
+		53F1273A1C74F72A00E205A2 /* groupExerciseButton_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = groupExerciseButton_menu.png; path = Images/groupExerciseButton_menu.png; sourceTree = SOURCE_ROOT; };
+		53F1273B1C74F72A00E205A2 /* hoursButton_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hoursButton_menu.png; path = Images/hoursButton_menu.png; sourceTree = SOURCE_ROOT; };
+		53F1273C1C74F72A00E205A2 /* personalTrainingButton_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = personalTrainingButton_menu.png; path = Images/personalTrainingButton_menu.png; sourceTree = SOURCE_ROOT; };
+		53F1273D1C74F72A00E205A2 /* rentalsButton_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rentalsButton_menu.png; path = Images/rentalsButton_menu.png; sourceTree = SOURCE_ROOT; };
+		53F1273E1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2016-02-17 at 11.51.37 AM.png"; path = "Images/Screen Shot 2016-02-17 at 11.51.37 AM.png"; sourceTree = SOURCE_ROOT; };
+		53F1273F1C74F72A00E205A2 /* SeahawkFitness_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SeahawkFitness_menu.png; path = Images/SeahawkFitness_menu.png; sourceTree = SOURCE_ROOT; };
+		53F127401C74F72A00E205A2 /* shAdventuresButton_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shAdventuresButton_menu.png; path = Images/shAdventuresButton_menu.png; sourceTree = SOURCE_ROOT; };
+		53F127411C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Primary_1ClrBlkBgrnd_Logo.jpg; path = Images/UNCW_Primary_1ClrBlkBgrnd_Logo.jpg; sourceTree = SOURCE_ROOT; };
+		53F127421C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Primary_TealBgrnd.jpg; path = Images/UNCW_Primary_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
+		53F127431C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary1_1ClrWhiteBgrnd.jpg; path = Images/UNCW_Secondary1_1ClrWhiteBgrnd.jpg; sourceTree = SOURCE_ROOT; };
+		53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary1_TealBgrnd.jpg; path = Images/UNCW_Secondary1_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
+		53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary2_TealBgrnd.jpg; path = Images/UNCW_Secondary2_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53E8769D1C73C48C00A564DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E876B41C73C48D00A564DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E876BF1C73C48D00A564DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53E876971C73C48C00A564DC = {
+			isa = PBXGroup;
+			children = (
+				53E876A21C73C48C00A564DC /* SeaHawk Fitness */,
+				53E876BA1C73C48D00A564DC /* SeaHawk FitnessTests */,
+				53E876C51C73C48D00A564DC /* SeaHawk FitnessUITests */,
+				53E876A11C73C48C00A564DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53E876A11C73C48C00A564DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53E876A01C73C48C00A564DC /* SeaHawk Fitness.app */,
+				53E876B71C73C48D00A564DC /* SeaHawk FitnessTests.xctest */,
+				53E876C21C73C48D00A564DC /* SeaHawk FitnessUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53E876A21C73C48C00A564DC /* SeaHawk Fitness */ = {
+			isa = PBXGroup;
+			children = (
+				53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */,
+				53D453711C7D084D00112593 /* Personal Training Rates.png */,
+				53F127391C74F72A00E205A2 /* eventsScheduleButton_menu.png */,
+				53F1273A1C74F72A00E205A2 /* groupExerciseButton_menu.png */,
+				53F1273B1C74F72A00E205A2 /* hoursButton_menu.png */,
+				53F1273C1C74F72A00E205A2 /* personalTrainingButton_menu.png */,
+				53F1273D1C74F72A00E205A2 /* rentalsButton_menu.png */,
+				53F1273E1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png */,
+				53F1273F1C74F72A00E205A2 /* SeahawkFitness_menu.png */,
+				53F127401C74F72A00E205A2 /* shAdventuresButton_menu.png */,
+				53F127411C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg */,
+				53F127421C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg */,
+				53F127431C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg */,
+				53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */,
+				53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */,
+				53E876A31C73C48C00A564DC /* AppDelegate.swift */,
+				53E876A51C73C48C00A564DC /* ViewController.swift */,
+				53E876A71C73C48C00A564DC /* Main.storyboard */,
+				53E876AD1C73C48C00A564DC /* Assets.xcassets */,
+				53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */,
+				53E876B21C73C48C00A564DC /* Info.plist */,
+				53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */,
+			);
+			path = "SeaHawk Fitness";
+			sourceTree = "<group>";
+		};
+		53E876BA1C73C48D00A564DC /* SeaHawk FitnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				53E876BB1C73C48D00A564DC /* SeaHawk_FitnessTests.swift */,
+				53E876BD1C73C48D00A564DC /* Info.plist */,
+			);
+			path = "SeaHawk FitnessTests";
+			sourceTree = "<group>";
+		};
+		53E876C51C73C48D00A564DC /* SeaHawk FitnessUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53E876C61C73C48D00A564DC /* SeaHawk_FitnessUITests.swift */,
+				53E876C81C73C48D00A564DC /* Info.plist */,
+			);
+			path = "SeaHawk FitnessUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53E8769F1C73C48C00A564DC /* SeaHawk Fitness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53E876CB1C73C48D00A564DC /* Build configuration list for PBXNativeTarget "SeaHawk Fitness" */;
+			buildPhases = (
+				53E8769C1C73C48C00A564DC /* Sources */,
+				53E8769D1C73C48C00A564DC /* Frameworks */,
+				53E8769E1C73C48C00A564DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SeaHawk Fitness";
+			productName = "SeaHawk Fitness";
+			productReference = 53E876A01C73C48C00A564DC /* SeaHawk Fitness.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53E876B61C73C48D00A564DC /* SeaHawk FitnessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53E876CE1C73C48D00A564DC /* Build configuration list for PBXNativeTarget "SeaHawk FitnessTests" */;
+			buildPhases = (
+				53E876B31C73C48D00A564DC /* Sources */,
+				53E876B41C73C48D00A564DC /* Frameworks */,
+				53E876B51C73C48D00A564DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53E876B91C73C48D00A564DC /* PBXTargetDependency */,
+			);
+			name = "SeaHawk FitnessTests";
+			productName = "SeaHawk FitnessTests";
+			productReference = 53E876B71C73C48D00A564DC /* SeaHawk FitnessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53E876C11C73C48D00A564DC /* SeaHawk FitnessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53E876D11C73C48D00A564DC /* Build configuration list for PBXNativeTarget "SeaHawk FitnessUITests" */;
+			buildPhases = (
+				53E876BE1C73C48D00A564DC /* Sources */,
+				53E876BF1C73C48D00A564DC /* Frameworks */,
+				53E876C01C73C48D00A564DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53E876C41C73C48D00A564DC /* PBXTargetDependency */,
+			);
+			name = "SeaHawk FitnessUITests";
+			productName = "SeaHawk FitnessUITests";
+			productReference = 53E876C21C73C48D00A564DC /* SeaHawk FitnessUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53E876981C73C48C00A564DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "James Stinson Gray";
+				TargetAttributes = {
+					53E8769F1C73C48C00A564DC = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = M66D476833;
+					};
+					53E876B61C73C48D00A564DC = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = M66D476833;
+						TestTargetID = 53E8769F1C73C48C00A564DC;
+					};
+					53E876C11C73C48D00A564DC = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = M66D476833;
+						TestTargetID = 53E8769F1C73C48C00A564DC;
+					};
+				};
+			};
+			buildConfigurationList = 53E8769B1C73C48C00A564DC /* Build configuration list for PBXProject "SeaHawk Fitness" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53E876971C73C48C00A564DC;
+			productRefGroup = 53E876A11C73C48C00A564DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53E8769F1C73C48C00A564DC /* SeaHawk Fitness */,
+				53E876B61C73C48D00A564DC /* SeaHawk FitnessTests */,
+				53E876C11C73C48D00A564DC /* SeaHawk FitnessUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53E8769E1C73C48C00A564DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53E876B11C73C48C00A564DC /* LaunchScreen.storyboard in Resources */,
+				53F127491C74F72A00E205A2 /* personalTrainingButton_menu.png in Resources */,
+				53F1274A1C74F72A00E205A2 /* rentalsButton_menu.png in Resources */,
+				53F1274D1C74F72A00E205A2 /* shAdventuresButton_menu.png in Resources */,
+				53F127521C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg in Resources */,
+				53F1274E1C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg in Resources */,
+				53E876AE1C73C48C00A564DC /* Assets.xcassets in Resources */,
+				53F1274B1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png in Resources */,
+				53F127501C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg in Resources */,
+				53D453721C7D084D00112593 /* Personal Training Rates.png in Resources */,
+				53F127511C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg in Resources */,
+				53F127481C74F72A00E205A2 /* hoursButton_menu.png in Resources */,
+				53F1274F1C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg in Resources */,
+				53F127461C74F72A00E205A2 /* eventsScheduleButton_menu.png in Resources */,
+				53F127471C74F72A00E205A2 /* groupExerciseButton_menu.png in Resources */,
+				53F1274C1C74F72A00E205A2 /* SeahawkFitness_menu.png in Resources */,
+				53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */,
+				53E876A91C73C48C00A564DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E876B51C73C48D00A564DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E876C01C73C48D00A564DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53E8769C1C73C48C00A564DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53E876A61C73C48C00A564DC /* ViewController.swift in Sources */,
+				53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */,
+				53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E876B31C73C48D00A564DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53E876BC1C73C48D00A564DC /* SeaHawk_FitnessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53E876BE1C73C48D00A564DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53E876C71C73C48D00A564DC /* SeaHawk_FitnessUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53E876B91C73C48D00A564DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53E8769F1C73C48C00A564DC /* SeaHawk Fitness */;
+			targetProxy = 53E876B81C73C48D00A564DC /* PBXContainerItemProxy */;
+		};
+		53E876C41C73C48D00A564DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53E8769F1C73C48C00A564DC /* SeaHawk Fitness */;
+			targetProxy = 53E876C31C73C48D00A564DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53E876A71C73C48C00A564DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53E876A81C73C48C00A564DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53E876B01C73C48C00A564DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53E876C91C73C48D00A564DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53E876CA1C73C48D00A564DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53E876CC1C73C48D00A564DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SeaHawk Fitness/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.SeaHawk-Fitness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		53E876CD1C73C48D00A564DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SeaHawk Fitness/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.SeaHawk-Fitness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		53E876CF1C73C48D00A564DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SeaHawk FitnessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.SeaHawk-FitnessTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeaHawk Fitness.app/SeaHawk Fitness";
+			};
+			name = Debug;
+		};
+		53E876D01C73C48D00A564DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "SeaHawk FitnessTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.SeaHawk-FitnessTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeaHawk Fitness.app/SeaHawk Fitness";
+			};
+			name = Release;
+		};
+		53E876D21C73C48D00A564DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "SeaHawk FitnessUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.SeaHawk-FitnessUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SeaHawk Fitness";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		53E876D31C73C48D00A564DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "SeaHawk FitnessUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "self.edu.SeaHawk-FitnessUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "SeaHawk Fitness";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53E8769B1C73C48C00A564DC /* Build configuration list for PBXProject "SeaHawk Fitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E876C91C73C48D00A564DC /* Debug */,
+				53E876CA1C73C48D00A564DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53E876CB1C73C48D00A564DC /* Build configuration list for PBXNativeTarget "SeaHawk Fitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E876CC1C73C48D00A564DC /* Debug */,
+				53E876CD1C73C48D00A564DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53E876CE1C73C48D00A564DC /* Build configuration list for PBXNativeTarget "SeaHawk FitnessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E876CF1C73C48D00A564DC /* Debug */,
+				53E876D01C73C48D00A564DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53E876D11C73C48D00A564DC /* Build configuration list for PBXNativeTarget "SeaHawk FitnessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E876D21C73C48D00A564DC /* Debug */,
+				53E876D31C73C48D00A564DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				53E876AB1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodel */,
+			);
+			currentVersion = 53E876AB1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodel */;
+			path = SeaHawk_Fitness.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 53E876981C73C48C00A564DC /* Project object */;
+}
