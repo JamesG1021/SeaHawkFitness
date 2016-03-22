@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		531D77C51CA1E01000983455 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531D77BF1CA1DED500983455 /* Media.xcassets */; };
 		53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */; };
 		53D453721C7D084D00112593 /* Personal Training Rates.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D453711C7D084D00112593 /* Personal Training Rates.png */; };
 		53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E876A31C73C48C00A564DC /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		531D77BF1CA1DED500983455 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../../../Desktop/Media.xcassets; sourceTree = "<group>"; };
 		53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SeahawkFitness_menu_blackTrim.png; path = Images/SeahawkFitness_menu_blackTrim.png; sourceTree = SOURCE_ROOT; };
 		53D453711C7D084D00112593 /* Personal Training Rates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Personal Training Rates.png"; path = "Images/Personal Training Rates.png"; sourceTree = SOURCE_ROOT; };
 		53E876A01C73C48C00A564DC /* SeaHawk Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeaHawk Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				53E876A51C73C48C00A564DC /* ViewController.swift */,
 				53E876A71C73C48C00A564DC /* Main.storyboard */,
 				53E876AD1C73C48C00A564DC /* Assets.xcassets */,
+				531D77BF1CA1DED500983455 /* Media.xcassets */,
 				53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */,
 				53E876B21C73C48C00A564DC /* Info.plist */,
 				53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */,
@@ -287,6 +290,7 @@
 				53F127521C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg in Resources */,
 				53F1274E1C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg in Resources */,
 				53E876AE1C73C48C00A564DC /* Assets.xcassets in Resources */,
+				531D77C51CA1E01000983455 /* Media.xcassets in Resources */,
 				53F1274B1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png in Resources */,
 				53F127501C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg in Resources */,
 				53D453721C7D084D00112593 /* Personal Training Rates.png in Resources */,
