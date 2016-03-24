@@ -31,6 +31,7 @@
 		53F127511C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */; };
 		53F127521C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */; };
 		E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02E61BA1CA2333E00D2DD0F /* Media.xcassets */; };
+		E02E61C31CA4723700D2DD0F /* GroupExcerciseScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02E61C21CA4723700D2DD0F /* GroupExcerciseScheduleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary1_TealBgrnd.jpg; path = Images/UNCW_Secondary1_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
 		53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary2_TealBgrnd.jpg; path = Images/UNCW_Secondary2_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
 		E02E61BA1CA2333E00D2DD0F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Images/Media.xcassets; sourceTree = SOURCE_ROOT; };
+		E02E61C21CA4723700D2DD0F /* GroupExcerciseScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupExcerciseScheduleViewController.swift; path = DrillDownTables/GroupExcerciseScheduleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */,
 				53E876A31C73C48C00A564DC /* AppDelegate.swift */,
 				53E876A51C73C48C00A564DC /* ViewController.swift */,
+				E02E61C21CA4723700D2DD0F /* GroupExcerciseScheduleViewController.swift */,
 				53E876A71C73C48C00A564DC /* Main.storyboard */,
 				53E876AD1C73C48C00A564DC /* Assets.xcassets */,
 				E02E61BA1CA2333E00D2DD0F /* Media.xcassets */,
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E876A61C73C48C00A564DC /* ViewController.swift in Sources */,
+				E02E61C31CA4723700D2DD0F /* GroupExcerciseScheduleViewController.swift in Sources */,
 				53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */,
 				53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */,
 			);
