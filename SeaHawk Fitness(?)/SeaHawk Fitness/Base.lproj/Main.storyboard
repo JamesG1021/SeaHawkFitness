@@ -738,7 +738,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQo-TC-YiQ">
-                                        <rect key="frame" x="8" y="50" width="347" height="86.5"/>
+                                        <rect key="frame" x="8" y="50" width="347" height="87"/>
                                         <string key="text">1. Any current student, faculty/ staff, or member with a valid Student Recreation Center membership is eligible to hire a personal trainer.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -763,48 +763,48 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                         <rect key="frame" x="8" y="524" width="347" height="210"/>
                                         <string key="text">5. There are no penalties if cancellations are made at least 24 hours in advance for a personal training session or fitness assessment appointment. You may contact your trainer directly or call 910-962-7443 between 8am and 5pm Monday through Friday. Every effort will be made to reschedule a training session according to the mutual availability of the client and trainer.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmx-tu-7pI">
                                         <rect key="frame" x="8" y="742" width="347" height="107"/>
                                         <string key="text">6. Failure to show up to a scheduled appointment or tardiness of 15 minutes or more will result in forfeiture of one appointment or session. Sessions that start late will still end at the scheduled time.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4. All training sessions will be a maximum of 60 minutes in length. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkB-az-Xu2">
                                         <rect key="frame" x="8" y="464" width="347" height="52"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSr-Ns-HaN">
                                         <rect key="frame" x="8" y="857" width="347" height="169"/>
                                         <string key="text">7. Training packages expire at the end of the semester that they were purchased, unless otherwise approved for extension by the Fitness Coordinator and/or Assistant Director. To request an extension you must contact Carey Greenwood via e-mail or phone at 910-962-2037. All unused sessions will be forfeited.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ka-4a-vFU">
                                         <rect key="frame" x="8" y="1034" width="347" height="83"/>
                                         <string key="text">8. Your initial session will be a Fitness Assessment. Packages purchased that are 8 sessions or greater will receive a post assessment free of charge.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq3-lS-pM9">
                                         <rect key="frame" x="8" y="1125" width="347" height="85"/>
                                         <string key="text">9. All personal training fees must be paid in full prior to starting program. Trainers may not accept any direct or additional payment for their services.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whr-Qu-bkI">
                                         <rect key="frame" x="8" y="1218" width="347" height="85"/>
                                         <string key="text">10. Some clients may require medical clearance (PDF) from a physician prior to starting an exercise program. You will be notified if medical clearance is needed.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-eB-8eQ">
@@ -1028,7 +1028,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="COA-6r-Dec"/>
-        <segue reference="eAm-d8-k8v"/>
+        <segue reference="C0Y-ot-2iC"/>
         <segue reference="ZZd-Ud-DlX"/>
     </inferredMetricsTieBreakers>
 </document>
