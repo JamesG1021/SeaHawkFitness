@@ -493,6 +493,9 @@
                                 <state key="normal" title="Training Policies">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oU1-J6-Blu" kind="show" id="9Wq-MF-Z2P"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
@@ -710,6 +713,148 @@
             </objects>
             <point key="canvasLocation" x="1386" y="-589"/>
         </scene>
+        <!--Training Policies-->
+        <scene sceneID="f1e-ZD-fYa">
+            <objects>
+                <viewController title="Training Policies" id="oU1-J6-Blu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wck-8E-fla"/>
+                        <viewControllerLayoutGuide type="bottom" id="2hP-Un-lHt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hfk-di-Egn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VX8-5m-e60">
+                                <rect key="frame" x="118" y="28" width="365" height="1355"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="UNCW Training Policies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-4v-tuc">
+                                        <rect key="frame" x="71" y="8" width="210" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Rn1-1p-tak"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQo-TC-YiQ">
+                                        <rect key="frame" x="8" y="50" width="347" height="86.5"/>
+                                        <string key="text">1. Any current student, faculty/ staff, or member with a valid Student Recreation Center membership is eligible to hire a personal trainer.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbE-EP-u5t">
+                                        <rect key="frame" x="8" y="144" width="347" height="172"/>
+                                        <string key="text">2. To sign up with a trainer, you must register and submit payment in the Campus Recreation Suite in the Student Recreation Center between business hours of 8am and 5pm Monday through Friday. Once you register and payment has been successfully received, your trainer will contact you via e-mail or phone within 2 business days </string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLr-Hq-evw">
+                                        <rect key="frame" x="8" y="324" width="347" height="132"/>
+                                        <string key="text">3. All sessions will be conducted at the UNCW Student Recreation Center by current Department of Campus Recreation Personal Training staff only.
+All training sessions will be a maximum of 60 minutes in length</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cn-cC-GTV">
+                                        <rect key="frame" x="8" y="524" width="347" height="210"/>
+                                        <string key="text">5. There are no penalties if cancellations are made at least 24 hours in advance for a personal training session or fitness assessment appointment. You may contact your trainer directly or call 910-962-7443 between 8am and 5pm Monday through Friday. Every effort will be made to reschedule a training session according to the mutual availability of the client and trainer.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kmx-tu-7pI">
+                                        <rect key="frame" x="8" y="742" width="347" height="107"/>
+                                        <string key="text">6. Failure to show up to a scheduled appointment or tardiness of 15 minutes or more will result in forfeiture of one appointment or session. Sessions that start late will still end at the scheduled time.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4. All training sessions will be a maximum of 60 minutes in length. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkB-az-Xu2">
+                                        <rect key="frame" x="8" y="464" width="347" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSr-Ns-HaN">
+                                        <rect key="frame" x="8" y="857" width="347" height="169"/>
+                                        <string key="text">7. Training packages expire at the end of the semester that they were purchased, unless otherwise approved for extension by the Fitness Coordinator and/or Assistant Director. To request an extension you must contact Carey Greenwood via e-mail or phone at 910-962-2037. All unused sessions will be forfeited.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ka-4a-vFU">
+                                        <rect key="frame" x="8" y="1034" width="347" height="83"/>
+                                        <string key="text">8. Your initial session will be a Fitness Assessment. Packages purchased that are 8 sessions or greater will receive a post assessment free of charge.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kq3-lS-pM9">
+                                        <rect key="frame" x="8" y="1125" width="347" height="85"/>
+                                        <string key="text">9. All personal training fees must be paid in full prior to starting program. Trainers may not accept any direct or additional payment for their services.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whr-Qu-bkI">
+                                        <rect key="frame" x="8" y="1218" width="347" height="85"/>
+                                        <string key="text">10. Some clients may require medical clearance (PDF) from a physician prior to starting an exercise program. You will be notified if medical clearance is needed.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-eB-8eQ">
+                                        <rect key="frame" x="165" y="1317" width="34" height="30"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="9hG-YS-twY" kind="show" id="eAm-d8-k8v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yGM-4v-tuc" secondAttribute="trailing" constant="174" id="dZl-zv-asn"/>
+                                    <constraint firstItem="yGM-4v-tuc" firstAttribute="top" secondItem="VX8-5m-e60" secondAttribute="topMargin" id="dwe-NQ-wgp"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="VX8-5m-e60" secondAttribute="bottom" constant="-236" id="1WR-Yv-XWb"/>
+                            <constraint firstItem="VX8-5m-e60" firstAttribute="top" secondItem="wck-8E-fla" secondAttribute="bottom" id="DQk-Op-3Ca"/>
+                            <constraint firstItem="VX8-5m-e60" firstAttribute="leading" secondItem="Hfk-di-Egn" secondAttribute="leadingMargin" constant="16" id="I5S-Qy-PLt"/>
+                            <constraint firstItem="VX8-5m-e60" firstAttribute="centerX" secondItem="Hfk-di-Egn" secondAttribute="centerX" id="s4N-OV-fQq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jY-MM-awo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="-1603"/>
+        </scene>
+        <!--Training Policies (2)-->
+        <scene sceneID="xUI-OA-bBz">
+            <objects>
+                <viewController title="Training Policies (2)" id="tBL-02-m4I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Trs-33-tlj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dwk-ex-aHK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AbQ-am-W5a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMg-2W-1Qq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2894" y="-1532"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="GtW-4R-Nkd">
             <objects>
@@ -882,8 +1027,8 @@
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rgM-wf-Wri"/>
+        <segue reference="COA-6r-Dec"/>
+        <segue reference="eAm-d8-k8v"/>
         <segue reference="ZZd-Ud-DlX"/>
-        <segue reference="etu-AE-D0R"/>
     </inferredMetricsTieBreakers>
 </document>
