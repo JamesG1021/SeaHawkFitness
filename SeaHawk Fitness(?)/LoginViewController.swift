@@ -8,9 +8,9 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController {
     
-    let dataService = JSONService()
     let groupScheduleAPI = "LoginService"
     var isAdministrator : Bool = false
 
@@ -28,27 +28,28 @@ class LoginViewController: UIViewController {
         LoginTextField.placeholder = "Username"
         PasswordTextField.placeholder = "Student ID (850xxxxxx)"
         
-        UseAsGuest.addTarget(self, action: #selector(LoginViewController.skipLogin),
-                             forControlEvents: UIControlEvents.TouchUpInside)
-        
-        if (isAdministrator) {
-            LoginButton.addTarget(self, action: #selector(LoginViewController.adminLogin),
-                                  forControlEvents: UIControlEvents.TouchUpInside)
-        } else {
-            LoginButton.addTarget(self, action: #selector(LoginViewController.studentLogin),
-                                  forControlEvents: UIControlEvents.TouchUpInside)
-        }
-
-        
-        
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func UseAsGuest(sender: UIButton)
+    {
+            skipLogin()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func LoginButton(sender: UIButton)
+    {
+        if (isAdministrator) {
+            adminLogin()
+        } else {
+            studentLogin()
+        }
+        
+    }
+
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch AdministrativeSegmentedController.selectedSegmentIndex
         {
@@ -73,9 +74,7 @@ class LoginViewController: UIViewController {
     
     
     func skipLogin() {
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            (segue.destinationViewController as? MainMenuViewController)
-        }
+
     }
     
     func adminLogin() {

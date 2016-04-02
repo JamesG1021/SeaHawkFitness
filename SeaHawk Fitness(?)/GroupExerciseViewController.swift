@@ -10,12 +10,17 @@ import UIKit
 
 class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let dataService = JSONService()
+    @IBOutlet weak var GetCalenderButton: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var txt: UITextField!
+    
+    @IBOutlet weak var UpdateCalenderButton: UIButton!
+    
     let groupScheduleURL = "GroupExerciseService"
     var RequestARGs = ""
     
-    var tableView:UITableView?
-    var txt:UITextField?
     var items = [GroupExerciseClass]()
     
     override func viewDidLoad() {
@@ -26,37 +31,26 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewWillAppear(animated: Bool) {
         //dataService.getJSON(groupScheduleURL, ReqARGs: "day=Monday", onCompletion: <#T##(JSON) -> Void#>)
-        let frame: CGRect = CGRect(x: 0, y: 100, width: self.view.frame.width,
-                                   height:self.view.frame.height - 200)
         
-        self.tableView = UITableView(frame: frame)
-        self.tableView?.dataSource = self
-        self.tableView?.delegate = self
-        self.view.addSubview(self.tableView!)
+
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+
+        GetCalenderButton.setTitle("Get Calender", forState: UIControlState.Normal)
+
+
+        txt.placeholder = "What day would you like to see?"
         
-        let btn = UIButton(frame: CGRect(x: 0,y: 25, width: self.view.frame.width, height: 50))
-        btn.backgroundColor = UIColor.cyanColor()
-        btn.setTitle("Get Calender", forState: UIControlState.Normal)
-        
-        btn.addTarget(self, action: #selector(GroupExerciseViewController.getCalender), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        self.view.addSubview(btn)
-        
-        txt = UITextField(frame: CGRect(x: 0, y:635, width: self.view.frame.width, height: 30))
-        txt!.placeholder = "What day would you like to see?"
-        
-        self.view.addSubview(txt!)
-        
-        let btn2 = UIButton(frame: CGRect(x: 0, y:685, width: self.view.frame.width, height: 50))
-        btn2.backgroundColor = UIColor.cyanColor()
-        btn2.setTitle("Update Calender", forState: UIControlState.Normal)
-        
-        btn2.addTarget(self, action: #selector(GroupExerciseViewController.updateCalender), forControlEvents: UIControlEvents.TouchUpInside)
-        
-        self.view.addSubview(btn2)
+        UpdateCalenderButton.setTitle("Update Calender", forState: UIControlState.Normal)
 
     }
     
+    @IBAction func GetCalender(sender: UIButton) {
+        getCalender()
+    }
+    @IBAction func UpdateCalender(sender: UIButton) {
+        updateCalender()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
