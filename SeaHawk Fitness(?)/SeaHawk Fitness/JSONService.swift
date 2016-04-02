@@ -32,6 +32,7 @@ class JSONService
         do {
             print("Make Request Function Call")
             request.HTTPMethod = "POST"
+            //request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
             request.HTTPBody = postString
             print(URL)
             print(RequestARGs)
@@ -40,10 +41,9 @@ class JSONService
             let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
                 if let jsonData = data {
                     let json:JSON = JSON(data: jsonData)
-                    print(json)
-                    print(data)
-                    let convertedStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print("Converted String = \(convertedStr)")
+                    //print(json)
+                    let results = NSString(data:data!, encoding:NSUTF8StringEncoding)
+                    //print("API Response: \(results)")
                     onCompletion(json, nil)
                 } else {
                     print("There was an error in creating the JSON")

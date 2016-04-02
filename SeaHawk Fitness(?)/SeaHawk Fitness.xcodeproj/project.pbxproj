@@ -10,7 +10,6 @@
 		53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */; };
 		53D453721C7D084D00112593 /* Personal Training Rates.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D453711C7D084D00112593 /* Personal Training Rates.png */; };
 		53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E876A31C73C48C00A564DC /* AppDelegate.swift */; };
-		53E876A91C73C48C00A564DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E876A71C73C48C00A564DC /* Main.storyboard */; };
 		53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */; };
 		53E876AE1C73C48C00A564DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E876AD1C73C48C00A564DC /* Assets.xcassets */; };
 		53E876B11C73C48C00A564DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */; };
@@ -35,10 +34,13 @@
 		AD271FB71CAE16AC0028F845 /* GroupExerciseScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FB61CAE16AC0028F845 /* GroupExerciseScheduleItem.swift */; };
 		AD271FB91CAE2CAA0028F845 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FB81CAE2CAA0028F845 /* LoginViewController.swift */; };
 		AD271FBB1CAE32640028F845 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FBA1CAE32640028F845 /* MainMenuViewController.swift */; };
+		AD5FB60F1CB01D09006FEE05 /* TableViewCellBG_base.png in Resources */ = {isa = PBXBuildFile; fileRef = AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */; };
+		AD5FB6121CB0380C006FEE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5FB6101CB0380C006FEE05 /* Main.storyboard */; };
 		AD94AE771CAF3F1200CD1C8D /* AdventuresItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94AE761CAF3F1200CD1C8D /* AdventuresItem.swift */; };
 		AD94AE791CAF3F3F00CD1C8D /* EventsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94AE781CAF3F3F00CD1C8D /* EventsItem.swift */; };
 		AD94AE7B1CAF3F5600CD1C8D /* RentalsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94AE7A1CAF3F5600CD1C8D /* RentalsItem.swift */; };
 		AD94AE7D1CAF425D00CD1C8D /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94AE7C1CAF425D00CD1C8D /* Instructor.swift */; };
+		AD94AE851CB011FF00CD1C8D /* ExerciseClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD94AE841CB011FF00CD1C8D /* ExerciseClassCell.xib */; };
 		E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02E61BA1CA2333E00D2DD0F /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +66,6 @@
 		53D453711C7D084D00112593 /* Personal Training Rates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Personal Training Rates.png"; path = "Images/Personal Training Rates.png"; sourceTree = SOURCE_ROOT; };
 		53E876A01C73C48C00A564DC /* SeaHawk Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SeaHawk Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E876A31C73C48C00A564DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		53E876A81C73C48C00A564DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53E876AB1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SeaHawk_Fitness.xcdatamodel; sourceTree = "<group>"; };
 		53E876AD1C73C48C00A564DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E876B01C73C48C00A564DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,10 +95,13 @@
 		AD271FB61CAE16AC0028F845 /* GroupExerciseScheduleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupExerciseScheduleItem.swift; sourceTree = "<group>"; };
 		AD271FB81CAE2CAA0028F845 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		AD271FBA1CAE32640028F845 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewCellBG_base.png; sourceTree = "<group>"; };
+		AD5FB6111CB0380C006FEE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD94AE761CAF3F1200CD1C8D /* AdventuresItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresItem.swift; sourceTree = "<group>"; };
 		AD94AE781CAF3F3F00CD1C8D /* EventsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsItem.swift; sourceTree = "<group>"; };
 		AD94AE7A1CAF3F5600CD1C8D /* RentalsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsItem.swift; sourceTree = "<group>"; };
 		AD94AE7C1CAF425D00CD1C8D /* Instructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
+		AD94AE841CB011FF00CD1C8D /* ExerciseClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseClassCell.xib; sourceTree = "<group>"; };
 		E02E61BA1CA2333E00D2DD0F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Images/Media.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -157,6 +161,7 @@
 				53F1273B1C74F72A00E205A2 /* hoursButton_menu.png */,
 				53F1273C1C74F72A00E205A2 /* personalTrainingButton_menu.png */,
 				53F1273D1C74F72A00E205A2 /* rentalsButton_menu.png */,
+				AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */,
 				53F1273E1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png */,
 				53F1273F1C74F72A00E205A2 /* SeahawkFitness_menu.png */,
 				53F127401C74F72A00E205A2 /* shAdventuresButton_menu.png */,
@@ -168,12 +173,12 @@
 				53E876A31C73C48C00A564DC /* AppDelegate.swift */,
 				AD94AE751CAF3EB900CD1C8D /* Model */,
 				AD271FB51CAE15260028F845 /* ViewControllers */,
-				53E876A71C73C48C00A564DC /* Main.storyboard */,
 				53E876AD1C73C48C00A564DC /* Assets.xcassets */,
 				E02E61BA1CA2333E00D2DD0F /* Media.xcassets */,
 				53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */,
 				53E876B21C73C48C00A564DC /* Info.plist */,
 				53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */,
+				AD94AE841CB011FF00CD1C8D /* ExerciseClassCell.xib */,
 			);
 			path = "SeaHawk Fitness";
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				AD271FBA1CAE32640028F845 /* MainMenuViewController.swift */,
 				AD271FB81CAE2CAA0028F845 /* LoginViewController.swift */,
 				AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */,
+				AD5FB6101CB0380C006FEE05 /* Main.storyboard */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -334,10 +340,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5FB6121CB0380C006FEE05 /* Main.storyboard in Resources */,
+				AD94AE851CB011FF00CD1C8D /* ExerciseClassCell.xib in Resources */,
 				53E876B11C73C48C00A564DC /* LaunchScreen.storyboard in Resources */,
 				53F127491C74F72A00E205A2 /* personalTrainingButton_menu.png in Resources */,
 				53F1274A1C74F72A00E205A2 /* rentalsButton_menu.png in Resources */,
 				53F1274D1C74F72A00E205A2 /* shAdventuresButton_menu.png in Resources */,
+				AD5FB60F1CB01D09006FEE05 /* TableViewCellBG_base.png in Resources */,
 				53F127521C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg in Resources */,
 				53F1274E1C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg in Resources */,
 				53E876AE1C73C48C00A564DC /* Assets.xcassets in Resources */,
@@ -352,7 +361,6 @@
 				53F127471C74F72A00E205A2 /* groupExerciseButton_menu.png in Resources */,
 				53F1274C1C74F72A00E205A2 /* SeahawkFitness_menu.png in Resources */,
 				53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */,
-				53E876A91C73C48C00A564DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,20 +432,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		53E876A71C73C48C00A564DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				53E876A81C73C48C00A564DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		53E876AF1C73C48C00A564DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				53E876B01C73C48C00A564DC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		AD5FB6101CB0380C006FEE05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD5FB6111CB0380C006FEE05 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

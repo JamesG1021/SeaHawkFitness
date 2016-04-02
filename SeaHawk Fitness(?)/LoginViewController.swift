@@ -11,22 +11,31 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let groupScheduleAPI = "LoginService"
-    var isAdministrator : Bool = false
+    let loginAPI = "LoginService"
+    var RequestARGs = ""
 
+    var isAdministrator : Bool = false
+    var validInput : Bool = false
+    
     @IBOutlet weak var LoginTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     
     @IBOutlet weak var UseAsGuest: UIButton!
     @IBOutlet weak var LoginButton: UIButton!
     
+    
     @IBOutlet weak var AdministrativeSegmentedController: UISegmentedControl!
+    
+    @IBOutlet weak var ErrorMessageField: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         LoginTextField.placeholder = "Username"
         PasswordTextField.placeholder = "Student ID (850xxxxxx)"
+        
+        ErrorMessageField.hidden = true;
+        ErrorMessageField.font = UIFont.systemFontOfSize(14.0)
         
         // Do any additional setup after loading the view.
     }
@@ -42,11 +51,40 @@ class LoginViewController: UIViewController {
     
     @IBAction func LoginButton(sender: UIButton)
     {
-        if (isAdministrator) {
-            adminLogin()
-        } else {
-            studentLogin()
+        ErrorMessageField.hidden = true
+        
+        if LoginTextField.text == ""
+        {
+            
+            ErrorMessageField.hidden = false
+            ErrorMessageField.text = "You must enter a username to login!"
+            print("You must enter a username to login!")
         }
+        
+        if PasswordTextField.text == ""
+        {
+            ErrorMessageField.hidden = false
+            if ErrorMessageField.text == ""
+            {
+                ErrorMessageField.text = "You must enter a password to login!"
+            }
+            print("You must enter a password to login!")
+        }
+        
+        if (LoginTextField.text != "" && PasswordTextField.text != "")
+        {
+            validInput = true
+        }
+        
+        if (validInput)
+        {
+            if (isAdministrator) {
+                adminLogin()
+            } else {
+                studentLogin()
+            }
+        }
+        
         
     }
 
@@ -55,8 +93,10 @@ class LoginViewController: UIViewController {
         {
         case 0:
             isAdministrator = false
+            print(isAdministrator)
         case 1:
             isAdministrator = true
+            print(isAdministrator)
         default:
             break; 
         }
@@ -74,15 +114,53 @@ class LoginViewController: UIViewController {
     
     
     func skipLogin() {
-
+        
     }
     
     func adminLogin() {
+        let username = LoginTextField.text
+        let password = PasswordTextField.text
+        
+        RequestARGs = "username=" + username! + "&password=" + password! + "&admin=true"
+        
+        JSONService.sharedInstance.getJSON (loginAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
+            if let results = json.array {
+                for entry in results {
+                    print(entry)
+                }
+            }
+        })
+        
         
     }
     
     func studentLogin() {
         
+        let username = LoginTextField.text
+        let password = PasswordTextField.text
+        
+        RequestARGs = "username=" + username! + "&password=" + password!
+        
+        JSONService.sharedInstance.getJSON (loginAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
+            if let results = json.array{
+                for entry in results {
+                    if entry["success"].boolValue
+                    {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.performSegueWithIdentifier("EnterMainMenuSegue", sender: nil)
+                        })
+                        print("Yup!!")
+                    } else
+                    {
+                        print("Incorrect login")
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.ErrorMessageField.hidden = false
+                            self.ErrorMessageField.text = entry["message"].stringValue
+                        })
+                    }
+                }
+            }
+        })
     }
 
 }

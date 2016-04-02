@@ -8,9 +8,32 @@
 
 import UIKit
 
-class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ExerciseClassCell : UITableViewCell
+{
     
-    @IBOutlet weak var GetCalenderButton: UIButton!
+    @IBOutlet weak var ExerciseClassName: UILabel!
+    @IBOutlet weak var ExerciseClassTimeframe: UILabel!
+    @IBOutlet weak var ExerciseClassLocation: UILabel!
+    
+    func setupCell(name: String!, startTime: String!, location: Int!)
+    {
+        // Add end time to create a time range.
+        
+        ExerciseClassName.text = name
+        ExerciseClassLocation.text = String(location)
+        ExerciseClassTimeframe.text = startTime
+        
+        ExerciseClassName.font = UIFont.boldSystemFontOfSize(18)
+    }
+}
+
+class ClassDescriptionCell : UITableViewCell
+{
+    @IBOutlet weak var ExerciseClassDescription: UITextView!
+}
+
+
+class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,7 +41,7 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var UpdateCalenderButton: UIButton!
     
-    let groupScheduleURL = "GroupExerciseService"
+    let groupScheduleAPI = "GroupExerciseService"
     var RequestARGs = ""
     
     var items = [GroupExerciseClass]()
@@ -30,24 +53,22 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewWillAppear(animated: Bool) {
-        //dataService.getJSON(groupScheduleURL, ReqARGs: "day=Monday", onCompletion: <#T##(JSON) -> Void#>)
-        
 
         self.tableView.dataSource = self
         self.tableView.delegate = self
-
-        GetCalenderButton.setTitle("Get Calender", forState: UIControlState.Normal)
-
+        
+        let nib = UINib(nibName: "ExerciseClassCell", bundle: nil)
+        
+        tableView.registerNib(nib, forCellReuseIdentifier: "CalenderItemCell")
 
         txt.placeholder = "What day would you like to see?"
         
         UpdateCalenderButton.setTitle("Update Calender", forState: UIControlState.Normal)
+        
+        getCalender()
 
     }
     
-    @IBAction func GetCalender(sender: UIButton) {
-        getCalender()
-    }
     @IBAction func UpdateCalender(sender: UIButton) {
         updateCalender()
     }
@@ -61,20 +82,16 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("CELL")
-        
-        if cell == nil{
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
-        }
+        let cell: ExerciseClassCell = (tableView.dequeueReusableCellWithIdentifier("CalenderItemCell") as? ExerciseClassCell)!
         
         let exerciseClass = self.items[indexPath.row]
         
-        cell!.textLabel?.text = exerciseClass.courseName
-        return cell!
+        cell.setupCell(exerciseClass.courseName, startTime: exerciseClass.time, location: exerciseClass.courseID)
+        return cell
     }
     
     func getCalender() {
-        JSONService.sharedInstance.getJSON (groupScheduleURL, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
+        JSONService.sharedInstance.getJSON (groupScheduleAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array {
                 for entry in results {
                     self.items.append(GroupExerciseClass(json: entry))
@@ -93,6 +110,7 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         self.items.removeAll()
         getCalender()
     }
+    
     /*
      // MARK: - Navigation
      
