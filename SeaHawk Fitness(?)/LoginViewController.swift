@@ -114,7 +114,7 @@ class LoginViewController: UIViewController {
     
     
     func skipLogin() {
-        
+        self.performSegueWithIdentifier("EnterMainMenuSegue", sender: nil)
     }
     
     func adminLogin() {

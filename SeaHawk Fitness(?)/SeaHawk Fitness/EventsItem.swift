@@ -23,6 +23,7 @@ class LargeEvent
         eventName = json["eventName"].stringValue
     }
     
+    
     // TODO: Implement Casting of time String to NSDate based format.
     
 }

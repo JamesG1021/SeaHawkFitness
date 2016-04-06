@@ -20,10 +20,18 @@ class ExerciseClassCell : UITableViewCell
         // Add end time to create a time range.
         
         ExerciseClassName.text = name
-        ExerciseClassLocation.text = String(location)
-        ExerciseClassTimeframe.text = startTime
-        
         ExerciseClassName.font = UIFont.boldSystemFontOfSize(18)
+        
+        ExerciseClassLocation.text = String(location)
+        ExerciseClassLocation.textColor = UIColor.grayColor()
+        ExerciseClassLocation.font = UIFont.systemFontOfSize(15)
+        
+        ExerciseClassTimeframe.text = startTime
+        ExerciseClassTimeframe.textColor = UIColor.grayColor()
+        ExerciseClassTimeframe.font = UIFont.systemFontOfSize(15)
+        
+        
+        
     }
 }
 

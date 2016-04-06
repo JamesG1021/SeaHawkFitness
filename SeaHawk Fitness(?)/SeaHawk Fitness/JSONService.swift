@@ -41,9 +41,9 @@ class JSONService
             let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
                 if let jsonData = data {
                     let json:JSON = JSON(data: jsonData)
-                    //print(json)
+                    print(json)
                     let results = NSString(data:data!, encoding:NSUTF8StringEncoding)
-                    //print("API Response: \(results)")
+                    print("API Response: \(results)")
                     onCompletion(json, nil)
                 } else {
                     print("There was an error in creating the JSON")
