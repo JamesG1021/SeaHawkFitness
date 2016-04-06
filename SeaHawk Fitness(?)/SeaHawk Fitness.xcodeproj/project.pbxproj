@@ -46,6 +46,9 @@
 		AD9ACBF81CB37B2100E55C8A /* RentalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9ACBF71CB37B2100E55C8A /* RentalsViewController.swift */; };
 		AD9ACBFC1CB3821000E55C8A /* RentalsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */; };
 		AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */; };
+		E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */; };
+		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
+		E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */; };
 		E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02E61BA1CA2333E00D2DD0F /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +115,9 @@
 		AD9ACBF71CB37B2100E55C8A /* RentalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsViewController.swift; sourceTree = "<group>"; };
 		AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentalsCollectionCell.xib; sourceTree = "<group>"; };
 		AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "../UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
+		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
+		E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E02E61BA1CA2333E00D2DD0F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Images/Media.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -190,6 +196,7 @@
 				53E876B21C73C48C00A564DC /* Info.plist */,
 				53E876AA1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld */,
 				AD94AE841CB011FF00CD1C8D /* ExerciseClassCell.xib */,
+				E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */,
 				AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */,
 			);
 			path = "SeaHawk Fitness";
@@ -229,8 +236,10 @@
 				AD271FB81CAE2CAA0028F845 /* LoginViewController.swift */,
 				AD9ACBF71CB37B2100E55C8A /* RentalsViewController.swift */,
 				AD11894E1CB468920011AF91 /* RentalsCollectionViewLayout.swift */,
+				E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */,
 				AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */,
 				AD5FB6101CB0380C006FEE05 /* Main.storyboard */,
+				E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -384,6 +393,7 @@
 				53F127461C74F72A00E205A2 /* eventsScheduleButton_menu.png in Resources */,
 				53F127471C74F72A00E205A2 /* groupExerciseButton_menu.png in Resources */,
 				53F1274C1C74F72A00E205A2 /* SeahawkFitness_menu.png in Resources */,
+				E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */,
 				53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +424,7 @@
 				AD271FB91CAE2CAA0028F845 /* LoginViewController.swift in Sources */,
 				AD271FB71CAE16AC0028F845 /* GroupExerciseScheduleItem.swift in Sources */,
 				AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */,
+				E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */,
 				AD271FAF1CAE13B10028F845 /* GroupExerciseViewController.swift in Sources */,
 				AD94AE7D1CAF425D00CD1C8D /* Instructor.swift in Sources */,
 				AD9ACBF81CB37B2100E55C8A /* RentalsViewController.swift in Sources */,
@@ -421,6 +432,7 @@
 				AD94AE791CAF3F3F00CD1C8D /* EventsItem.swift in Sources */,
 				AD271FB31CAE15020028F845 /* SwiftyJSON.swift in Sources */,
 				AD94AE771CAF3F1200CD1C8D /* AdventuresItem.swift in Sources */,
+				E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */,
 				53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */,
 				53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */,
 				AD11894F1CB468920011AF91 /* RentalsCollectionViewLayout.swift in Sources */,

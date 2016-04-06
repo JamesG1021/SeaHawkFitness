@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -882,7 +882,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <!--SH Adventures-->
         <scene sceneID="V1S-o5-8LT">
             <objects>
-                <viewController title="SH Adventures" id="nek-8d-lkt" sceneMemberID="viewController">
+                <viewController title="SH Adventures" id="nek-8d-lkt" customClass="AdventureViewController" customModule="SeaHawk_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E18-By-pAy"/>
                         <viewControllerLayoutGuide type="bottom" id="bRs-6P-rv4"/>
@@ -892,19 +892,51 @@ All training sessions will be a maximum of 60 minutes in length</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-N2-Cyl">
-                                <rect key="frame" x="289" y="511" width="34" height="30"/>
+                                <rect key="frame" x="268" y="5" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="vyf-IO-cjW" kind="show" id="kWM-y4-He8"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-Di-Ouh">
+                                <rect key="frame" x="0.0" y="43" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-9g-Mv7">
+                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="updateAdventures:" destination="nek-8d-lkt" eventType="touchUpInside" id="nQS-Ve-kzZ"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-mo-Gqx">
+                                <rect key="frame" x="0.0" y="81" width="600" height="450"/>
+                                <collectionViewLayout key="collectionViewLayout" id="ruA-Ap-DSf" customClass="AdventuresCollectionViewLayout" customModule="SeaHawk_Fitness" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="H8d-uM-gKj">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Luu-mo-Gqx" id="jIy-3h-HW0"/>
+                        <outlet property="refreshButton" destination="hBY-9g-Mv7" id="itT-We-OFs"/>
+                        <outlet property="searchBar" destination="Ny2-Di-Ouh" id="kdj-lI-WE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPq-iU-bJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="1501"/>
+            <point key="canvasLocation" x="1484" y="1809"/>
         </scene>
         <!--Rentals-->
         <scene sceneID="Bxg-xl-phA">
@@ -948,7 +980,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-ck-nDq">
-                                <rect key="frame" x="522" y="12" width="34" height="30"/>
+                                <rect key="frame" x="263" y="12" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="vyf-IO-cjW" kind="show" id="0R6-3K-lZA"/>
@@ -982,7 +1014,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0R6-3K-lZA"/>
         <segue reference="etu-AE-D0R"/>
+        <segue reference="0R6-3K-lZA"/>
     </inferredMetricsTieBreakers>
 </document>
