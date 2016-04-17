@@ -8,45 +8,11 @@
 
 import UIKit
 
-class RentalsCollectionCell : UICollectionViewCell
-{
-    @IBOutlet weak var rentalImage: UIImageView!
-    @IBOutlet weak var rentalName: UILabel!
-    @IBOutlet weak var rentalPrice: UILabel!
-
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
-    
-    
-    func setupCell(name: String!, price: Int!)
-    {
-        // Extension functions used here.  SEE Utils folder.
-        let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"  // String Extension Allows us to remove whitespace
-                                            // We were getting a null pointer error from the urls with spaces(" ") in image name
-        
-        rentalImage.loadImageFromURL(imagePath)    // Function that extends UIImageView. pass it the URL of an image
-        
-        //rentalImage.image = UIImage (named: "Soccerball.jpg")
-        rentalName.text = name
-        rentalName.font = UIFont.boldSystemFontOfSize(18)
-        
-        rentalPrice.text = String(price)
-        rentalPrice.font = UIFont.systemFontOfSize(15)
-        rentalPrice.textColor = UIColor.grayColor()
-        
-    }
-}
-
-class RentalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class RentalsViewController:
+UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var searchBar: UITextField!
-    
     @IBOutlet weak var updateButton: UIButton!
     
     let rentalsAPI = "RentalService"
@@ -54,24 +20,37 @@ class RentalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var items = [Rentals]()
 
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
         
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.layer.backgroundColor = UIColor.clearColor().CGColor
+        collectionView.backgroundColor = UIColor.clearColor()
+        
+        
+        let layout: UICollectionViewFlowLayout = RentalsCollectionViewFlowLayout()
+        collectionView.setCollectionViewLayout(layout, animated: false)
+ 
         let nib = UINib(nibName: "RentalsCollectionCell", bundle: nil)
+        collectionView.registerNib(nib, forCellWithReuseIdentifier: "RentalCell")
         
-        collectionView.registerNib(nib, forCellWithReuseIdentifier: "RentalItemCell")
         
         searchBar.placeholder = "What did you want to rent today?"
         
         updateButton.setTitle("Refresh Rentals", forState: UIControlState.Normal)
         
         getRentals()
+        getImagesForModel()
 
-        
         // Do any additional setup after loading the view.
     }
 
@@ -88,15 +67,30 @@ class RentalsViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: RentalsCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("RentalItemCell", forIndexPath: indexPath) as? RentalsCollectionCell)!
+        
+        let cell: RentalsCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("RentalCell", forIndexPath: indexPath) as? RentalsCollectionCell)!
         
         let rentalItem = self.items[indexPath.row]
         
         cell.setupCell(rentalItem.equipName, price: rentalItem.equipID)
+        
+        cell.rentalImage.image = rentalItem.equipImage
+        
+        print(cell.rentalImage.image)
+        
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let selectedRental = items[indexPath.row]
+        
+        print("Rental Name = " + selectedRental.equipName)
+        print("Rental ID = ", selectedRental.equipID)
+        print("Rental Price = ", selectedRental.equipPrice)
+    }
+    
     func getRentals() {
+        
         JSONService.sharedInstance.getJSON (rentalsAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array {
                 for entry in results {
@@ -115,6 +109,45 @@ class RentalsViewController: UIViewController, UICollectionViewDelegate, UIColle
         RequestARGs = "equipName=" + rentalName!
         self.items.removeAll()
         getRentals()
+    }
+    
+    func getImagesForModel() {
+        
+        let session = NSURLSession.sharedSession()
+        let imageServiceURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/API/ImageService.php"
+        
+        let imageSize = "150"
+    
+        for rentalItem in items {
+            
+            let RequestARGs = "?size=" + imageSize + "&name=" + rentalItem.equipName.removeWhitespace()
+            let requestPath = imageServiceURL + RequestARGs
+            print(requestPath)
+            
+            let imgURL: NSURL = NSURL(string: requestPath)!
+            let request = NSMutableURLRequest(URL: imgURL)
+            
+            /*
+             request.HTTPMethod = "GET"
+             request.HTTPBody = getString
+             */
+            
+            session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+                var imageData : NSData
+                imageData = data!
+                rentalItem.equipImage = UIImage.init(data: imageData)
+                
+                if error == nil {
+                    rentalItem.equipImage = UIImage.init(named: "NoImageFound.jpg")
+                    //UIImage(data: data!)
+                }
+                dispatch_async(dispatch_get_main_queue(),{
+                    self.collectionView!.reloadData()
+                })
+            }).resume()
+            
+            //item.equipImage.loadImageFromURL(item.equipName.removeWhitespace(), imageSize: "150")
+        }
     }
 
     /*

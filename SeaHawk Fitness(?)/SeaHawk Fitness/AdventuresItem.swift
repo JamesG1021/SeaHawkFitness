@@ -15,14 +15,17 @@ class AdventuresTrip
     var time: String!
     var description: String!
     var instructorID: NSInteger!
-    
+    var enrolled: NSInteger!
+    var capacity: NSInteger!
     
     required init(json: JSON) {
-        name = json["courseID"].stringValue
-        day = json["courseName"].stringValue
+        name = json["name"].stringValue
+        day = json["day"].stringValue
         time = json["time"].stringValue
         description = json["description"].stringValue
         instructorID = json["instructorID"].intValue
+        enrolled = json["enrolled"].intValue
+        capacity = json["capacity"].intValue
     }
     
     // TODO: Implement Casting of time String to NSDate based format.

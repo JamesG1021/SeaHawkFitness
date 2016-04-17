@@ -7,15 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 class Rentals
 {
+
     var equipID: NSInteger!
     var equipName: String!
+    var equipPrice : NSInteger!
+    var equipImage : UIImage!
     
     required init(json: JSON)
     {
+        
         equipID = json["equipID"].intValue
         equipName = json["equipName"].stringValue
+        
+        equipPrice = json["price"].intValue
+        
     }
 }

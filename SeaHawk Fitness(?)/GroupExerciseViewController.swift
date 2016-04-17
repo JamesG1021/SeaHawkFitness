@@ -14,10 +14,15 @@ class ExerciseClassCell : UITableViewCell
     @IBOutlet weak var ExerciseClassName: UILabel!
     @IBOutlet weak var ExerciseClassTimeframe: UILabel!
     @IBOutlet weak var ExerciseClassLocation: UILabel!
+    @IBOutlet weak var ExerciseClassDescription: UITextView!
     
-    func setupCell(name: String!, startTime: String!, location: Int!)
+    
+    func setupCell(name: String!, startTime: String!, location: Int!, description: String!)
     {
         // Add end time to create a time range.
+        
+        ExerciseClassDescription.text = description
+        ExerciseClassDescription.hidden = true
         
         ExerciseClassName.text = name
         ExerciseClassName.font = UIFont.boldSystemFontOfSize(18)
@@ -30,14 +35,21 @@ class ExerciseClassCell : UITableViewCell
         ExerciseClassTimeframe.textColor = UIColor.grayColor()
         ExerciseClassTimeframe.font = UIFont.systemFontOfSize(15)
         
-        
+        self.contentView.clipsToBounds = true;
         
     }
 }
 
 class ClassDescriptionCell : UITableViewCell
 {
-    @IBOutlet weak var ExerciseClassDescription: UITextView!
+    @IBOutlet weak var ClassDescription: UITextView!
+    
+    @IBOutlet weak var MinimizeArrow: UIImageView!
+    
+    func setupCell(description: String!)
+    {
+        
+    }
 }
 
 
@@ -57,6 +69,25 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        /*
+        let tapSelector : Selector = #selector(self.selectCalenderItem(_:))
+        let dblTapSelector : Selector = #selector(self.showDescription)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: tapSelector)
+        let doubleTapGesture = (UITapGestureRecognizer(target: self, action: dblTapSelector))
+        
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.cancelsTouchesInView = true;
+        // tapGesture.delaysTouchesBegan = true;
+        
+        doubleTapGesture.numberOfTapsRequired = 2
+        tapGesture.requireGestureRecognizerToFail(doubleTapGesture)
+        
+        self.tableView.addGestureRecognizer(tapGesture)
+        self.tableView.addGestureRecognizer(doubleTapGesture)
+        */
+        
         // Do any additional setup after loading the view.
     }
     
@@ -65,10 +96,12 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        let nib = UINib(nibName: "ExerciseClassCell", bundle: nil)
+        let classNib = UINib(nibName: "ExerciseClassCell", bundle: nil)
+        let descNib = UINib(nibName: "ClassDescriptionCell", bundle: nil)
         
-        tableView.registerNib(nib, forCellReuseIdentifier: "CalenderItemCell")
-
+        tableView.registerNib(descNib, forCellReuseIdentifier: "CalenderDescriptionCell")
+        tableView.registerNib(classNib, forCellReuseIdentifier: "CalenderItemCell")
+        
         txt.placeholder = "What day would you like to see?"
         
         UpdateCalenderButton.setTitle("Update Calender", forState: UIControlState.Normal)
@@ -93,10 +126,37 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         let cell: ExerciseClassCell = (tableView.dequeueReusableCellWithIdentifier("CalenderItemCell") as? ExerciseClassCell)!
         
         let exerciseClass = self.items[indexPath.row]
+
+        cell.setupCell(exerciseClass.courseName,
+                       startTime: exerciseClass.time,
+                       location: exerciseClass.courseID,
+                       description: exerciseClass.description)
         
-        cell.setupCell(exerciseClass.courseName, startTime: exerciseClass.time, location: exerciseClass.courseID)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.cyanColor()
+        cell.selectedBackgroundView = backgroundView
+        
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ExerciseClassCell
+        tableView.beginUpdates()
+        currentCell.ExerciseClassDescription.hidden = false
+        print(currentCell.ExerciseClassName.text)
+        tableView.endUpdates()
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+ 
+    
     
     func getCalender() {
         JSONService.sharedInstance.getJSON (groupScheduleAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
@@ -117,6 +177,33 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         RequestARGs = "day=" + day!
         self.items.removeAll()
         getCalender()
+    }
+    /*
+    func selectCalenderItem(recognizer : UIGestureRecognizer) {
+        print("add cell to calender")
+        if recognizer.state == UIGestureRecognizerState.Ended {
+            let tapLocation = recognizer.locationInView(self.tableView)
+            if let tappedIndexPath = tableView.indexPathForRowAtPoint(tapLocation) {
+                if let tappedCell = self.tableView.cellForRowAtIndexPath(tappedIndexPath) {
+                    
+                    // If the cell is already selected De-Select it.  Otherwise, select it.
+                    if tappedCell.selected == true{
+                        tappedCell.selected = false
+                    } else
+                    {
+                        tappedCell.selected = true
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    */
+    
+    func showDescription()
+    {
+        print("show cell description")
     }
     
     /*

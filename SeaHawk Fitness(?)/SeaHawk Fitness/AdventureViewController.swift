@@ -22,9 +22,9 @@ class AdventuresCollectionCell: UICollectionViewCell
     let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
     
     func setupCell(name: String!, date: String!, price: Int!){
-        let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
+        //let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
         
-        adventureImage.loadImageFromURL(imagePath)
+        //adventureImage.loadImageFromURL(imagePath)
         adventureName.text = name
         adventureName.font = UIFont.boldSystemFontOfSize(18)
         
@@ -38,23 +38,39 @@ class AdventuresCollectionCell: UICollectionViewCell
     
 }
 
-class AdventureViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class AdventureViewController:
+UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
+    
+    // ---------  OUTLETS
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var refreshButton: UIButton!
     
+    // ---------- API STRINGS
     let adventuresAPI = "SHAdventuresService"
     var RequestARGs = ""
 
+    // ---------- MODEL OBJECTS ARRAY
     var items = [AdventuresTrip]()
     
+    
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
+        
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
+        let layout: UICollectionViewFlowLayout = AdventuresCollectionViewFlowLayout()
+        collectionView.setCollectionViewLayout(layout, animated: false)
         
         let nib = UINib(nibName: "AdventuresCollectionCell", bundle: nil)
         
@@ -86,7 +102,17 @@ class AdventureViewController: UIViewController, UICollectionViewDelegate, UICol
         let trip = self.items[indexPath.row]
         
         cell.setupCell( trip.name, date: trip.day, price: 10)
+        cell.backgroundColor = UIColor.cyanColor()
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let selectectedAdventure = items[indexPath.row]
+        
+        print("Adventure Name = " + selectectedAdventure.name)
+        print("Adventure Description = " + selectectedAdventure.description)
+        print("Adventure Time = " + selectectedAdventure.time)
+        
     }
     
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -891,30 +891,31 @@ All training sessions will be a maximum of 60 minutes in length</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-N2-Cyl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-N2-Cyl">
                                 <rect key="frame" x="268" y="5" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="vyf-IO-cjW" kind="show" id="kWM-y4-He8"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-Di-Ouh">
-                                <rect key="frame" x="0.0" y="43" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-9g-Mv7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-9g-Mv7">
                                 <rect key="frame" x="0.0" y="539" width="600" height="61"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="updateAdventures:" destination="nek-8d-lkt" eventType="touchUpInside" id="nQS-Ve-kzZ"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-mo-Gqx">
-                                <rect key="frame" x="0.0" y="81" width="600" height="450"/>
-                                <collectionViewLayout key="collectionViewLayout" id="ruA-Ap-DSf" customClass="AdventuresCollectionViewLayout" customModule="SeaHawk_Fitness" customModuleProvider="target"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-mo-Gqx">
+                                <rect key="frame" x="0.0" y="81" width="600" height="427"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BpN-cL-elp">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="H8d-uM-gKj">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdventureCell" id="H8d-uM-gKj" customClass="AdventuresCollectionCell" customModule="SeaHawk_Fitness" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -922,11 +923,32 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-Di-Ouh">
+                                <rect key="frame" x="0.0" y="516" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="Luu-mo-Gqx" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leading" id="2uz-GK-SOf"/>
+                            <constraint firstItem="Luu-mo-Gqx" firstAttribute="leading" secondItem="Ny2-Di-Ouh" secondAttribute="leading" id="8oh-Cj-tb5"/>
+                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="trailing" secondItem="hBY-9g-Mv7" secondAttribute="trailing" id="AVh-FV-gzN"/>
+                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="top" secondItem="Luu-mo-Gqx" secondAttribute="bottom" constant="8" symbolic="YES" id="CRr-uh-B8f"/>
+                            <constraint firstItem="Luu-mo-Gqx" firstAttribute="top" secondItem="p7o-N2-Cyl" secondAttribute="bottom" constant="46" id="GQp-x8-Q0P"/>
+                            <constraint firstAttribute="trailing" secondItem="Luu-mo-Gqx" secondAttribute="trailing" id="H9h-dX-AY4"/>
+                            <constraint firstItem="bRs-6P-rv4" firstAttribute="top" secondItem="Ny2-Di-Ouh" secondAttribute="bottom" constant="54" id="Tkh-gr-0vs"/>
+                            <constraint firstItem="hBY-9g-Mv7" firstAttribute="top" secondItem="Luu-mo-Gqx" secondAttribute="bottom" constant="31" id="Tqs-40-a1q"/>
+                            <constraint firstItem="p7o-N2-Cyl" firstAttribute="top" secondItem="fdm-ve-zoI" secondAttribute="topMargin" constant="5" id="Xr5-7W-7Bs"/>
+                            <constraint firstItem="hBY-9g-Mv7" firstAttribute="bottom" secondItem="bRs-6P-rv4" secondAttribute="top" id="ceU-Ij-Vib"/>
+                            <constraint firstItem="Luu-mo-Gqx" firstAttribute="trailing" secondItem="Ny2-Di-Ouh" secondAttribute="trailing" id="eZo-1p-xvd"/>
+                            <constraint firstItem="p7o-N2-Cyl" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leading" constant="268" id="gUc-WU-a0g"/>
+                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="leading" secondItem="hBY-9g-Mv7" secondAttribute="leading" id="u5k-lw-4wj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Luu-mo-Gqx" id="jIy-3h-HW0"/>
@@ -950,44 +972,55 @@ All training sessions will be a maximum of 60 minutes in length</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-lk-aW1">
-                                <rect key="frame" x="0.0" y="79" width="600" height="441"/>
-                                <collectionViewLayout key="collectionViewLayout" id="Ysw-Wv-20s" customClass="RentalsCollectionViewLayout" customModule="SeaHawk_Fitness" customModuleProvider="target"/>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="355" placeholderIntrinsicHeight="355" id="lLE-T5-7Bh" customClass="RentalsCollectionCell" customModule="SeaHawk_Fitness" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="74"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="96" height="74"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <size key="customSize" width="96" height="74"/>
-                                    </collectionViewCell>
-                                </cells>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-lk-aW1">
+                                <rect key="frame" x="19" y="104" width="562" height="377"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mb9-LR-zXq" customClass="RentalsCollectionViewFlowLayout" customModule="SeaHawk_Fitness" customModuleProvider="target">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-bF-2Ui">
-                                <rect key="frame" x="0.0" y="50" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvi-yU-xgP">
-                                <rect key="frame" x="0.0" y="520" width="600" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvi-yU-xgP">
+                                <rect key="frame" x="0.0" y="547" width="600" height="53"/>
                                 <color key="backgroundColor" red="0.00048080514534376562" green="0.9948388934135437" blue="0.94425505399703979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="zNn-JK-f7I"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="updateRentals:" destination="lYi-5p-XD9" eventType="touchUpInside" id="y7H-7L-WlZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-ck-nDq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-ck-nDq">
                                 <rect key="frame" x="263" y="12" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="vyf-IO-cjW" kind="show" id="0R6-3K-lZA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EmO-bF-2Ui">
+                                <rect key="frame" x="0.0" y="509" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EmO-bF-2Ui" secondAttribute="trailing" id="2HZ-bH-Pvu"/>
+                            <constraint firstItem="EmO-bF-2Ui" firstAttribute="top" secondItem="YwJ-lk-aW1" secondAttribute="bottom" constant="28" id="A79-X6-P3e"/>
+                            <constraint firstItem="EmO-bF-2Ui" firstAttribute="leading" secondItem="fPN-Zr-A1f" secondAttribute="leading" id="PfC-OS-ghD"/>
+                            <constraint firstItem="YwJ-lk-aW1" firstAttribute="centerX" secondItem="EmO-bF-2Ui" secondAttribute="centerX" id="Qtr-SN-7bn"/>
+                            <constraint firstItem="oCd-ck-nDq" firstAttribute="leading" secondItem="fPN-Zr-A1f" secondAttribute="leading" constant="263" id="XTd-LC-8YM"/>
+                            <constraint firstItem="YwJ-lk-aW1" firstAttribute="top" secondItem="oCd-ck-nDq" secondAttribute="bottom" constant="62" id="cKD-Q9-3ku"/>
+                            <constraint firstItem="EmO-bF-2Ui" firstAttribute="leading" secondItem="tvi-yU-xgP" secondAttribute="leading" id="dS6-sU-DNr"/>
+                            <constraint firstItem="YwJ-lk-aW1" firstAttribute="leading" secondItem="fPN-Zr-A1f" secondAttribute="leadingMargin" constant="-1" id="nC4-yK-v4N"/>
+                            <constraint firstItem="EmO-bF-2Ui" firstAttribute="trailing" secondItem="tvi-yU-xgP" secondAttribute="trailing" id="s2L-bN-PFk"/>
+                            <constraint firstItem="oCd-ck-nDq" firstAttribute="top" secondItem="fPN-Zr-A1f" secondAttribute="topMargin" constant="12" id="vNl-tc-CVh"/>
+                            <constraint firstItem="tvi-yU-xgP" firstAttribute="bottom" secondItem="DTl-IW-MAF" secondAttribute="top" id="w51-rg-3f6"/>
+                            <constraint firstItem="tvi-yU-xgP" firstAttribute="top" secondItem="EmO-bF-2Ui" secondAttribute="bottom" constant="8" symbolic="YES" id="yoc-bY-MDT"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="YwJ-lk-aW1" id="e6d-gA-HT3"/>
@@ -1015,6 +1048,6 @@ All training sessions will be a maximum of 60 minutes in length</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="etu-AE-D0R"/>
-        <segue reference="0R6-3K-lZA"/>
+        <segue reference="kWM-y4-He8"/>
     </inferredMetricsTieBreakers>
 </document>
