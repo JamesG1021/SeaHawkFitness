@@ -40,6 +40,11 @@ create table trainers(
    name varchar(40),
    primary key(instructorID)) engine = innodb;
 
+create table admin(
+  instructorID integer(9),
+  name varchar(40),
+  primary key(instructorID)) engine = inodb;
+
 create table trains(
    instructorID integer(9),
    studentID integer(9),
@@ -100,6 +105,16 @@ add constraint iID_ibfk_6 foreign key(instructorID) references trainers(instruct
 alter table instructs_events
 add constraint iID_ibfk_7 foreign key(eventID) references events(eventID);
 
+
+delimiter #
+create trigger add_sa_events after insert on events
+  for each row
+  BEGIN 
+  insert into sa_events(name, day, time, description)
+    select events.eventName, events.day, events.time, events.description from events;
+    end#
+    delimiter ;
+    
 create table sa_events(
   name varchar(30),
   day varchar(10),
@@ -124,3 +139,52 @@ create table attending(
 alter table attending
 add constraint sID_ibfk_4 foreign key(studentID) references students(studentID);
 SET FOREIGN_KEY_CHECKS=1;
+
+#views
+create view trainer_name as
+select distinct name from trainers;
+#views
+create view rental_name as 
+select distinct name from equipment;
+
+#intersect
+create view rented_name as
+select * from equipment where equipment.equipID in (select equipID from rents);
+
+#aggregate function average
+create view avg_capacity as
+select avg(capacity) from sa_events;
+
+#nested subquerry and stuff
+create view students_renting as
+select * from students where exists (select * from rents where rents.studentID = students.studentID);
+
+#stored function example
+DELIMITER $$
+CREATE FUNCTION valid_id(id_number integer) RETURNS VARCHAR(10)
+    DETERMINISTIC
+BEGIN
+    DECLARE valid varchar(10);
+ 
+    IF id_number > 950123455 THEN
+        SET valid = 'FALSE';
+    ELSE
+        SET valid = 'TRUE';
+    END IF;
+ 
+ RETURN (valid);
+END $$ 
+DELIMITER ; 
+
+#stored function example
+select name, valid_id(instructorID) from trainers ORDER BY name;
+
+#stored procedure
+DELIMITER $$
+ 
+CREATE PROCEDURE totalparticipants
+(OUT total int)
+BEGIN
+    select sum(enrolled) from sa_events; 
+  END $$
+DELIMITER ;

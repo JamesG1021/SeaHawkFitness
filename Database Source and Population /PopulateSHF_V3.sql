@@ -102,25 +102,25 @@ insert into trains values
 (950123459,950000020);
 
 insert into equipment values
-(850120, 'Kayak');
+(850120, 'Kayak', 20);
 insert into equipment values
-(850121, 'Kayak');
+(850121, 'Kayak', 20);
 insert into equipment values
-(850122, 'Tent');
+(850122, 'Tent', 15);
 insert into equipment values
-(850123, 'Tent');
+(850123, 'Tent', 15);
 insert into equipment values
-(850124, 'Canoe');
+(850124, 'Canoe', 25);
 insert into equipment values
-(850125, 'Canoe');
+(850125, 'Canoe', 25);
 insert into equipment values
-(850126, 'Corn Hole');
+(850126, 'Corn Hole', 10);
 insert into equipment values
-(850127, 'Corn Hole');
+(850127, 'Corn Hole', 10);
 insert into equipment values
-(850128, 'Sleeping Bag');
+(850128, 'Sleeping Bag', 5);
 insert into equipment values
-(850129, 'Grill');
+(850129, 'Grill', 10);
 
 insert into rents values
 (850120,950000002);
@@ -134,25 +134,25 @@ insert into rents values
 (850128,950000010);
 
 insert into courses values
-(123450,'Yoga Flow','9:30am','A new form of Yoga that will get the energy flowing.', 'Monday');
+(123450,'Yoga Flow','9:30am','10:30am','A new form of Yoga that will get the energy flowing.', 'Monday','200');
 insert into courses values
-(123451,'Core','8:00am','Blast your abdominals with this half hour hell.','Tuesday');
+(123451,'Core','8:00am','9:00am','Blast your abdominals with this half hour hell.','Tuesday','150');
 insert into courses values
-(123452,'Yoga relax','9:00am','Relax and unwind with this meditative soothing Yoga session.','Wednesday');
+(123452,'Yoga relax','9:00am','10:00am','Relax and unwind with this meditative soothing Yoga session.','Wednesday','100');
 insert into courses values
-(123453,'Yogalates','2:00pm','A pleasant and exhilerating blending of Yoga and Pilates.','Thursday');
+(123453,'Yogalates','2:00pm','3:00pm','A pleasant and exhilerating blending of Yoga and Pilates.','Thursday','175');
 insert into courses values
-(123454,'Cardio Dance','4:00pm','An upbeat and aggresive Cardio Dance session,  get ready to sweat!','Friday');
+(123454,'Cardio Dance','4:00pm','5:00pm','An upbeat and aggresive Cardio Dance session,  get ready to sweat!','Friday','100');
 insert into courses values
-(123455,'Body Pump','2:00pm','Engage your whole body in this vigarous workout.','Monday');
+(123455,'Body Pump','2:00pm','3:00pm','Engage your whole body in this vigarous workout.','Monday','150');
 insert into courses values
-(123456,'Pilates','8:00am','You love it, we love it, Pilates.','Tuesday');
+(123456,'Pilates','8:00am','9:00am','You love it, we love it, Pilates.','Tuesday','200');
 insert into courses values
-(123457,'Yoga Relax','3:00pm','Relax and unwind with this meditative soothing Yoga session.','Wednesday');
+(123457,'Yoga Relax','3:00pm','4:00pm','Relax and unwind with this meditative soothing Yoga session.','Wednesday','150');
 insert into courses values
-(123458,'Cycle30','9:00am','30 minutes of intense bicycling action!','Thursday');
+(123458,'Cycle30','9:00am','10:00am','30 minutes of intense bicycling action!','Thursday','100');
 insert into courses values
-(123459,'Hydrofit','1:00pm','Low impact aquatic exercise fun!','Friday');
+(123459,'Hydrofit','1:00pm','2:00pm','Low impact aquatic exercise fun!','Friday','175');
 
 insert into instructs values
 (950123450,123450);
@@ -204,9 +204,9 @@ insert into events values
 (890122,'8:00am','Satuday','Blast fat away with P90x',  'P90x');
 
 insert into sa_events values
-('Kayaking Trip','04-05-16','8:00am','Kayak in the Everglades',950123459, 10,20);
+('Kayaking Trip','04-05-16','8:00am', '04-10-16','Kayak in the Everglades',950123459, 10,20,50);
 insert into sa_events values
-('Camping Trip','03-21-16', '9:00am','Come join us for camping in the Appalachian Mountains',950123458, 10, 15);
+('Camping Trip','03-21-16', '9:00am', '03-28-16','Come join us for camping in the Appalachian Mountains',950123458, 10, 15,75);
 
 insert into attending values
 (950000020, '04-05-16', '8:00am');

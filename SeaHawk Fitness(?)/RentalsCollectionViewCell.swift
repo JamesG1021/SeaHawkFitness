@@ -30,7 +30,7 @@ class RentalsCollectionCell : UICollectionViewCell
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(RentalsCollectionCell.tapped))
+        let singleTap = UITapGestureRecognizer()
         
         singleTap.numberOfTouchesRequired = 1
         
