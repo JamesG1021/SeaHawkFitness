@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         LoginTextField.placeholder = "Username"
-        PasswordTextField.placeholder = "Student ID (850xxxxxx)"
+        PasswordTextField.placeholder = "Student ID (950xxxxxx)"
         
         ErrorMessageField.hidden = true;
         ErrorMessageField.font = UIFont.systemFontOfSize(14.0)
@@ -126,12 +126,23 @@ class LoginViewController: UIViewController {
         JSONService.sharedInstance.getJSON (loginAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array {
                 for entry in results {
-                    print(entry)
+                    if entry["success"].boolValue
+                    {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.performSegueWithIdentifier("IsAdmin", sender: nil)
+                        })
+                        print("Yup!!")
+                    } else
+                    {
+                        print("Incorrect login")
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.ErrorMessageField.hidden = false
+                            self.ErrorMessageField.text = entry["message"].stringValue
+                        })
+                    }
                 }
             }
         })
-        
-        
     }
     
     func studentLogin() {

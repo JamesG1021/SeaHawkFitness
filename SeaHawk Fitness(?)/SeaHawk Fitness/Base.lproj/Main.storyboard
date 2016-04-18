@@ -119,11 +119,48 @@
                         <outlet property="LoginTextField" destination="Nwk-QP-0E7" id="bH3-Ds-xdI"/>
                         <outlet property="PasswordTextField" destination="Or2-Ha-jBi" id="GSC-vN-2Ng"/>
                         <outlet property="UseAsGuest" destination="VZb-6p-pvm" id="gVu-6I-T4X"/>
+                        <segue destination="jOC-EI-Zl8" kind="show" identifier="IsAdmin" id="K0d-aF-RvL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-870" y="208"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Q6-US-X8e">
+            <objects>
+                <viewController id="jOC-EI-Zl8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NQc-KD-0aF"/>
+                        <viewControllerLayoutGuide type="bottom" id="9P5-mc-mxn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vjA-jF-UVD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMu-Zl-PRO">
+                                <rect key="frame" x="188" y="160" width="133" height="30"/>
+                                <state key="normal" title="Manage Equipment"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-PO-in1">
+                                <rect key="frame" x="197" y="225" width="114" height="30"/>
+                                <state key="normal" title="Manage Trainers"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVI-KI-pq4">
+                                <rect key="frame" x="194" y="285" width="121" height="30"/>
+                                <state key="normal" title="Manage Students"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojO-Gh-fLT">
+                                <rect key="frame" x="186" y="348" width="137" height="30"/>
+                                <state key="normal" title="Manage Adventures"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUw-H9-WZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-818" y="976"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="33e-iJ-FiG">
@@ -1047,7 +1084,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kWM-y4-He8"/>
-        <segue reference="C0Y-ot-2iC"/>
+        <segue reference="nD1-jS-vCf"/>
+        <segue reference="etu-AE-D0R"/>
     </inferredMetricsTieBreakers>
 </document>
