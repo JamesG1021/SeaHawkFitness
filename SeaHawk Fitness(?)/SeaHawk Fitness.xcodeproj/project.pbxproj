@@ -56,6 +56,9 @@
 		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
 		E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */; };
 		E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02E61BA1CA2333E00D2DD0F /* Media.xcassets */; };
+		E0EDAD9B1CC46DAA008D2E95 /* EventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EDAD9A1CC46DAA008D2E95 /* EventsCell.xib */; };
+		E0EDAD9D1CC46FEE008D2E95 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */; };
+		E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDAD9E1CC477D7008D2E95 /* EventsCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,9 @@
 		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
 		E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E02E61BA1CA2333E00D2DD0F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Images/Media.xcassets; sourceTree = SOURCE_ROOT; };
+		E0EDAD9A1CC46DAA008D2E95 /* EventsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsCell.xib; sourceTree = "<group>"; };
+		E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		E0EDAD9E1CC477D7008D2E95 /* EventsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +257,7 @@
 				AD271FB81CAE2CAA0028F845 /* LoginViewController.swift */,
 				AD9ACBF71CB37B2100E55C8A /* RentalsViewController.swift */,
 				AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */,
+				E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */,
 				E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */,
 			);
 			name = ViewControllers;
@@ -261,6 +268,7 @@
 			children = (
 				AD8B831F1CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift */,
 				AD8B83211CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift */,
+				E0EDAD9E1CC477D7008D2E95 /* EventsCollectionViewLayout.swift */,
 			);
 			name = "Flow Layouts";
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 			children = (
 				AD8B83241CC4394100B1C4FC /* RentalsCollectionViewCell.swift */,
 				AD932ACA1CB6167E00490C3B /* ClassDescriptionCell.xib */,
+				E0EDAD9A1CC46DAA008D2E95 /* EventsCell.xib */,
 				AD94AE841CB011FF00CD1C8D /* ExerciseClassCell.xib */,
 				AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */,
 				E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */,
@@ -410,6 +419,7 @@
 				AD94AE851CB011FF00CD1C8D /* ExerciseClassCell.xib in Resources */,
 				53E876B11C73C48C00A564DC /* LaunchScreen.storyboard in Resources */,
 				53F127491C74F72A00E205A2 /* personalTrainingButton_menu.png in Resources */,
+				E0EDAD9B1CC46DAA008D2E95 /* EventsCell.xib in Resources */,
 				53F1274A1C74F72A00E205A2 /* rentalsButton_menu.png in Resources */,
 				53F1274D1C74F72A00E205A2 /* shAdventuresButton_menu.png in Resources */,
 				AD5FB60F1CB01D09006FEE05 /* TableViewCellBG_base.png in Resources */,
@@ -465,6 +475,8 @@
 				AD271FAF1CAE13B10028F845 /* GroupExerciseViewController.swift in Sources */,
 				AD94AE7D1CAF425D00CD1C8D /* Instructor.swift in Sources */,
 				AD9ACBF81CB37B2100E55C8A /* RentalsViewController.swift in Sources */,
+				E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */,
+				E0EDAD9D1CC46FEE008D2E95 /* EventsViewController.swift in Sources */,
 				AD271FB11CAE14C70028F845 /* JSONService.swift in Sources */,
 				AD94AE791CAF3F3F00CD1C8D /* EventsItem.swift in Sources */,
 				AD271FB31CAE15020028F845 /* SwiftyJSON.swift in Sources */,
