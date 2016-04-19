@@ -33,15 +33,15 @@ class AddAdventuresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        pageTitle.text = "Add New Adventure"
-        pageTitle.sizeToFit()
-        nameLabel.text = "Name"
-        dayLabel.text = "Day"
-        timeLabel.text = "Time"
-        descriptionLabel.text = "Description"
-        instructorIDLabel.text = "Instructor ID"
-        enrolledLabel.text = "Currently Enrolled"
-        capacityLabel.text = "Capacity"
+        //pageTitle.text = "Add New Adventure"
+        //pageTitle.sizeToFit()
+        //nameLabel.text = "Name"
+        //dayLabel.text = "Day"
+        //timeLabel.text = "Time"
+        //descriptionLabel.text = "Description"
+        //instructorIDLabel.text = "Instructor ID"
+        //enrolledLabel.text = "Currently Enrolled"
+        //capacityLabel.text = "Capacity"
         
         messageLabel.text = "Status message will go here"
         
