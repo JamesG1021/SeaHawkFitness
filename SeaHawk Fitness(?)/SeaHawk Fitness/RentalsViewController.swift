@@ -33,7 +33,6 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.layer.backgroundColor = UIColor.clearColor().CGColor
         collectionView.backgroundColor = UIColor.clearColor()
         
         

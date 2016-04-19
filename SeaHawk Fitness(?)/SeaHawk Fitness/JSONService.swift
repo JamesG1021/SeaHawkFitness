@@ -14,7 +14,7 @@ class JSONService
 {
     static let sharedInstance = JSONService()
     
-    let baseURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/API/"
+    let baseURL = "http://webdev.cislabs.uncw.edu/~jsg6998/SeahawkFitness/API/"
     let session = NSURLSession.sharedSession()
     
     func getJSON(SpecifyAPI: NSString, ReqARGs: NSString, onCompletion: (JSON) -> Void) {

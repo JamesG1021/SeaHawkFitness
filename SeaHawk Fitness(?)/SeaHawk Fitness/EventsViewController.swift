@@ -8,38 +8,6 @@
 
 import UIKit
 
-
-class EventsCell: UICollectionViewCell{
-    
-    @IBOutlet weak var eventName: UILabel!
-    @IBOutlet weak var eventTime: UILabel!
-    @IBOutlet weak var eventDate: UILabel!
-    @IBOutlet weak var eventImage: UIImageView!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
-    
-    
-    func setupCell(name: String!, date: String!, time: String!){
-        //let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
-        //eventImage.loadImageFromURL(imagePath)
-        
-        eventName.text = name
-        eventName.font = UIFont.boldSystemFontOfSize(18)
-        
-        eventDate.text = date
-        eventDate.font = UIFont.boldSystemFontOfSize(18)
-        
-        eventTime.text = time
-        eventTime.font = UIFont.systemFontOfSize(15)
-
-    }
-
-}
-
 class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -99,7 +67,6 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         let event = self.items[indexPath.row]
         
         cell.setupCell( event.eventName, date: event.day, time: event.time)
-        cell.backgroundColor = UIColor.cyanColor()
         return cell
     }
     

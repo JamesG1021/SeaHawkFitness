@@ -8,36 +8,6 @@
 
 import UIKit
 
-class AdventuresCollectionCell: UICollectionViewCell
-{
-    @IBOutlet weak var adventureImage: UIImageView!
-    @IBOutlet weak var adventureName: UILabel!
-    @IBOutlet weak var adventureDate: UILabel!
-    @IBOutlet weak var adventurePrice: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
-    
-    func setupCell(name: String!, date: String!, price: Int!){
-        //let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
-        
-        //adventureImage.loadImageFromURL(imagePath)
-        adventureName.text = name
-        adventureName.font = UIFont.boldSystemFontOfSize(18)
-        
-        adventureDate.text = date
-        adventureDate.font = UIFont.boldSystemFontOfSize(18)
-        
-        adventurePrice.text = String(price)
-        adventurePrice.font = UIFont.systemFontOfSize(15)
-        adventurePrice.textColor = UIColor.grayColor()
-    }
-    
-}
-
 class AdventureViewController:
 UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
@@ -48,12 +18,11 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     @IBOutlet weak var refreshButton: UIButton!
     
     // ---------- API STRINGS
-    let adventuresAPI = "SHAdventuresService"
+    let adventuresAPI = "AdventuresService"
     var RequestARGs = ""
 
     // ---------- MODEL OBJECTS ARRAY
     var items = [AdventuresTrip]()
-    
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -66,8 +35,10 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.backgroundColor = UIColor.clearColor()
+
         
         let layout: UICollectionViewFlowLayout = AdventuresCollectionViewFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: false)
