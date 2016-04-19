@@ -224,3 +224,5 @@ insert into attending values
 (950000008, '03-21-16', '9:00am');
 insert into attending values
 (950000006, '03-21-16', '9:00am');
+
+SET FOREIGN_KEY_CHECKS=1;
