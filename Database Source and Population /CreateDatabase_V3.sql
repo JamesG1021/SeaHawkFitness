@@ -136,7 +136,6 @@ create table attending(
 
 alter table attending
 add constraint sID_ibfk_4 foreign key(studentID) references students(studentID) ON DELETE CASCADE ON UPDATE CASCADE;
-SET FOREIGN_KEY_CHECKS=1;
 
 #views
 create view trainer_name as
