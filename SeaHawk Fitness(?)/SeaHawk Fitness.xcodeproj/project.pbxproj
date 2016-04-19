@@ -56,6 +56,13 @@
 		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
 		E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */; };
 		E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02E61BA1CA2333E00D2DD0F /* Media.xcassets */; };
+		E0351A161CC5D0B6006B83E3 /* StudentsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0351A151CC5D0B6006B83E3 /* StudentsItem.swift */; };
+		E0C894311CC5B2FD0075ADD0 /* AddStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C894301CC5B2FD0075ADD0 /* AddStudentsViewController.swift */; };
+		E0C894331CC5B81F0075ADD0 /* DeleteStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C894321CC5B81F0075ADD0 /* DeleteStudentsViewController.swift */; };
+		E0C894351CC5B82D0075ADD0 /* DeleteAdventuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C894341CC5B82D0075ADD0 /* DeleteAdventuresViewController.swift */; };
+		E0C894371CC5B8E00075ADD0 /* DeleteAdventuresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C894361CC5B8E00075ADD0 /* DeleteAdventuresCell.xib */; };
+		E0C894391CC5B8F10075ADD0 /* DeleteStudentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C894381CC5B8F10075ADD0 /* DeleteStudentsCell.xib */; };
+		E0E1CB061CC49CAC00200510 /* AddAdventuresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E1CB051CC49CAC00200510 /* AddAdventuresViewController.swift */; };
 		E0EDAD9B1CC46DAA008D2E95 /* EventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EDAD9A1CC46DAA008D2E95 /* EventsCell.xib */; };
 		E0EDAD9D1CC46FEE008D2E95 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */; };
 		E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EDAD9E1CC477D7008D2E95 /* EventsCollectionViewLayout.swift */; };
@@ -134,6 +141,13 @@
 		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
 		E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E02E61BA1CA2333E00D2DD0F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Images/Media.xcassets; sourceTree = SOURCE_ROOT; };
+		E0351A151CC5D0B6006B83E3 /* StudentsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsItem.swift; sourceTree = "<group>"; };
+		E0C894301CC5B2FD0075ADD0 /* AddStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentsViewController.swift; sourceTree = "<group>"; };
+		E0C894321CC5B81F0075ADD0 /* DeleteStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteStudentsViewController.swift; sourceTree = "<group>"; };
+		E0C894341CC5B82D0075ADD0 /* DeleteAdventuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAdventuresViewController.swift; sourceTree = "<group>"; };
+		E0C894361CC5B8E00075ADD0 /* DeleteAdventuresCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteAdventuresCell.xib; sourceTree = "<group>"; };
+		E0C894381CC5B8F10075ADD0 /* DeleteStudentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeleteStudentsCell.xib; sourceTree = "<group>"; };
+		E0E1CB051CC49CAC00200510 /* AddAdventuresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAdventuresViewController.swift; sourceTree = "<group>"; };
 		E0EDAD9A1CC46DAA008D2E95 /* EventsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsCell.xib; sourceTree = "<group>"; };
 		E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		E0EDAD9E1CC477D7008D2E95 /* EventsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -259,6 +273,10 @@
 				AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */,
 				E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */,
 				E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */,
+				E0E1CB051CC49CAC00200510 /* AddAdventuresViewController.swift */,
+				E0C894301CC5B2FD0075ADD0 /* AddStudentsViewController.swift */,
+				E0C894321CC5B81F0075ADD0 /* DeleteStudentsViewController.swift */,
+				E0C894341CC5B82D0075ADD0 /* DeleteAdventuresViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +300,8 @@
 				AD94AE841CB011FF00CD1C8D /* ExerciseClassCell.xib */,
 				AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */,
 				E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */,
+				E0C894361CC5B8E00075ADD0 /* DeleteAdventuresCell.xib */,
+				E0C894381CC5B8F10075ADD0 /* DeleteStudentsCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -291,6 +311,7 @@
 			children = (
 				AD271FB61CAE16AC0028F845 /* GroupExerciseScheduleItem.swift */,
 				AD94AE761CAF3F1200CD1C8D /* AdventuresItem.swift */,
+				E0351A151CC5D0B6006B83E3 /* StudentsItem.swift */,
 				AD94AE781CAF3F3F00CD1C8D /* EventsItem.swift */,
 				AD94AE7A1CAF3F5600CD1C8D /* RentalsItem.swift */,
 				AD94AE7C1CAF425D00CD1C8D /* Instructor.swift */,
@@ -435,7 +456,9 @@
 				53F127511C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg in Resources */,
 				53F127481C74F72A00E205A2 /* hoursButton_menu.png in Resources */,
 				53F1274F1C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg in Resources */,
+				E0C894391CC5B8F10075ADD0 /* DeleteStudentsCell.xib in Resources */,
 				53F127461C74F72A00E205A2 /* eventsScheduleButton_menu.png in Resources */,
+				E0C894371CC5B8E00075ADD0 /* DeleteAdventuresCell.xib in Resources */,
 				AD932ACB1CB6167E00490C3B /* ClassDescriptionCell.xib in Resources */,
 				53F127471C74F72A00E205A2 /* groupExerciseButton_menu.png in Resources */,
 				53F1274C1C74F72A00E205A2 /* SeahawkFitness_menu.png in Resources */,
@@ -467,12 +490,15 @@
 			files = (
 				AD271FBB1CAE32640028F845 /* MainMenuViewController.swift in Sources */,
 				AD11894D1CB3F9CE0011AF91 /* String+Replace.swift in Sources */,
+				E0E1CB061CC49CAC00200510 /* AddAdventuresViewController.swift in Sources */,
 				AD271FB91CAE2CAA0028F845 /* LoginViewController.swift in Sources */,
 				AD271FB71CAE16AC0028F845 /* GroupExerciseScheduleItem.swift in Sources */,
 				AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */,
 				ADAF64FF1CC292B800EE65EF /* UIImage+ImageLoader.swift in Sources */,
 				E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */,
 				AD271FAF1CAE13B10028F845 /* GroupExerciseViewController.swift in Sources */,
+				E0C894311CC5B2FD0075ADD0 /* AddStudentsViewController.swift in Sources */,
+				E0C894351CC5B82D0075ADD0 /* DeleteAdventuresViewController.swift in Sources */,
 				AD94AE7D1CAF425D00CD1C8D /* Instructor.swift in Sources */,
 				AD9ACBF81CB37B2100E55C8A /* RentalsViewController.swift in Sources */,
 				E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */,
@@ -481,6 +507,7 @@
 				AD94AE791CAF3F3F00CD1C8D /* EventsItem.swift in Sources */,
 				AD271FB31CAE15020028F845 /* SwiftyJSON.swift in Sources */,
 				AD94AE771CAF3F1200CD1C8D /* AdventuresItem.swift in Sources */,
+				E0C894331CC5B81F0075ADD0 /* DeleteStudentsViewController.swift in Sources */,
 				AD8B83201CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift in Sources */,
 				E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */,
 				AD8B83251CC4394100B1C4FC /* RentalsCollectionViewCell.swift in Sources */,
@@ -488,6 +515,7 @@
 				53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */,
 				AD11894F1CB468920011AF91 /* RentalsCollectionViewLayout.swift in Sources */,
 				AD94AE7B1CAF3F5600CD1C8D /* RentalsItem.swift in Sources */,
+				E0351A161CC5D0B6006B83E3 /* StudentsItem.swift in Sources */,
 				AD8B83221CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
