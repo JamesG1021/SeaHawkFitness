@@ -73,7 +73,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         let trip = self.items[indexPath.row]
         
         cell.setupCell( trip.name, date: trip.day, price: 10)
-        cell.backgroundColor = UIColor.cyanColor()
+        //cell.backgroundColor = UIColor.cyanColor()
         return cell
     }
     
