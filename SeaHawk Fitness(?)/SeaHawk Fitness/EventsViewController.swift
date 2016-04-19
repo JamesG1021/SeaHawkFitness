@@ -46,7 +46,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var refreshEvents: UIButton!
     @IBOutlet weak var searchBar: UITextField!
     
-    let eventsAPI = "EventService"
+    let eventsAPI = "EventsService"
     var RequestARGs = ""
     
     var items = [LargeEvent]()
@@ -72,7 +72,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.setCollectionViewLayout(layout, animated: false)
 
         let nib = UINib(nibName: "EventsCell", bundle: nil)
-        collectionView.registerNib(nib, forCellWithReuseIdentifier: "EventCell")
+        collectionView.registerNib(nib, forCellWithReuseIdentifier: "EventsCell")
         searchBar.placeholder = "What event are you looking for?"
         refreshEvents.setTitle("Refresh Events", forState: UIControlState.Normal)
         
