@@ -102,25 +102,25 @@ insert into trains values
 (950123459,950000020);
 
 insert into equipment values
-(850120, 'Kayak', 20);
+(850120, 'Kayak');
 insert into equipment values
-(850121, 'Kayak', 20);
+(850121, 'Kayak');
 insert into equipment values
-(850122, 'Tent', 15);
+(850122, 'Tent');
 insert into equipment values
-(850123, 'Tent', 15);
+(850123, 'Tent');
 insert into equipment values
-(850124, 'Canoe', 25);
+(850124, 'Canoe');
 insert into equipment values
-(850125, 'Canoe', 25);
+(850125, 'Canoe');
 insert into equipment values
-(850126, 'Corn Hole', 10);
+(850126, 'Corn Hole');
 insert into equipment values
-(850127, 'Corn Hole', 10);
+(850127, 'Corn Hole');
 insert into equipment values
-(850128, 'Sleeping Bag', 5);
+(850128, 'Sleeping Bag');
 insert into equipment values
-(850129, 'Grill', 10);
+(850129, 'Grill');
 
 insert into rents values
 (850120,950000002);

@@ -25,7 +25,7 @@ create table rents(
   engine = innodb;
 
 alter table rents
-add constraint eID_ibfk_1 foreign key(equipID) references equipment(equipID);
+add constraint eID_ibfk_1 foreign key(equipID) references equipment(equipID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 create table students(
   studentID integer(9),
@@ -33,7 +33,7 @@ create table students(
   primary key(studentID)) engine = innodb;
 
 alter table rents
-add constraint sID_ibfk_1 foreign key(studentID) references students(studentID);
+add constraint sID_ibfk_1 foreign key(studentID) references students(studentID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 create table trainers(
    instructorID integer(9),
@@ -51,10 +51,10 @@ create table trains(
    primary key(instructorID, studentID)) engine = innodb;
 
 alter table trains
-add constraint sID_ibfk_2 foreign key(studentID) references students(studentID);
+add constraint sID_ibfk_2 foreign key(studentID) references students(studentID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 alter table trains
-add constraint iID_ibfk_1 foreign key(instructorID) references trainers(instructorID);
+add constraint iID_ibfk_1 foreign key(instructorID) references trainers(instructorID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 create table takes(
   studentID integer(9),
@@ -62,7 +62,7 @@ create table takes(
   primary key(studentID, courseID)) engine = innodb;
 
 alter table takes
-add constraint sID_ibfk_3 foreign key(studentID) references students(studentID);
+add constraint sID_ibfk_3 foreign key(studentID) references students(studentID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 create table courses(
   courseID integer(6),
@@ -74,7 +74,7 @@ create table courses(
 /* some weirdness in this table on the data dictionary*/
 
 alter table takes
-add constraint cID_ibfk_1 foreign key(courseID) references courses(courseID);
+add constraint cID_ibfk_1 foreign key(courseID) references courses(courseID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 create table instructs(
   instructorID integer(9),
@@ -82,9 +82,9 @@ create table instructs(
   primary key(instructorID, courseID)) engine = innodb;
 
 alter table instructs
-add constraint cID_ibfk_2 foreign key(courseID) references courses(courseID);
+add constraint cID_ibfk_2 foreign key(courseID) references courses(courseID) ON DELETE CASCADE ON UPDATE CASCADE;
 alter table instructs
-add constraint iID_ibfk_3 foreign key(instructorID) references trainers(instructorID);
+add constraint iID_ibfk_3 foreign key(instructorID) references trainers(instructorID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 create table events(
   eventId integer(6),
@@ -100,20 +100,11 @@ create table instructs_events (
   primary key(eventID, instructorID)) engine = innodb;
 
 alter table instructs_events
-add constraint iID_ibfk_6 foreign key(instructorID) references trainers(instructorID);
+add constraint iID_ibfk_6 foreign key(instructorID) references trainers(instructorID) ON DELETE CASCADE ON UPDATE CASCADE;
 
 alter table instructs_events
-add constraint iID_ibfk_7 foreign key(eventID) references events(eventID);
+add constraint iID_ibfk_7 foreign key(eventID) references events(eventID) ON DELETE CASCADE ON UPDATE CASCADE;
 
-
-delimiter #
-create trigger add_sa_events after insert on events
-  for each row
-  BEGIN 
-  insert into sa_events(name, day, time, description)
-    select events.eventName, events.day, events.time, events.description from events;
-    end#
-    delimiter ;
     
 create table sa_events(
   name varchar(30),
@@ -129,6 +120,13 @@ create table sa_events(
 alter table sa_events
 add constraint iID_ibfk_5 foreign key(instructorID) references trainers(instructorID);
 
+delimiter #
+create trigger add_sa_events after insert on events
+  for each row
+  BEGIN 
+  insert into sa_events(name, day, time, description) values(NEW.eventName, NEW.day, NEW.time, NEW.description);
+    end#
+    delimiter ;
 
 create table attending(
   studentID integer(9),
@@ -137,7 +135,7 @@ create table attending(
   primary key(studentID, day)) engine = innodb;
 
 alter table attending
-add constraint sID_ibfk_4 foreign key(studentID) references students(studentID);
+add constraint sID_ibfk_4 foreign key(studentID) references students(studentID) ON DELETE CASCADE ON UPDATE CASCADE;
 SET FOREIGN_KEY_CHECKS=1;
 
 #views
