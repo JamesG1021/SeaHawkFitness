@@ -1,5 +1,5 @@
 //
-//  ManageStudentsViewController.swift
+//  AddStudentsViewController.swift
 //  SeaHawk Fitness
 //
 //  Created by Amanda Harman on 4/18/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ManageStudentsViewController: UIViewController {
+class AddStudentsViewController: UIViewController {
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var studentIDLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!

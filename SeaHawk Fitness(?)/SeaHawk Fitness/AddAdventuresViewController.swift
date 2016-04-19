@@ -1,5 +1,5 @@
 //
-//  ManageAdventuresViewController.swift
+//  AddAdventuresViewController.swift
 //  SeaHawk Fitness
 //
 //  Created by Amanda Harman on 4/18/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ManageAdventuresViewController: UIViewController {
+class AddAdventuresViewController: UIViewController {
 
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
