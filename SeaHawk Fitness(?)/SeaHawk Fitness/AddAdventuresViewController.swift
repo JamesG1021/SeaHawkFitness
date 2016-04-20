@@ -9,8 +9,8 @@
 import UIKit
 
 class AddAdventuresViewController: UIViewController {
-
-    @IBOutlet weak var pageTitle: UILabel!
+    
+    @IBOutlet weak var adventureID: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -18,7 +18,9 @@ class AddAdventuresViewController: UIViewController {
     @IBOutlet weak var instructorIDLabel: UILabel!
     @IBOutlet weak var enrolledLabel: UILabel!
     @IBOutlet weak var capacityLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var adventureIDField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var timeField: UITextField!
@@ -26,22 +28,15 @@ class AddAdventuresViewController: UIViewController {
     @IBOutlet weak var instructorIDField: UITextField!
     @IBOutlet weak var enrolledField: UITextField!
     @IBOutlet weak var capacityField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
     
-    @IBOutlet weak var addButton: UIButton!
+
+
     @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //pageTitle.text = "Add New Adventure"
-        //pageTitle.sizeToFit()
-        //nameLabel.text = "Name"
-        //dayLabel.text = "Day"
-        //timeLabel.text = "Time"
-        //descriptionLabel.text = "Description"
-        //instructorIDLabel.text = "Instructor ID"
-        //enrolledLabel.text = "Currently Enrolled"
-        //capacityLabel.text = "Capacity"
         
         messageLabel.text = "Status message will go here"
         
@@ -54,6 +49,13 @@ class AddAdventuresViewController: UIViewController {
     }
     
     @IBAction func addButtonPresssed(sender: UIButton) {
+    }
+    
+    
+
+    @IBAction func cancelButtonPressed(sender: UIButton) {
+    }
+    @IBAction func submitButtonPressed(sender: UIButton) {
     }
 
     /*

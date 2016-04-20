@@ -2,94 +2,44 @@
 //  DeleteAdventuresViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by Amanda Harman on 4/18/16.
+//  Created by Amanda Harman on 4/20/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
 import UIKit
 
-class DeleteAdventuresCell: UITableViewCell{
-    
-    @IBOutlet weak var adventureName: UILabel!
-    
-    func setupCell(name: String!){
-        adventureName.text = name
-        self.contentView.clipsToBounds = true;
-    }
-}
+class DeleteAdventuresViewController: UIViewController {
 
-class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var adventureIDField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var startDateField: UITextField!
+    @IBOutlet weak var endDateField: UITextField!
+    @IBOutlet weak var timeField: UITextField!
+    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var instructorField: UITextField!
+    @IBOutlet weak var enrolledField: UITextField!
+    @IBOutlet weak var capacityField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
 
-    let adventuresAPI = "SHAdventuresService"
-    var RequestARGs = ""
+
+    @IBOutlet weak var messageLabel: UILabel!
     
-    var items = [AdventuresTrip]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        let nib = UINib(nibName:"DeleteAdventuresCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "DeleteAdventuresCell")
-        
-        getAdventures()
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
-    }
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: DeleteAdventuresCell = (tableView.dequeueReusableCellWithIdentifier("DeleteAdventuresCell") as? DeleteAdventuresCell)!
-        
-        let adventure = self.items[indexPath.row]
-        
-        cell.setupCell(adventure.name)
-        
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.cyanColor()
-        cell.selectedBackgroundView = backgroundView
-        return cell
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! DeleteAdventuresCell
-        tableView.beginUpdates()
-        print(currentCell.adventureName.text)
-        tableView.endUpdates()
-    }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
     
-    func getAdventures(){
-        JSONService.sharedInstance.getJSON(adventuresAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(AdventuresTrip(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
-
+    @IBAction func cancelButtonPressed(sender: UIButton) {
     }
-    
+    @IBAction func submitButtonPressed(sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation

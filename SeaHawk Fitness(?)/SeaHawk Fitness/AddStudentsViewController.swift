@@ -9,24 +9,17 @@
 import UIKit
 
 class AddStudentsViewController: UIViewController {
-    @IBOutlet weak var pageTitle: UILabel!
-    @IBOutlet weak var studentIDLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+
     
     @IBOutlet weak var studentIDField: UITextField!
     @IBOutlet weak var nameField: UITextField!
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var addButton: UIButton!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pageTitle.text = "Add New Student"
-        studentIDLabel.text = "ID"
-        nameLabel.text = "Name"
-        
-        messageLabel.text="Status message will go here"
 
 
         // Do any additional setup after loading the view.
@@ -37,8 +30,10 @@ class AddStudentsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addButtonPressed(sender: UIButton) {
-        
+    @IBAction func cancelButtonPressed(sender: UIButton) {
+    }
+
+    @IBAction func submitButtonPressed(sender: UIButton) {
     }
 
     /*
