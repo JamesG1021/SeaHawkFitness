@@ -1,5 +1,5 @@
 //
-//  DeleteStudentsViewController.swift
+//  ShowStudentsViewController.swift
 //  SeaHawk Fitness
 //
 //  Created by Amanda Harman on 4/18/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeleteStudentsCell : UITableViewCell{
+class ShowStudentsCell : UITableViewCell{
     
     @IBOutlet weak var studentID: UILabel!
     @IBOutlet weak var studentName: UILabel!
@@ -21,7 +21,7 @@ class DeleteStudentsCell : UITableViewCell{
     }
 }
 
-class DeleteStudentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,8 +39,8 @@ class DeleteStudentsViewController: UIViewController, UITableViewDelegate, UITab
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        let nib = UINib(nibName:"DeleteStudentsCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "DeleteStudentsCell")
+        let nib = UINib(nibName:"ShowStudentsCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "ShowStudentsCell")
         
         getStudents()
     }
@@ -53,7 +53,7 @@ class DeleteStudentsViewController: UIViewController, UITableViewDelegate, UITab
         return self.items.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: DeleteStudentsCell = (tableView.dequeueReusableCellWithIdentifier("DeleteStudentsCell") as? DeleteStudentsCell)!
+        let cell: ShowStudentsCell = (tableView.dequeueReusableCellWithIdentifier("ShowStudentsCell") as? ShowStudentsCell)!
         
         let student = self.items[indexPath.row]
         
@@ -65,7 +65,7 @@ class DeleteStudentsViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! DeleteStudentsCell
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ShowStudentsCell
         tableView.beginUpdates()
         print(currentCell.studentName.text)
         tableView.endUpdates()

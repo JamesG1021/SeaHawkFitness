@@ -1,5 +1,5 @@
 //
-//  DeleteAdventuresViewController.swift
+//  ShowAdventuresViewController.swift
 //  SeaHawk Fitness
 //
 //  Created by Amanda Harman on 4/18/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeleteAdventuresCell: UITableViewCell{
+class ShowAdventuresCell: UITableViewCell{
     
     @IBOutlet weak var adventureName: UILabel!
     
@@ -18,7 +18,7 @@ class DeleteAdventuresCell: UITableViewCell{
     }
 }
 
-class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var tableView: UITableView!
 
     let adventuresAPI = "SHAdventuresService"
@@ -36,8 +36,8 @@ class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, U
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        let nib = UINib(nibName:"DeleteAdventuresCell", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "DeleteAdventuresCell")
+        let nib = UINib(nibName:"ShowAdventuresCell", bundle: nil)
+        tableView.registerNib(nib, forCellReuseIdentifier: "ShowAdventuresCell")
         
         getAdventures()
         
@@ -51,7 +51,7 @@ class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, U
         return self.items.count
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: DeleteAdventuresCell = (tableView.dequeueReusableCellWithIdentifier("DeleteAdventuresCell") as? DeleteAdventuresCell)!
+        let cell: ShowAdventuresCell = (tableView.dequeueReusableCellWithIdentifier("ShowAdventuresCell") as? ShowAdventuresCell)!
         
         let adventure = self.items[indexPath.row]
         
@@ -63,7 +63,7 @@ class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! DeleteAdventuresCell
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ShowAdventuresCell
         tableView.beginUpdates()
         print(currentCell.adventureName.text)
         tableView.endUpdates()
