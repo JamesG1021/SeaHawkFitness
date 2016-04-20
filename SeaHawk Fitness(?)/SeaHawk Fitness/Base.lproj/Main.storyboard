@@ -653,6 +653,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IKo-E6-Mry">
                                 <rect key="frame" x="0.0" y="82" width="600" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="82" width="400" height="518"/>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-SJ-vuD">
                                 <rect key="frame" x="87" y="28" width="46" height="30"/>
@@ -920,10 +923,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sQJ-9n-Lo6">
-                                <rect key="frame" x="0.0" y="65" width="600" height="559"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4r-qW-DGv">
                                 <rect key="frame" x="90" y="20" width="46" height="30"/>
                                 <state key="normal" title="Back"/>
@@ -931,6 +930,13 @@
                                     <segue destination="GkQ-gL-2LV" kind="show" id="uHN-Dx-r62"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sQJ-9n-Lo6">
+                                <rect key="frame" x="0.0" y="65" width="600" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="65" width="400" height="535"/>
+                                </variation>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                     </view>
@@ -1901,12 +1907,12 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LH8-Js-a1z"/>
-        <segue reference="cbO-wx-pfl"/>
-        <segue reference="wda-l7-rkh"/>
-        <segue reference="FoL-ae-68Y"/>
         <segue reference="nD1-jS-vCf"/>
+        <segue reference="FoL-ae-68Y"/>
+        <segue reference="LH8-Js-a1z"/>
+        <segue reference="uHN-Dx-r62"/>
         <segue reference="etu-AE-D0R"/>
         <segue reference="FhU-Vd-S0o"/>
+        <segue reference="TCl-aG-Iao"/>
     </inferredMetricsTieBreakers>
 </document>
