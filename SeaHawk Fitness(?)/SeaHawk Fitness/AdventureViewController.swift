@@ -20,9 +20,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     // ---------- API STRINGS
     let adventuresAPI = "AdventuresService"
     var RequestARGs = ""
-
-    // ---------- MODEL OBJECTS ARRAY
-    var items = [AdventuresTrip]()
+    var EditARGs = ""
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -30,6 +28,8 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -52,33 +52,24 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         refreshButton.setTitle("Refresh Adventures", forState: UIControlState.Normal)
         
         getAdventures()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return AdventuresItems.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: AdventuresCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("AdventureCell", forIndexPath: indexPath) as? AdventuresCollectionCell)!
         
-        let trip = self.items[indexPath.row]
+        let trip = AdventuresItems[indexPath.row]
         
         cell.setupCell( trip.name, date: trip.day, price: 10)
-        //cell.backgroundColor = UIColor.cyanColor()
+        
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let selectectedAdventure = items[indexPath.row]
+        let selectectedAdventure = AdventuresItems[indexPath.row]
         
         print("Adventure Name = " + selectectedAdventure.name)
         print("Adventure Description = " + selectectedAdventure.description)
@@ -86,37 +77,21 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
     }
     
-    
     func getAdventures(){
-        JSONService.sharedInstance.getJSON (adventuresAPI, ReqARGs: RequestARGs, onCompletion: {(json:JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(AdventuresTrip(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(), {self.collectionView!.reloadData()})
-            }
-        })
+        
+        makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
+        
     }
             
-
+    func refreshList(notification: NSNotification){
+        self.collectionView.reloadData()
+    }
     
     @IBAction func updateAdventures(sender: UIButton) {
-        let adventureName = searchBar?.text
-        RequestARGs = "name=" + adventureName!
-        self.items.removeAll()
+        let name = searchBar?.text
+        RequestARGs = "name=" + name!
+        AdventuresItems.removeAll()
         getAdventures()
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

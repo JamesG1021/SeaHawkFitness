@@ -15,9 +15,9 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var searchBar: UITextField!
     
     let eventsAPI = "EventsService"
-    var RequestARGs = ""
     
-    var items = [LargeEvent]()
+    var RequestARGs = ""
+    var EditARGs = ""
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -25,6 +25,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
 
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -45,33 +47,23 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         refreshEvents.setTitle("Refresh Events", forState: UIControlState.Normal)
         
         getEvents()
-            
-        
-        
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return EventsItems.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: EventsCell = (collectionView.dequeueReusableCellWithReuseIdentifier("EventsCell", forIndexPath: indexPath) as? EventsCell)!
         
-        let event = self.items[indexPath.row]
+        let event = EventsItems[indexPath.row]
         
         cell.setupCell( event.eventName, date: event.day, time: event.time)
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let selectedEvent = items[indexPath.row]
+        let selectedEvent = EventsItems[indexPath.row]
         
         print("Event Name = " + selectedEvent.eventName)
         print("Event Date = " + selectedEvent.day)
@@ -81,34 +73,19 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func getEvents(){
-        JSONService.sharedInstance.getJSON(eventsAPI, ReqARGs: RequestARGs, onCompletion: {(json:JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(LargeEvent(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(), {self.collectionView!.reloadData()})
-            }
-        })}
+       
+        makeDatabaseRequest(self.view, API: eventsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
+    }
 
+    func refreshList(notification: NSNotification){
+        self.collectionView.reloadData()
+    }
     
     @IBAction func updateEvents(sender: UIButton) {
        let eventName = searchBar?.text
         RequestARGs = "name=" + eventName!
-        self.items.removeAll()
+        EventsItems.removeAll()
         getEvents()
     }
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
         
 }

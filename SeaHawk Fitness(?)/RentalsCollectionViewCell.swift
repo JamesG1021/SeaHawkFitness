@@ -59,10 +59,12 @@ class RentalsCollectionCell : UICollectionViewCell
         rentalImage.image = UIImage.init(named: "NoImageFound")
         
         rentalName.text = name
-        rentalName.font = UIFont.boldSystemFontOfSize(18)
+        rentalName.adjustsFontSizeToFitWidth = true
+        rentalPrice.adjustsFontSizeToFitWidth = true
+        //rentalName.font = UIFont.boldSystemFontOfSize(18)
         
         rentalPrice.text = String(price)
-        rentalPrice.font = UIFont.systemFontOfSize(15)
+        //rentalPrice.font = UIFont.systemFontOfSize(15)
         rentalPrice.textColor = UIColor.grayColor()
         
         ReserveNowButton.backgroundColor = UIColor(red: 225/255, green: 244/255, blue: 220/255, alpha: 255/255)

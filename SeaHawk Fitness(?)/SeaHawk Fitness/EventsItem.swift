@@ -7,7 +7,7 @@
 //
 import Foundation
 
-class LargeEvent
+class Event
 {
     var eventId: NSInteger!
     var time: String!

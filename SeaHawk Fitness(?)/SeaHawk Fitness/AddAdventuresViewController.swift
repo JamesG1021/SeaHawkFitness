@@ -10,60 +10,155 @@ import UIKit
 
 class AddAdventuresViewController: UIViewController {
 
-    @IBOutlet weak var pageTitle: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var instructorIDLabel: UILabel!
-    @IBOutlet weak var enrolledLabel: UILabel!
-    @IBOutlet weak var capacityLabel: UILabel!
+    @IBOutlet var AdventureIDField: UITextField!
+    @IBOutlet var NameField: UITextField!
+    @IBOutlet var StartDateField: UITextField!
+    @IBOutlet var EndDateField: UITextField!
+    @IBOutlet var TimeField: UITextField!
+    @IBOutlet var PriceField: UITextField!
+    @IBOutlet var DescriptionField: UITextView!
+    @IBOutlet var InstructorIDField: UITextField!
+    @IBOutlet var EnrolledField: UITextField!
+    @IBOutlet var CapacityField: UITextField!
     
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var dayField: UITextField!
-    @IBOutlet weak var timeField: UITextField!
-    @IBOutlet weak var descriptionField: UITextField!
-    @IBOutlet weak var instructorIDField: UITextField!
-    @IBOutlet weak var enrolledField: UITextField!
-    @IBOutlet weak var capacityField: UITextField!
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     
+    let studentAPI = "AdventuresService"
+    
+    var RequestARGs = ""
+    var EditARGs = ""
+    
+    var validInput : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        pageTitle.text = "Add New Adventure"
-        pageTitle.sizeToFit()
-        nameLabel.text = "Name"
-        dayLabel.text = "Day"
-        timeLabel.text = "Time"
-        descriptionLabel.text = "Description"
-        instructorIDLabel.text = "Instructor ID"
-        enrolledLabel.text = "Currently Enrolled"
-        capacityLabel.text = "Capacity"
         
-        messageLabel.text = "Status message will go here"
+        messageLabel.text = ""
         
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func addButtonPresssed(sender: UIButton) {
+       checkFormFilled()
+    }
+
+    func checkFormFilled()
+    {
+        messageLabel.hidden = true
+        
+        if AdventureIDField.text == ""
+        {
+            messageLabel.hidden = false
+            messageLabel.text = messageLabel.text! + "You must include a Adventure ID to add a new Adventure"
+            print("You must include a Adventure ID to add a new Adventure!")
+        }
+        if NameField.text == ""
+        {
+            messageLabel.hidden = false
+            messageLabel.text = messageLabel.text! + "You must include a Adventure Name to add a new Adventure"
+            print("You must include a Adventure Name to add a new Adventure!")
+        }
+        if StartDateField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a Start Date to add a new Adventure"
+            }
+            print("You must include a Start Date to add a new Adventure!")
+        }
+        if EndDateField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a End Date to add a new Adventure"
+            }
+            print("You must include a End Date to add a new Adventure!")
+        }
+        if TimeField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a Time to add a new Adventure"
+            }
+            print("You must include a Time to add a new Adventure!")
+        }
+        if PriceField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a Price to add a new Adventure"
+            }
+            print("You must include a Price to add a new Adventure!")
+        }
+        if DescriptionField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a Description to add a new Adventure"
+            }
+            print("You must include Description to add a new Adventure!")
+        }
+        if InstructorIDField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a Instructor ID to add a new Adventure"
+            }
+            print("You must include a Instructor ID to add a new Adventure!")
+        }
+        if EnrolledField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a enrollment value to add a new Adventure"
+            }
+            print("You must include a enrollment value to add a new Adventure!")
+        }
+        if CapacityField.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = messageLabel.text! + "You must include a capacity value to add a new Adventure"
+            }
+            print("You must include a capacity value to add a new Adventure!")
+        }
+        
+        if (AdventureIDField.text != "" && NameField.text != "" && StartDateField.text != "" && EndDateField.text != "" &&
+            TimeField.text != "" && PriceField.text != "" && DescriptionField.text != "" && InstructorIDField.text != "" &&
+                EnrolledField.text != "" && CapacityField.text != "")
+        {
+            validInput = true
+        }
+        if (validInput)
+        {
+            addAdventure()
+        }
     }
     
-    @IBAction func addButtonPresssed(sender: UIButton) {
+    func addAdventure() {
+        EditARGs = "insertion"
+        RequestARGs = "adventureID=" + AdventureIDField.text! + "&name=" + NameField.text! +
+                      "&startDate=" + StartDateField.text! + "&endDate=" + EndDateField.text! +
+                      "&description=" + DescriptionField.text! + "&instructorID=" + InstructorIDField.text! +
+                      "&enrolled=" + EnrolledField.text! + "&capacity=" + CapacityField.text! +
+                      "&price=" + PriceField.text!
+        
+        // Appwide addObject function ::
+        //
+        // REQUIRES: self.view, The API the ViewController uses, and the Constructed RequestARGs String
+        // --------------------------------------------------------------------------------------------
+        makeDatabaseRequest(self.view, API: studentAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
+        
+
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -25,15 +25,18 @@ class ExerciseClassCell : UITableViewCell
         ExerciseClassDescription.hidden = true
         
         ExerciseClassName.text = name
-        ExerciseClassName.font = UIFont.boldSystemFontOfSize(18)
+        //ExerciseClassName.font = UIFont.boldSystemFontOfSize(18)
+        ExerciseClassName.adjustsFontSizeToFitWidth = true
         
         ExerciseClassLocation.text = String(location)
         ExerciseClassLocation.textColor = UIColor.grayColor()
-        ExerciseClassLocation.font = UIFont.systemFontOfSize(15)
+        ExerciseClassLocation.adjustsFontSizeToFitWidth = true
+        //ExerciseClassLocation.font = UIFont.systemFontOfSize(15)
         
         ExerciseClassTimeframe.text = startTime
         ExerciseClassTimeframe.textColor = UIColor.grayColor()
-        ExerciseClassTimeframe.font = UIFont.systemFontOfSize(15)
+        ExerciseClassTimeframe.adjustsFontSizeToFitWidth = true
+        //ExerciseClassTimeframe.font = UIFont.systemFontOfSize(15)
         
         self.contentView.clipsToBounds = true;
         
@@ -69,7 +72,7 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         /*
         let tapSelector : Selector = #selector(self.selectCalenderItem(_:))
         let dblTapSelector : Selector = #selector(self.showDescription)
@@ -119,13 +122,14 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        print(ExerciseClassItems.count)
+        return ExerciseClassItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ExerciseClassCell = (tableView.dequeueReusableCellWithIdentifier("CalenderItemCell") as? ExerciseClassCell)!
         
-        let exerciseClass = self.items[indexPath.row]
+        let exerciseClass = ExerciseClassItems[indexPath.row]
 
         cell.setupCell(exerciseClass.courseName,
                        startTime: exerciseClass.time,
@@ -156,26 +160,20 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         return UITableViewAutomaticDimension
     }
  
+    func refreshList(notification: NSNotification){
+        self.tableView.reloadData()
+    }
     
     
     func getCalender() {
-        JSONService.sharedInstance.getJSON (groupScheduleAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(GroupExerciseClass(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
+        
+        makeDatabaseRequest(self.view, API: groupScheduleAPI, EditARGs: "", RequestARGs: RequestARGs)
     }
     
     func updateCalender() {
         let day = txt?.text
         RequestARGs = "day=" + day!
-        self.items.removeAll()
+        ExerciseClassItems.removeAll()
         getCalender()
     }
     /*

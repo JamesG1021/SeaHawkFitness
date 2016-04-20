@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,22 +12,40 @@
             <rect key="frame" x="0.0" y="0.0" width="593" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3c-HX-2VW" id="1LR-PV-LdL">
-                <rect key="frame" x="0.0" y="0.0" width="593" height="109"/>
+                <rect key="frame" x="0.0" y="0.0" width="593" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77i-UN-NDt">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77i-UN-NDt">
                         <rect key="frame" x="33" y="8" width="256" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="256" id="6I5-QC-EK4"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feD-kg-PPJ">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vg-FV-u84">
+                        <rect key="frame" x="225" y="37" width="46" height="30"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feD-kg-PPJ">
                         <rect key="frame" x="33" y="55" width="285" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="285" id="BIB-i8-D57"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="5Vg-FV-u84" firstAttribute="leading" secondItem="1LR-PV-LdL" secondAttribute="leading" constant="225" id="CQR-m2-WPm"/>
+                    <constraint firstItem="77i-UN-NDt" firstAttribute="leading" secondItem="1LR-PV-LdL" secondAttribute="leadingMargin" constant="25" id="JR7-EF-jsA"/>
+                    <constraint firstItem="77i-UN-NDt" firstAttribute="leading" secondItem="feD-kg-PPJ" secondAttribute="leading" id="O9b-5l-hiS"/>
+                    <constraint firstItem="feD-kg-PPJ" firstAttribute="top" secondItem="77i-UN-NDt" secondAttribute="bottom" constant="26" id="sEU-z7-bHp"/>
+                    <constraint firstItem="77i-UN-NDt" firstAttribute="top" secondItem="1LR-PV-LdL" secondAttribute="topMargin" id="u8O-Ub-vCC"/>
+                    <constraint firstItem="5Vg-FV-u84" firstAttribute="top" secondItem="77i-UN-NDt" secondAttribute="bottom" constant="8" symbolic="YES" id="wOK-Eo-KUb"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="studentID" destination="77i-UN-NDt" id="Ig0-gA-ZJ7"/>

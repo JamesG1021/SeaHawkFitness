@@ -16,16 +16,18 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     @IBOutlet weak var updateButton: UIButton!
     
     let rentalsAPI = "RentalService"
-    var RequestARGs = ""
     
-    var items = [Rentals]()
-
+    var RequestARGs = ""
+    var EditARGs = ""
+    
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -52,6 +54,10 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
 
         // Do any additional setup after loading the view.
     }
+    
+    func refreshList(notification: NSNotification){
+        self.collectionView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,14 +68,14 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return RentalItems.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: RentalsCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("RentalCell", forIndexPath: indexPath) as? RentalsCollectionCell)!
         
-        let rentalItem = self.items[indexPath.row]
+        let rentalItem = RentalItems[indexPath.row]
         
         cell.setupCell(rentalItem.equipName, price: rentalItem.equipID)
         
@@ -81,7 +87,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let selectedRental = items[indexPath.row]
+        let selectedRental = RentalItems[indexPath.row]
         
         print("Rental Name = " + selectedRental.equipName)
         print("Rental ID = ", selectedRental.equipID)
@@ -89,24 +95,13 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func getRentals() {
-        
-        JSONService.sharedInstance.getJSON (rentalsAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(Rentals(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.collectionView!.reloadData()
-                })
-            }
-        })
+       makeDatabaseRequest(self.view, API: rentalsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
     func updateRentals() {
         let rentalName = searchBar?.text
         RequestARGs = "equipName=" + rentalName!
-        self.items.removeAll()
+        RentalItems.removeAll()
         getRentals()
     }
     
@@ -117,7 +112,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let imageSize = "150"
     
-        for rentalItem in items {
+        for rentalItem in RentalItems {
             
             let RequestARGs = "?size=" + imageSize + "&name=" + rentalItem.equipName.removeWhitespace()
             let requestPath = imageServiceURL + RequestARGs
@@ -148,15 +143,4 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             //item.equipImage.loadImageFromURL(item.equipName.removeWhitespace(), imageSize: "150")
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -10,6 +10,7 @@ import Foundation
 
 class AdventuresTrip
 {
+    
     var name: String!
     var day: String!
     var time: String!

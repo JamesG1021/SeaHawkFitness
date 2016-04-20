@@ -19,21 +19,17 @@ class DeleteAdventuresCell: UITableViewCell{
 }
 
 class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
     @IBOutlet weak var tableView: UITableView!
 
-    let adventuresAPI = "SHAdventuresService"
+    let adventuresAPI = "AdventuresService"
     var RequestARGs = ""
-    
-    var items = [AdventuresTrip]()
+    var EditARGs = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name: "refreshMyData", object: nil)
 
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
         self.tableView.dataSource = self
         self.tableView.delegate = self
         let nib = UINib(nibName:"DeleteAdventuresCell", bundle: nil)
@@ -42,24 +38,25 @@ class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, U
         getAdventures()
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func getAdventures(){
+        
+        makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
+        
     }
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return AdventuresItems.count
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: DeleteAdventuresCell = (tableView.dequeueReusableCellWithIdentifier("DeleteAdventuresCell") as? DeleteAdventuresCell)!
         
-        let adventure = self.items[indexPath.row]
+        let adventure = AdventuresItems[indexPath.row]
         
         cell.setupCell(adventure.name)
         
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.cyanColor()
-        cell.selectedBackgroundView = backgroundView
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -75,30 +72,8 @@ class DeleteAdventuresViewController: UIViewController, UITableViewDataSource, U
         return UITableViewAutomaticDimension
     }
     
-    func getAdventures(){
-        JSONService.sharedInstance.getJSON(adventuresAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(AdventuresTrip(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
-
+    func refreshList(notification: NSNotification){
+        self.tableView.reloadData()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

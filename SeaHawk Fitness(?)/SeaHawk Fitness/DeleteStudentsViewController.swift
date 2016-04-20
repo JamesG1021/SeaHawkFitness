@@ -17,7 +17,7 @@ class DeleteStudentsCell : UITableViewCell{
         studentID.text = studentId
         studentName.text = name
  
-        self.contentView.clipsToBounds = true;
+        //self.contentView.clipsToBounds = true;
     }
 }
 
@@ -25,50 +25,50 @@ class DeleteStudentsViewController: UIViewController, UITableViewDelegate, UITab
 
     @IBOutlet weak var tableView: UITableView!
     
-    let studentsAPI = "UserService"
-    var RequestARGs = ""
+    let studentsAPI = "StudentService"
     
-    var items = [Students]()
+    var RequestARGs = ""
+    var EditARGs = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(animated: Bool) {
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
         let nib = UINib(nibName:"DeleteStudentsCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "DeleteStudentsCell")
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
+        
         getStudents()
+
+    }
+    
+    func refreshList(notification: NSNotification){
+        self.tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return StudentsItems.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: DeleteStudentsCell = (tableView.dequeueReusableCellWithIdentifier("DeleteStudentsCell") as? DeleteStudentsCell)!
         
-        let student = self.items[indexPath.row]
+        let student = StudentsItems[indexPath.row]
         
         cell.setupCell(String(student.studentID), name: student.name)
         
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.cyanColor()
-        cell.selectedBackgroundView = backgroundView
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! DeleteStudentsCell
-        tableView.beginUpdates()
-        print(currentCell.studentName.text)
-        tableView.endUpdates()
+        
+        //tableView.beginUpdates()
+        
+        deleteStudent(currentCell.studentID.text!)
+        
+        //tableView.endUpdates()
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
@@ -77,32 +77,26 @@ class DeleteStudentsViewController: UIViewController, UITableViewDelegate, UITab
         return UITableViewAutomaticDimension
     }
     
+    
     func getStudents(){
-        JSONService.sharedInstance.getJSON(studentsAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(Students(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
+        
+        makeDatabaseRequest(self.view, API: studentsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
-
-
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateStudents(){
+        StudentsItems.removeAll()
+        EditARGs = ""
+        RequestARGs = ""
+        getStudents()
     }
-    */
+    
+    func deleteStudent(studentID : String){
+        EditARGs = "deletion"
+        RequestARGs = "studentID=" + studentID
+        
+        makeDatabaseRequest(self.view, API: studentsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
+        updateStudents()
+    }
 
 }

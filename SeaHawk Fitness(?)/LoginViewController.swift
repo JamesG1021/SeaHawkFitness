@@ -12,6 +12,7 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let loginAPI = "LoginService"
+    
     var RequestARGs = ""
 
     var isAdministrator : Bool = false
@@ -51,41 +52,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func LoginButton(sender: UIButton)
     {
-        ErrorMessageField.hidden = true
-        
-        if LoginTextField.text == ""
-        {
-            
-            ErrorMessageField.hidden = false
-            ErrorMessageField.text = "You must enter a username to login!"
-            print("You must enter a username to login!")
-        }
-        
-        if PasswordTextField.text == ""
-        {
-            ErrorMessageField.hidden = false
-            if ErrorMessageField.text == ""
-            {
-                ErrorMessageField.text = "You must enter a password to login!"
-            }
-            print("You must enter a password to login!")
-        }
-        
-        if (LoginTextField.text != "" && PasswordTextField.text != "")
-        {
-            validInput = true
-        }
-        
-        if (validInput)
-        {
-            if (isAdministrator) {
-                adminLogin()
-            } else {
-                studentLogin()
-            }
-        }
-        
-        
+        checkValidLogin()
     }
 
     @IBAction func indexChanged(sender: UISegmentedControl) {
@@ -101,17 +68,7 @@ class LoginViewController: UIViewController {
             break; 
         }
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
     func skipLogin() {
         self.performSegueWithIdentifier("EnterMainMenuSegue", sender: nil)
@@ -172,6 +129,44 @@ class LoginViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func checkValidLogin() {
+        
+        ErrorMessageField.hidden = true
+        
+        if LoginTextField.text == ""
+        {
+            
+            ErrorMessageField.hidden = false
+            ErrorMessageField.text = "You must enter a username to login!"
+            print("You must enter a username to login!")
+        }
+        
+        if PasswordTextField.text == ""
+        {
+            ErrorMessageField.hidden = false
+            if ErrorMessageField.text == ""
+            {
+                ErrorMessageField.text = "You must enter a password to login!"
+            }
+            print("You must enter a password to login!")
+        }
+        
+        if (LoginTextField.text != "" && PasswordTextField.text != "")
+        {
+            validInput = true
+        }
+        
+        if (validInput)
+        {
+            if (isAdministrator) {
+                adminLogin()
+            } else {
+                studentLogin()
+            }
+        }
+
     }
 
 }
