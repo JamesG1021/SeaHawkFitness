@@ -850,7 +850,7 @@
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jOC-EI-Zl8" kind="show" id="LH8-Js-a1z"/>
+                                    <segue destination="jOC-EI-Zl8" kind="show" id="lQ0-AD-u1M"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxW-dL-0t8">
@@ -1984,7 +1984,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uHN-Dx-r62"/>
-        <segue reference="LH8-Js-a1z"/>
+        <segue reference="lQ0-AD-u1M"/>
         <segue reference="T5L-eo-rnd"/>
         <segue reference="wda-l7-rkh"/>
         <segue reference="ZZd-Ud-DlX"/>
