@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53909EC91CC81F36007ED8E8 /* DeleteTrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53909EC81CC81F36007ED8E8 /* DeleteTrainerViewController.swift */; };
+		53909ECF1CC82084007ED8E8 /* AddEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53909ECE1CC82084007ED8E8 /* AddEquipmentViewController.swift */; };
+		53909ED11CC82103007ED8E8 /* DeleteEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53909ED01CC82103007ED8E8 /* DeleteEquipmentViewController.swift */; };
 		53B01EBF1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png in Resources */ = {isa = PBXBuildFile; fileRef = 53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */; };
 		53C8B1C91CC6B97C002C556A /* AddTrainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8B1C81CC6B97C002C556A /* AddTrainerViewController.swift */; };
 		53D453721C7D084D00112593 /* Personal Training Rates.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D453711C7D084D00112593 /* Personal Training Rates.png */; };
@@ -89,6 +92,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53909EC81CC81F36007ED8E8 /* DeleteTrainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteTrainerViewController.swift; sourceTree = "<group>"; };
+		53909ECE1CC82084007ED8E8 /* AddEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddEquipmentViewController.swift; path = ../AddEquipmentViewController.swift; sourceTree = "<group>"; };
+		53909ED01CC82103007ED8E8 /* DeleteEquipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteEquipmentViewController.swift; sourceTree = "<group>"; };
 		53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SeahawkFitness_menu_blackTrim.png; path = Images/SeahawkFitness_menu_blackTrim.png; sourceTree = SOURCE_ROOT; };
 		53C8B1C81CC6B97C002C556A /* AddTrainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTrainerViewController.swift; sourceTree = "<group>"; };
 		53D453711C7D084D00112593 /* Personal Training Rates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Personal Training Rates.png"; path = "Images/Personal Training Rates.png"; sourceTree = SOURCE_ROOT; };
@@ -287,11 +293,14 @@
 		AD36CA941CC6AE4E00AE9C0B /* AdminViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				53909ECE1CC82084007ED8E8 /* AddEquipmentViewController.swift */,
 				53C8B1C81CC6B97C002C556A /* AddTrainerViewController.swift */,
 				E0E1CB051CC49CAC00200510 /* AddAdventuresViewController.swift */,
 				E0C894301CC5B2FD0075ADD0 /* AddStudentsViewController.swift */,
 				E0C894321CC5B81F0075ADD0 /* DeleteStudentsViewController.swift */,
 				E0C894341CC5B82D0075ADD0 /* DeleteAdventuresViewController.swift */,
+				53909EC81CC81F36007ED8E8 /* DeleteTrainerViewController.swift */,
+				53909ED01CC82103007ED8E8 /* DeleteEquipmentViewController.swift */,
 			);
 			name = AdminViewControllers;
 			sourceTree = "<group>";
@@ -522,13 +531,16 @@
 				E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */,
 				E0EDAD9D1CC46FEE008D2E95 /* EventsViewController.swift in Sources */,
 				AD271FB11CAE14C70028F845 /* JSONService.swift in Sources */,
+				53909ED11CC82103007ED8E8 /* DeleteEquipmentViewController.swift in Sources */,
 				AD94AE791CAF3F3F00CD1C8D /* EventsItem.swift in Sources */,
+				53909ECF1CC82084007ED8E8 /* AddEquipmentViewController.swift in Sources */,
 				AD271FB31CAE15020028F845 /* SwiftyJSON.swift in Sources */,
 				AD94AE771CAF3F1200CD1C8D /* AdventuresItem.swift in Sources */,
 				AD36CA961CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift in Sources */,
 				E0C894331CC5B81F0075ADD0 /* DeleteStudentsViewController.swift in Sources */,
 				53C8B1C91CC6B97C002C556A /* AddTrainerViewController.swift in Sources */,
 				AD8B83201CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift in Sources */,
+				53909EC91CC81F36007ED8E8 /* DeleteTrainerViewController.swift in Sources */,
 				E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */,
 				AD8B83251CC4394100B1C4FC /* RentalsCollectionViewCell.swift in Sources */,
 				53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */,
