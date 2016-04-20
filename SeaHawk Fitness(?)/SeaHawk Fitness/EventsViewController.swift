@@ -32,8 +32,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        collectionView.layer.backgroundColor = UIColor.clearColor().CGColor
+
         collectionView.backgroundColor = UIColor.clearColor()
         
         let layout: UICollectionViewFlowLayout = EventsCollectionViewFlowLayout()
@@ -45,7 +44,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         refreshEvents.setTitle("Refresh Events", forState: UIControlState.Normal)
         
         getEvents()
-            
+//        getImagesForModel()
+        
         
         
 
@@ -68,6 +68,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         cell.setupCell( event.eventName, date: event.day, time: event.time)
         return cell
+        
+//        cell.eventImage.image = eventItem.equipImage
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

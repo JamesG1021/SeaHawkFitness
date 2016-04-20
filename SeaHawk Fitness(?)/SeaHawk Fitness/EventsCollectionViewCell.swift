@@ -32,6 +32,7 @@ class EventsCell: UICollectionViewCell{
     func setupCell(name: String!, date: String!, time: String!){
         //let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
         //eventImage.loadImageFromURL(imagePath)
+
         
         eventName.text = name
         eventName.font = UIFont.boldSystemFontOfSize(18)
