@@ -346,6 +346,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="AZ8-mX-ccF" eventType="touchUpInside" id="CNT-K7-srN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uA-QQ-urc">
                                 <rect key="frame" x="99" y="417" width="48" height="30"/>
@@ -392,6 +395,12 @@
                                     <segue destination="Tnf-Xq-GqY" kind="show" id="HmI-v2-5Be"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-VG-lIY">
+                                <rect key="frame" x="155" y="486" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
@@ -507,7 +516,8 @@
                     </view>
                     <connections>
                         <outlet property="TrainerID" destination="HOy-LK-SeM" id="cr9-S8-JHC"/>
-                        <outlet property="TrainerName" destination="Cyh-XG-j1Q" id="KMl-eI-vgx"/>
+                        <outlet property="TrainerName" destination="abC-Tt-EyU" id="aCq-DH-pPS"/>
+                        <outlet property="messageLabel" destination="bU4-VG-lIY" id="ouY-FO-TCj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoO-ik-Hpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2655,11 +2665,11 @@ All training sessions will be a maximum of 60 minutes in length</string>
     <inferredMetricsTieBreakers>
         <segue reference="etu-AE-D0R"/>
         <segue reference="0R6-3K-lZA"/>
+        <segue reference="PFU-09-KgM"/>
         <segue reference="T5L-eo-rnd"/>
-        <segue reference="T7L-xI-B9E"/>
+        <segue reference="FoL-ae-68Y"/>
         <segue reference="wda-l7-rkh"/>
         <segue reference="cbO-wx-pfl"/>
-        <segue reference="FoL-ae-68Y"/>
         <segue reference="hQf-BD-Jui"/>
     </inferredMetricsTieBreakers>
 </document>
