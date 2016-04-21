@@ -46,6 +46,7 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         
+        StudentsItems.removeAll()
         getStudents()
     }
 
