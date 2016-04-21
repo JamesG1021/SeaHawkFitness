@@ -9,15 +9,6 @@
 import UIKit
 
 class AddAdventuresViewController: UIViewController {
-
-    @IBOutlet weak var pageTitle: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var instructorIDLabel: UILabel!
-    @IBOutlet weak var enrolledLabel: UILabel!
-    @IBOutlet weak var capacityLabel: UILabel!
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var dayField: UITextField!
@@ -33,17 +24,7 @@ class AddAdventuresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //pageTitle.text = "Add New Adventure"
-        //pageTitle.sizeToFit()
-        //nameLabel.text = "Name"
-        //dayLabel.text = "Day"
-        //timeLabel.text = "Time"
-        //descriptionLabel.text = "Description"
-        //instructorIDLabel.text = "Instructor ID"
-        //enrolledLabel.text = "Currently Enrolled"
-        //capacityLabel.text = "Capacity"
-        
-        messageLabel.text = "Status message will go here"
+
         
         // Do any additional setup after loading the view.
     }
