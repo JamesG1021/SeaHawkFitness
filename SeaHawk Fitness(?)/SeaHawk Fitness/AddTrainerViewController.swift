@@ -11,15 +11,19 @@ import UIKit
 class AddTrainerViewController: UIViewController {
 
     @IBOutlet weak var TrainerID: UITextField!
-    @IBOutlet weak var TrainerName: NSLayoutConstraint!
+    @IBOutlet weak var TrainerName: UITextField!
+
+    
+    @IBOutlet weak var messageLabel: UILabel!
     
     let trainerAPI = "TrainersService"
     var RequestARGs = ""
     
-    var items = [Instructor]()
+    var EditARGs = ""
     
-    
-    
+    var validInput: Bool = false
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,32 +34,50 @@ class AddTrainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func addTrainer() {
+    @IBAction func submitButtonPressed(sender: UIButton) {
+        checkFormFilled()
         
-        JSONService.sharedInstance.getJSON (trainerAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(Instructor(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                })
+    }
+    func addTrainer() {
+        EditARGs = "insertion"
+        RequestARGs = "name=" + TrainerName.text! + "&instructorID=" + TrainerID.text!
+        
+        // Appwide addObject function ::
+        //
+        // REQUIRES: self.view, The API the ViewController uses, and the Constructed RequestARGs String
+        // --------------------------------------------------------------------------------------------
+        makeDatabaseRequest(self.view, API: trainerAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
+    }
+    
+    func checkFormFilled() {
+        messageLabel.hidden = true
+        
+        if TrainerID.text == ""
+        {
+            
+            messageLabel.hidden = false
+            messageLabel.text = "You must include a Trainer ID to add a new trainer!"
+            print("You must include a  Trainer ID to add a new trainer!")
+        }
+        
+        if TrainerName.text == ""
+        {
+            messageLabel.hidden = false
+            if messageLabel.text == ""
+            {
+                messageLabel.text = "You must include a trainer name to add a new trainer!"
             }
-        })
+            print("You must include a trainer name to add a new trainer!")
+        }
+        
+        if (TrainerID.text != "" && TrainerName.text != "")
+        {
+            validInput = true
+        }
+        
+        if (validInput)
+        {
+            addTrainer()
+        }
     }
-    
-    
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
