@@ -40,7 +40,7 @@ class AddTrainerViewController: UIViewController {
     }
     func addTrainer() {
         EditARGs = "insertion"
-        RequestARGs = "name=" + TrainerName.text! + "&studentID=" + TrainerID.text!
+        RequestARGs = "name=" + TrainerName.text! + "&instructorID=" + TrainerID.text!
         
         // Appwide addObject function ::
         //
