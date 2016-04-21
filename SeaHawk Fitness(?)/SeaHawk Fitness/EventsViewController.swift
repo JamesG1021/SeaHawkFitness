@@ -17,7 +17,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     let eventsAPI = "EventsService"
     var RequestARGs = ""
     
-    var items = [LargeEvent]()
+    var items = [Event]()
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -86,7 +86,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         JSONService.sharedInstance.getJSON(eventsAPI, ReqARGs: RequestARGs, onCompletion: {(json:JSON) in
             if let results = json.array {
                 for entry in results {
-                    self.items.append(LargeEvent(json: entry))
+                    self.items.append(Event(json: entry))
                     print(entry)
                 }
                 dispatch_async(dispatch_get_main_queue(), {self.collectionView!.reloadData()})

@@ -1,24 +1,15 @@
 //
-//  AddStudentsViewController.swift
+//  DeleteStudentsViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by Amanda Harman on 4/18/16.
+//  Created by Amanda Harman on 4/20/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
 import UIKit
 
-class AddStudentsViewController: UIViewController {
-    @IBOutlet weak var pageTitle: UILabel!
-    @IBOutlet weak var studentIDLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
+class DeleteStudentsViewController: UIViewController {
     
-    @IBOutlet weak var studentIDField: UITextField!
-    @IBOutlet weak var nameField: UITextField!
-
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var addButton: UIButton!
-
     let studentsAPI = "StudentService"
     
     var RequestARGs = ""
@@ -26,32 +17,29 @@ class AddStudentsViewController: UIViewController {
     
     var validInput: Bool = false
     
+    @IBOutlet var studentIDField: UITextField!
+    @IBOutlet var studentNameField: UITextField!
+    @IBOutlet var messageLabel: UILabel!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.loadView()
         
-        pageTitle.text = "Add New Student"
-        studentIDLabel.text = "ID"
-        nameLabel.text = "Name"
-        
-        messageLabel.text="Status message will go here"
-
-
-        // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func addButtonPressed(sender: UIButton) {
-        
+
+    @IBAction func submitButtonPressed(sender: AnyObject)
+    {
         checkFormFilled()
     }
     
-    func addStudent() {
-        EditARGs = "insertion"
-        RequestARGs = "name=" + nameField.text! + "&studentID=" + studentIDField.text!
+    func deleteStudent() {
+        
+        EditARGs = "deletion"
+        RequestARGs = "name=" + studentNameField.text! + "&studentID=" + studentIDField.text!
         
         // Appwide addObject function ::
         //
@@ -72,7 +60,7 @@ class AddStudentsViewController: UIViewController {
             print("You must include a studentID to add a new student!")
         }
         
-        if nameField.text == ""
+        if studentNameField.text == ""
         {
             messageLabel.hidden = false
             if messageLabel.text == ""
@@ -82,14 +70,21 @@ class AddStudentsViewController: UIViewController {
             print("You must include a student name to add a new student!")
         }
         
-        if (studentIDField.text != "" && nameField.text != "")
+        if (studentIDField.text != "" && studentNameField.text != "")
         {
             validInput = true
         }
         
         if (validInput)
         {
-            addStudent()
+           deleteStudent()
         }
     }
+
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject)
+    {
+        
+    }
+    
 }

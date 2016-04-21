@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Students{
+class Student{
     var studentID: NSInteger!
     var name: String!
     

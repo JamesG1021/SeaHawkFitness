@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -980,7 +980,7 @@
         <!--Delete Student-->
         <scene sceneID="73s-PT-cSS">
             <objects>
-                <viewController title="Delete Student" id="X0v-Ye-PuV" sceneMemberID="viewController">
+                <viewController title="Delete Student" id="X0v-Ye-PuV" customClass="DeleteStudentsViewController" customModule="SeaHawk_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4db-iZ-Fsc"/>
                         <viewControllerLayoutGuide type="bottom" id="LjI-xq-Wzg"/>
@@ -990,10 +990,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UNCW_Primary_TealBgrnd.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hrm-tI-IAf">
-                                <rect key="frame" x="41" y="28" width="240" height="128"/>
+                                <rect key="frame" x="41" y="28" width="240" height="128.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKy-hz-3ay">
-                                <rect key="frame" x="20" y="292" width="110" height="21"/>
+                                <rect key="frame" x="20" y="353.5" width="110" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="fJi-DP-8IN"/>
                                 </constraints>
@@ -1002,7 +1002,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8I-Gs-KYe">
-                                <rect key="frame" x="35" y="352" width="81" height="21"/>
+                                <rect key="frame" x="35" y="291.5" width="81" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="tah-6W-JYs"/>
                                 </constraints>
@@ -1029,6 +1029,7 @@
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelButtonPressed:" destination="X0v-Ye-PuV" eventType="touchUpInside" id="CTx-W1-pW5"/>
                                     <segue destination="jOC-EI-Zl8" kind="show" id="KNW-gC-Hh6"/>
                                 </connections>
                             </button>
@@ -1037,6 +1038,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="X0v-Ye-PuV" eventType="touchUpInside" id="em8-Ng-UOg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-cJ-ZBE">
                                 <rect key="frame" x="144" y="561" width="34" height="30"/>
@@ -1070,6 +1074,12 @@
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7z-VK-0lE">
+                                <rect key="frame" x="35" y="487" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
@@ -1078,27 +1088,32 @@
                             <constraint firstItem="GS2-cJ-ZBE" firstAttribute="top" secondItem="oLV-ou-e7N" secondAttribute="bottom" constant="8" symbolic="YES" id="CRq-fC-ZcN"/>
                             <constraint firstItem="hPG-ip-WhB" firstAttribute="top" secondItem="41j-bB-HJT" secondAttribute="bottom" constant="71" id="HZf-Lk-uSA"/>
                             <constraint firstItem="hrm-tI-IAf" firstAttribute="leading" secondItem="ROn-mQ-ZK0" secondAttribute="leadingMargin" constant="21" id="Jgi-xB-gCd"/>
-                            <constraint firstItem="41j-bB-HJT" firstAttribute="centerY" secondItem="h8I-Gs-KYe" secondAttribute="centerY" id="MPI-Ju-K3r"/>
+                            <constraint firstItem="41j-bB-HJT" firstAttribute="centerY" secondItem="h8I-Gs-KYe" secondAttribute="centerY" constant="61" id="MPI-Ju-K3r"/>
                             <constraint firstItem="hPG-ip-WhB" firstAttribute="baseline" secondItem="Pke-H0-PWo" secondAttribute="baseline" id="Mhv-n0-qpU"/>
                             <constraint firstItem="bKy-hz-3ay" firstAttribute="leading" secondItem="ROn-mQ-ZK0" secondAttribute="leadingMargin" id="OwL-2S-Viv"/>
                             <constraint firstItem="oLV-ou-e7N" firstAttribute="centerX" secondItem="GS2-cJ-ZBE" secondAttribute="centerX" id="PDr-D1-EgN"/>
                             <constraint firstItem="oLV-ou-e7N" firstAttribute="centerX" secondItem="Bfx-1u-nD5" secondAttribute="centerX" id="Sgz-6y-3TW"/>
                             <constraint firstItem="LjI-xq-Wzg" firstAttribute="top" secondItem="hPG-ip-WhB" secondAttribute="bottom" constant="121" id="WUh-ZI-oAb"/>
                             <constraint firstItem="h8I-Gs-KYe" firstAttribute="trailing" secondItem="Pke-H0-PWo" secondAttribute="trailing" id="cQ0-od-SrK"/>
-                            <constraint firstItem="bKy-hz-3ay" firstAttribute="top" secondItem="Bfx-1u-nD5" secondAttribute="bottom" constant="72" id="dJ6-nv-OvI"/>
+                            <constraint firstItem="bKy-hz-3ay" firstAttribute="top" secondItem="Bfx-1u-nD5" secondAttribute="bottom" constant="133.5" id="dJ6-nv-OvI"/>
                             <constraint firstItem="oLV-ou-e7N" firstAttribute="leading" secondItem="ROn-mQ-ZK0" secondAttribute="leadingMargin" constant="87" id="dVz-Ig-Qsp"/>
-                            <constraint firstItem="8Iy-by-uT0" firstAttribute="centerY" secondItem="bKy-hz-3ay" secondAttribute="centerY" id="dhd-Ck-R3A"/>
+                            <constraint firstItem="8Iy-by-uT0" firstAttribute="centerY" secondItem="bKy-hz-3ay" secondAttribute="centerY" constant="-61" id="dhd-Ck-R3A"/>
                             <constraint firstItem="Pke-H0-PWo" firstAttribute="top" secondItem="hPG-ip-WhB" secondAttribute="top" id="gcy-24-J5X"/>
                             <constraint firstItem="hPG-ip-WhB" firstAttribute="leading" secondItem="ROn-mQ-ZK0" secondAttribute="leading" constant="219" id="hbU-Rc-iSB"/>
                             <constraint firstItem="hrm-tI-IAf" firstAttribute="top" secondItem="4db-iZ-Fsc" secondAttribute="bottom" constant="8" symbolic="YES" id="igG-Af-1K8"/>
                             <constraint firstItem="LjI-xq-Wzg" firstAttribute="top" secondItem="GS2-cJ-ZBE" secondAttribute="bottom" constant="9" id="lNR-QJ-FL2"/>
-                            <constraint firstItem="h8I-Gs-KYe" firstAttribute="top" secondItem="bKy-hz-3ay" secondAttribute="bottom" constant="39" id="ltQ-Ek-Y9o"/>
+                            <constraint firstItem="h8I-Gs-KYe" firstAttribute="top" secondItem="bKy-hz-3ay" secondAttribute="bottom" constant="-83" id="ltQ-Ek-Y9o"/>
                             <constraint firstItem="h8I-Gs-KYe" firstAttribute="centerX" secondItem="bKy-hz-3ay" secondAttribute="centerX" id="mQO-oT-pA4"/>
                             <constraint firstItem="41j-bB-HJT" firstAttribute="trailing" secondItem="8Iy-by-uT0" secondAttribute="trailing" id="o99-E9-OCr"/>
                             <constraint firstItem="hrm-tI-IAf" firstAttribute="centerX" secondItem="Bfx-1u-nD5" secondAttribute="centerX" id="yoS-vi-cFw"/>
                             <constraint firstItem="8Iy-by-uT0" firstAttribute="leading" secondItem="bKy-hz-3ay" secondAttribute="trailing" constant="94" id="yuf-VH-EAx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="L7z-VK-0lE" id="Uz4-2v-qOg"/>
+                        <outlet property="studentIDField" destination="8Iy-by-uT0" id="uXd-gg-G66"/>
+                        <outlet property="studentNameField" destination="41j-bB-HJT" id="aSA-47-OYw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljS-Ir-et9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2094,7 +2109,6 @@
         <!--Group Exercise Schedule-->
         <scene sceneID="Wfp-Tt-nMK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3OO-78-IHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Group Exercise Schedule" id="oKb-K6-NMV" customClass="GroupExerciseViewController" customModule="SeaHawk_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KYP-hu-hdz"/>
@@ -2141,6 +2155,7 @@
                         <outlet property="txt" destination="SpT-x6-bXW" id="eZJ-WD-jfD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3OO-78-IHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1284" y="-49"/>
         </scene>
@@ -2593,13 +2608,13 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xgv-t3-fRU"/>
-        <segue reference="wda-l7-rkh"/>
-        <segue reference="FoL-ae-68Y"/>
+        <segue reference="etu-AE-D0R"/>
+        <segue reference="0R6-3K-lZA"/>
+        <segue reference="7NV-lT-Ecb"/>
+        <segue reference="KNW-gC-Hh6"/>
         <segue reference="T5L-eo-rnd"/>
         <segue reference="hQf-BD-Jui"/>
-        <segue reference="0R6-3K-lZA"/>
-        <segue reference="etu-AE-D0R"/>
+        <segue reference="FoL-ae-68Y"/>
         <segue reference="m3L-7H-uaW"/>
     </inferredMetricsTieBreakers>
 </document>

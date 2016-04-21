@@ -42,6 +42,9 @@
 		AD271FBB1CAE32640028F845 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FBA1CAE32640028F845 /* MainMenuViewController.swift */; };
 		AD36CA961CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36CA951CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift */; };
 		AD36CA981CC6AFF400AE9C0B /* EventsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD36CA971CC6AFF400AE9C0B /* EventsCollectionViewCell.swift */; };
+		AD584F841CC84B3800C4F2A3 /* MakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584F831CC84B3800C4F2A3 /* MakeRequest.swift */; };
+		AD584F861CC84B6C00C4F2A3 /* GlobalArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584F851CC84B6C00C4F2A3 /* GlobalArrays.swift */; };
+		AD584F881CC8549D00C4F2A3 /* DeleteStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584F871CC8549D00C4F2A3 /* DeleteStudentsViewController.swift */; };
 		AD5FB60F1CB01D09006FEE05 /* TableViewCellBG_base.png in Resources */ = {isa = PBXBuildFile; fileRef = AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */; };
 		AD5FB6121CB0380C006FEE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5FB6101CB0380C006FEE05 /* Main.storyboard */; };
 		AD8B83201CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B831F1CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift */; };
@@ -133,6 +136,9 @@
 		AD271FBA1CAE32640028F845 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		AD36CA951CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD36CA971CC6AFF400AE9C0B /* EventsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD584F831CC84B3800C4F2A3 /* MakeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeRequest.swift; sourceTree = "<group>"; };
+		AD584F851CC84B6C00C4F2A3 /* GlobalArrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalArrays.swift; sourceTree = "<group>"; };
+		AD584F871CC8549D00C4F2A3 /* DeleteStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteStudentsViewController.swift; sourceTree = "<group>"; };
 		AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewCellBG_base.png; sourceTree = "<group>"; };
 		AD5FB6111CB0380C006FEE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD8B831F1CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 			children = (
 				AD271FB01CAE14C70028F845 /* JSONService.swift */,
 				AD271FB21CAE15020028F845 /* SwiftyJSON.swift */,
+				AD584F831CC84B3800C4F2A3 /* MakeRequest.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -301,6 +308,7 @@
 				E0C894341CC5B82D0075ADD0 /* ShowAdventuresViewController.swift */,
 				53909EC81CC81F36007ED8E8 /* DeleteTrainerViewController.swift */,
 				53909ED01CC82103007ED8E8 /* DeleteEquipmentViewController.swift */,
+				AD584F871CC8549D00C4F2A3 /* DeleteStudentsViewController.swift */,
 			);
 			name = AdminViewControllers;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 				AD94AE781CAF3F3F00CD1C8D /* EventsItem.swift */,
 				AD94AE7A1CAF3F5600CD1C8D /* RentalsItem.swift */,
 				AD94AE7C1CAF425D00CD1C8D /* Instructor.swift */,
+				AD584F851CC84B6C00C4F2A3 /* GlobalArrays.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -517,8 +526,10 @@
 				AD271FBB1CAE32640028F845 /* MainMenuViewController.swift in Sources */,
 				AD36CA981CC6AFF400AE9C0B /* EventsCollectionViewCell.swift in Sources */,
 				AD11894D1CB3F9CE0011AF91 /* String+Replace.swift in Sources */,
+				AD584F841CC84B3800C4F2A3 /* MakeRequest.swift in Sources */,
 				E0E1CB061CC49CAC00200510 /* AddAdventuresViewController.swift in Sources */,
 				AD271FB91CAE2CAA0028F845 /* LoginViewController.swift in Sources */,
+				AD584F861CC84B6C00C4F2A3 /* GlobalArrays.swift in Sources */,
 				AD271FB71CAE16AC0028F845 /* GroupExerciseScheduleItem.swift in Sources */,
 				AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */,
 				ADAF64FF1CC292B800EE65EF /* UIImage+ImageLoader.swift in Sources */,
@@ -531,6 +542,7 @@
 				E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */,
 				E0EDAD9D1CC46FEE008D2E95 /* EventsViewController.swift in Sources */,
 				AD271FB11CAE14C70028F845 /* JSONService.swift in Sources */,
+				AD584F881CC8549D00C4F2A3 /* DeleteStudentsViewController.swift in Sources */,
 				53909ED11CC82103007ED8E8 /* DeleteEquipmentViewController.swift in Sources */,
 				AD94AE791CAF3F3F00CD1C8D /* EventsItem.swift in Sources */,
 				53909ECF1CC82084007ED8E8 /* AddEquipmentViewController.swift in Sources */,

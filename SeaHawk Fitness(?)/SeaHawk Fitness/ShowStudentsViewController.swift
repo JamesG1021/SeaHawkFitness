@@ -25,10 +25,12 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
-    let studentsAPI = "UserService"
-    var RequestARGs = ""
+    let studentsAPI = "StudentService"
     
-    var items = [Students]()
+    var RequestARGs = ""
+    var EditARGs = ""
+    
+    var items = [Student]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,8 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
         let nib = UINib(nibName:"ShowStudentsCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "ShowStudentsCell")
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
+        
         getStudents()
     }
 
@@ -50,12 +54,12 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return StudentsItems.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ShowStudentsCell = (tableView.dequeueReusableCellWithIdentifier("ShowStudentsCell") as? ShowStudentsCell)!
         
-        let student = self.items[indexPath.row]
+        let student = StudentsItems[indexPath.row]
         
         cell.setupCell(String(student.studentID), name: student.name)
         
@@ -78,20 +82,15 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func getStudents(){
-        JSONService.sharedInstance.getJSON(studentsAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(Students(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
+        
+        makeDatabaseRequest(self.view, API: studentsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
 
+    func refreshList(notification: NSNotification){
+        
+        self.tableView.reloadData()
+    }
 
     
 
