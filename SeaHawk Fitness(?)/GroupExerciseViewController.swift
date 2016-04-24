@@ -27,6 +27,7 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width

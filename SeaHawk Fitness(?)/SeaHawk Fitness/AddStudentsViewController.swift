@@ -28,6 +28,7 @@ class AddStudentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         pageTitle.text = "Add New Student"
         studentIDLabel.text = "ID"

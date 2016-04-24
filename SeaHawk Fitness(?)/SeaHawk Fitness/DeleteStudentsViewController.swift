@@ -23,6 +23,7 @@ class DeleteStudentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.loadView()
+        self.hideKeyboardWhenTappedAround()
         
     }
     
