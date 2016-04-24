@@ -1,3 +1,6 @@
+# This file is used to populate the database with fau data. It is used for demo purposes as well as testing.
+
+# Populate the students tables
 insert into students values
 (950000001, 'James');
 insert into students values
@@ -39,6 +42,7 @@ insert into students values
 insert into students values
 (950000020, 'Bob');
 
+# Populate the trainers table
 insert into trainers values
 (950123450, 'Mohammad');
 insert into trainers values
@@ -60,6 +64,7 @@ insert into trainers values
 insert into trainers values
 (950123459, 'Einstien');
 
+#Populate the trains table
 insert into trains values
 (950123450,950000001);
 insert into trains values
@@ -101,6 +106,7 @@ insert into trains values
 insert into trains values
 (950123459,950000020);
 
+#Populate the equipment table
 insert into equipment values
 (850120, 'Kayak');
 insert into equipment values
@@ -122,6 +128,7 @@ insert into equipment values
 insert into equipment values
 (850129, 'Grill');
 
+# Populate the rents table
 insert into rents values
 (850120,950000002);
 insert into rents values
@@ -133,6 +140,7 @@ insert into rents values
 insert into rents values
 (850128,950000010);
 
+# Populate the courses table
 insert into courses values
 (123450,'Yoga Flow','9:30am','10:30am','A new form of Yoga that will get the energy flowing.', 'Monday','200');
 insert into courses values
@@ -154,6 +162,7 @@ insert into courses values
 insert into courses values
 (123459,'Hydrofit','1:00pm','2:00pm','Low impact aquatic exercise fun!','Friday','175');
 
+# Populate the instructs table
 insert into instructs values
 (950123450,123450);
 insert into instructs values
@@ -175,6 +184,7 @@ insert into instructs values
 insert into instructs values
 (950123459,123459);
 
+# Populate the takes values
 insert into takes values
 (950000001,123450);
 insert into takes values
@@ -196,6 +206,7 @@ insert into takes values
 insert into takes values
 (950000019,123459);
 
+#Populate the events table
 insert into events values
 (890120,'8:00pm','Saturday','High paced hip hop and latin dance fitness.','Zumba');
 insert into events values
@@ -203,11 +214,13 @@ insert into events values
 insert into events values
 (890122,'8:00am','Satuday','Blast fat away with P90x',  'P90x');
 
+#Populate the sa_events table
 insert into sa_events values
 ('Kayaking Trip','04-05-16','8:00am', '04-10-16','Kayak in the Everglades',950123459, 10,20,50);
 insert into sa_events values
 ('Camping Trip','03-21-16', '9:00am', '03-28-16','Come join us for camping in the Appalachian Mountains',950123458, 10, 15,75);
 
+#Populate the attending table
 insert into attending values
 (950000020, '04-05-16', '8:00am');
 insert into attending values
@@ -225,4 +238,5 @@ insert into attending values
 insert into attending values
 (950000006, '03-21-16', '9:00am');
 
+#Turn on foreign key checks after everything is inside the database
 SET FOREIGN_KEY_CHECKS=1;
