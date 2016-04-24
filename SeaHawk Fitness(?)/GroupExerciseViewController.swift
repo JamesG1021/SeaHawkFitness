@@ -2,7 +2,7 @@
 //  GroupExerciseViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones on 3/31/16.
+//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 3/31/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1773,7 +1773,7 @@
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.12156862745098039" green="0.47843137254901957" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="uzi-un-E0c" firstAttribute="top" secondItem="3y8-og-CJN" secondAttribute="bottom" id="0HF-uY-aNd">
                                 <variation key="widthClass=compact" constant="-24"/>
@@ -1825,8 +1825,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xr-bF-jbK">
-                                <rect key="frame" x="229" y="320" width="143" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJN-3c-xNp">
+                                <rect key="frame" x="283" y="550" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vyf-IO-cjW" kind="show" id="COA-6r-Dec"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xr-bF-jbK">
+                                <rect key="frame" x="229" y="336" width="143" height="30"/>
                                 <state key="normal" title="Small Group Training">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1834,8 +1843,8 @@
                                     <rect key="frame" x="128.5" y="320" width="143" height="30"/>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aZ-Td-WqG">
-                                <rect key="frame" x="190" y="279" width="220" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aZ-Td-WqG">
+                                <rect key="frame" x="190" y="295" width="220" height="30"/>
                                 <state key="normal" title="Individual and Partner Packages">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1846,8 +1855,8 @@
                                     <segue destination="77R-oY-QOc" kind="show" id="ctj-lY-en7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-Xf-ecD">
-                                <rect key="frame" x="239" y="366" width="122" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-Xf-ecD">
+                                <rect key="frame" x="239" y="382" width="122" height="30"/>
                                 <state key="normal" title="Registration Form">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1855,17 +1864,8 @@
                                     <rect key="frame" x="138.5" y="366" width="122" height="30"/>
                                 </variation>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJN-3c-xNp">
-                                <rect key="frame" x="283" y="550" width="34" height="30"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vyf-IO-cjW" kind="show" id="COA-6r-Dec"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEL-ba-aTf">
-                                <rect key="frame" x="244" y="241" width="112" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEL-ba-aTf">
+                                <rect key="frame" x="244" y="257" width="112" height="30"/>
                                 <state key="normal" title="Training Policies">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1905,6 +1905,7 @@
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" id="A8k-QV-dTn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bJN-3c-xNp" secondAttribute="trailing" constant="263" id="APw-Qq-RbV"/>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" id="AXH-4G-lsS"/>
+                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="top" secondItem="bEL-ba-aTf" secondAttribute="bottom" constant="8" symbolic="YES" id="Adw-en-Wns"/>
                             <constraint firstItem="bJN-3c-xNp" firstAttribute="top" secondItem="sVW-Xf-ecD" secondAttribute="bottom" id="BoW-gW-duI"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" constant="8" id="C29-yg-aSM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6xr-bF-jbK" secondAttribute="trailing" constant="208" id="DLg-7M-Cns"/>
@@ -1912,16 +1913,21 @@
                             <constraint firstItem="cuE-ZU-EWl" firstAttribute="top" secondItem="bJN-3c-xNp" secondAttribute="bottom" id="Fwa-5O-rqP"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="top" secondItem="bEL-ba-aTf" secondAttribute="bottom" constant="28" id="GAv-fu-dnA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" id="Gvx-Ia-Nfc"/>
+                            <constraint firstItem="sVW-Xf-ecD" firstAttribute="centerX" secondItem="6xr-bF-jbK" secondAttribute="centerX" id="Hai-KU-NAz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEL-ba-aTf" secondAttribute="trailing" constant="224" id="I1a-Em-tbX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" id="Jds-Zh-YhR"/>
+                            <constraint firstItem="bEL-ba-aTf" firstAttribute="top" secondItem="Qf2-m1-TeK" secondAttribute="bottom" constant="235" id="Km1-cj-0U9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" constant="219" id="KmA-SJ-e1m"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="L9H-cu-mpk"/>
                             <constraint firstItem="bJN-3c-xNp" firstAttribute="top" secondItem="sVW-Xf-ecD" secondAttribute="bottom" id="Nj9-At-MfB"/>
+                            <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" constant="16" id="O61-vV-DXU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0aZ-Td-WqG" secondAttribute="trailing" id="Ojc-Kq-mgn"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" id="Omr-mt-S0c"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" id="P1E-PT-6Rs"/>
+                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leading" constant="192" id="PZj-gZ-NiS"/>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" id="PrL-sn-mLv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6xr-bF-jbK" secondAttribute="trailing" id="RHE-y4-GRj"/>
+                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="centerX" secondItem="6xr-bF-jbK" secondAttribute="centerX" id="RQR-28-CQE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" constant="224" id="RQq-tM-Pef"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" constant="28" id="TY9-cD-ZBX"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="Tfo-eo-YLg"/>
@@ -1946,38 +1952,32 @@
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="eTN-vD-gwS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" id="ehN-Bu-otl"/>
                             <constraint firstItem="bEL-ba-aTf" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="eyS-qx-Ogg"/>
-                            <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" constant="11" id="frb-1I-MNL"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" constant="214" id="fuL-X8-6P5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bJN-3c-xNp" secondAttribute="trailing" constant="263" id="gNo-vt-F24"/>
-                            <constraint firstItem="6xr-bF-jbK" firstAttribute="centerX" secondItem="sVW-Xf-ecD" secondAttribute="centerX" id="h3x-7O-FPI"/>
-                            <constraint firstItem="6xr-bF-jbK" firstAttribute="centerX" secondItem="0aZ-Td-WqG" secondAttribute="centerX" id="idN-oz-0w3"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" constant="170" id="jHH-DM-gdd"/>
-                            <constraint firstItem="6xr-bF-jbK" firstAttribute="centerX" secondItem="F68-2h-hFu" secondAttribute="centerX" id="jS3-tm-Sr0"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="top" secondItem="bEL-ba-aTf" secondAttribute="bottom" id="jXd-IM-D8Q"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="jr5-wb-bdB"/>
                             <constraint firstItem="bEL-ba-aTf" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="kHO-ir-uN5"/>
                             <constraint firstItem="bJN-3c-xNp" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="kKR-wk-B1U"/>
                             <constraint firstItem="cuE-ZU-EWl" firstAttribute="top" secondItem="bJN-3c-xNp" secondAttribute="bottom" id="kVp-7c-yah"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEL-ba-aTf" secondAttribute="trailing" id="kdy-2c-rhG"/>
-                            <constraint firstItem="sVW-Xf-ecD" firstAttribute="centerX" secondItem="bJN-3c-xNp" secondAttribute="centerX" id="lNa-mH-VaV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bJN-3c-xNp" secondAttribute="trailing" id="mR6-Pd-qTF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEL-ba-aTf" secondAttribute="trailing" constant="224" id="mfh-sC-X4f"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" id="mhf-fN-GCh"/>
                             <constraint firstItem="bJN-3c-xNp" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" constant="263" id="ne6-me-sit"/>
                             <constraint firstItem="bEL-ba-aTf" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="o0M-k1-Dde"/>
-                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="top" secondItem="bEL-ba-aTf" secondAttribute="bottom" constant="8" symbolic="YES" id="oqx-V0-uJr"/>
                             <constraint firstItem="cuE-ZU-EWl" firstAttribute="top" secondItem="bJN-3c-xNp" secondAttribute="bottom" id="pfz-qg-W66"/>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="pgh-lz-oRT"/>
-                            <constraint firstItem="bEL-ba-aTf" firstAttribute="centerX" secondItem="0aZ-Td-WqG" secondAttribute="centerX" id="ppW-2w-7rU"/>
                             <constraint firstItem="bEL-ba-aTf" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="q19-VP-pga"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bJN-3c-xNp" secondAttribute="trailing" id="qaw-WU-ISi"/>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" constant="27" id="qcS-La-jfe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0aZ-Td-WqG" secondAttribute="trailing" id="qjq-3T-f9p"/>
                             <constraint firstItem="bJN-3c-xNp" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" constant="263" id="r1N-v9-atV"/>
+                            <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" constant="11" id="r5k-lH-ryP"/>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" id="rFp-XV-B9V"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="s0V-Rr-3wb"/>
-                            <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" constant="16" id="sKj-RL-ZRN"/>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" id="vAl-ik-Mlm"/>
+                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="centerX" secondItem="bEL-ba-aTf" secondAttribute="centerX" id="wEC-7h-zbK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEL-ba-aTf" secondAttribute="trailing" id="x5h-FO-kJM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0aZ-Td-WqG" secondAttribute="trailing" id="xpK-RE-wM3"/>
                             <constraint firstItem="cuE-ZU-EWl" firstAttribute="top" secondItem="bJN-3c-xNp" secondAttribute="bottom" constant="25" id="yU9-oz-lRh"/>
@@ -2099,7 +2099,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HY-WE-nlq">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HY-WE-nlq">
                                 <rect key="frame" x="0.0" y="544" width="600" height="56"/>
                                 <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -2122,12 +2122,12 @@
                                     <action selector="UpdateCalender:" destination="oKb-K6-NMV" eventType="touchUpInside" id="cF7-GJ-NLb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpT-x6-bXW">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpT-x6-bXW">
                                 <rect key="frame" x="0.0" y="517" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R7n-yK-cyQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R7n-yK-cyQ">
                                 <rect key="frame" x="0.0" y="51" width="600" height="465"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -2137,7 +2137,7 @@
                                     <rect key="frame" x="0.0" y="24" width="400" height="108"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFZ-O2-2zu">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFZ-O2-2zu">
                                 <rect key="frame" x="39" y="13" width="34" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="dHM-h3-EOq">
@@ -2199,18 +2199,18 @@
                                 <exclude reference="oc0-0R-aLE"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="3SL-aF-WaP"/>
+                                <exclude reference="Gm6-14-i9B"/>
                                 <exclude reference="OQE-MS-xQ8"/>
                                 <exclude reference="X2n-YO-pLt"/>
                                 <exclude reference="hJk-AA-a9a"/>
                                 <exclude reference="sqG-rR-XRI"/>
                                 <exclude reference="6Pi-YM-Hfa"/>
                                 <exclude reference="fUd-pJ-B38"/>
-                                <exclude reference="3SL-aF-WaP"/>
-                                <exclude reference="Gm6-14-i9B"/>
-                                <exclude reference="JJV-r3-rPp"/>
                                 <exclude reference="A6r-1B-bCK"/>
                                 <exclude reference="Lgz-t0-vsF"/>
                                 <exclude reference="f2x-zC-zKK"/>
+                                <exclude reference="JJV-r3-rPp"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2218,18 +2218,18 @@
                                 <include reference="oc0-0R-aLE"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="3SL-aF-WaP"/>
+                                <include reference="Gm6-14-i9B"/>
                                 <include reference="OQE-MS-xQ8"/>
                                 <include reference="X2n-YO-pLt"/>
                                 <include reference="hJk-AA-a9a"/>
                                 <include reference="sqG-rR-XRI"/>
                                 <include reference="6Pi-YM-Hfa"/>
                                 <include reference="fUd-pJ-B38"/>
-                                <include reference="3SL-aF-WaP"/>
-                                <include reference="Gm6-14-i9B"/>
-                                <include reference="JJV-r3-rPp"/>
                                 <include reference="A6r-1B-bCK"/>
                                 <include reference="Lgz-t0-vsF"/>
                                 <include reference="f2x-zC-zKK"/>
+                                <include reference="JJV-r3-rPp"/>
                             </mask>
                         </variation>
                     </view>
@@ -2598,11 +2598,11 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="X6N-jZ-EWz"/>
                                 <exclude reference="ry8-wq-eu0"/>
                                 <exclude reference="sE8-Ic-Nit"/>
+                                <exclude reference="Pwm-Tl-A7v"/>
+                                <exclude reference="VET-Ia-waa"/>
                                 <exclude reference="kdQ-LV-diM"/>
                                 <exclude reference="nZ5-ty-2Mf"/>
                                 <exclude reference="pL1-Oj-epV"/>
-                                <exclude reference="Pwm-Tl-A7v"/>
-                                <exclude reference="VET-Ia-waa"/>
                                 <exclude reference="jHB-cV-msO"/>
                                 <exclude reference="yLC-pt-LdU"/>
                                 <exclude reference="Y4O-vP-oFF"/>
@@ -2625,12 +2625,12 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="eqQ-j9-aXz"/>
                                 <include reference="ry8-wq-eu0"/>
                                 <include reference="sE8-Ic-Nit"/>
+                                <include reference="Pwm-Tl-A7v"/>
+                                <include reference="VET-Ia-waa"/>
                                 <include reference="kdQ-LV-diM"/>
                                 <exclude reference="mN2-N1-pMl"/>
                                 <include reference="nZ5-ty-2Mf"/>
                                 <include reference="pL1-Oj-epV"/>
-                                <include reference="Pwm-Tl-A7v"/>
-                                <include reference="VET-Ia-waa"/>
                                 <include reference="jHB-cV-msO"/>
                                 <include reference="yLC-pt-LdU"/>
                                 <include reference="Y4O-vP-oFF"/>
@@ -2682,7 +2682,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                     <action selector="updateAdventures:" destination="nek-8d-lkt" eventType="touchUpInside" id="nQS-Ve-kzZ"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-mo-Gqx">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-mo-Gqx">
                                 <rect key="frame" x="20" y="68" width="560" height="440"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BpN-cL-elp">
@@ -2704,7 +2704,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                     <rect key="frame" x="6" y="22" width="400" height="108"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-N2-Cyl">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-N2-Cyl">
                                 <rect key="frame" x="268" y="5" width="34" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="TYH-ub-yJf"/>
@@ -2779,11 +2779,11 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="9SN-bD-4Xu"/>
                                 <exclude reference="GWR-ll-lLn"/>
                                 <exclude reference="vau-vh-jfO"/>
+                                <exclude reference="rRl-nb-MOk"/>
+                                <exclude reference="yvU-u5-Nia"/>
                                 <exclude reference="Ce9-Gn-TaA"/>
                                 <exclude reference="IZq-JJ-AjS"/>
                                 <exclude reference="uUp-M6-Scb"/>
-                                <exclude reference="rRl-nb-MOk"/>
-                                <exclude reference="yvU-u5-Nia"/>
                                 <exclude reference="P36-zj-23k"/>
                                 <exclude reference="s0a-c4-amY"/>
                                 <exclude reference="nLa-PO-pHg"/>
@@ -2802,16 +2802,16 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="H9h-dX-AY4"/>
                                 <exclude reference="eZo-1p-xvd"/>
                                 <include reference="vau-vh-jfO"/>
+                                <exclude reference="Xr5-7W-7Bs"/>
+                                <exclude reference="gUc-WU-a0g"/>
+                                <include reference="rRl-nb-MOk"/>
+                                <include reference="yvU-u5-Nia"/>
                                 <exclude reference="AVh-FV-gzN"/>
                                 <exclude reference="CRr-uh-B8f"/>
                                 <include reference="Ce9-Gn-TaA"/>
                                 <include reference="IZq-JJ-AjS"/>
                                 <exclude reference="u5k-lw-4wj"/>
                                 <include reference="uUp-M6-Scb"/>
-                                <exclude reference="Xr5-7W-7Bs"/>
-                                <exclude reference="gUc-WU-a0g"/>
-                                <include reference="rRl-nb-MOk"/>
-                                <include reference="yvU-u5-Nia"/>
                                 <include reference="P36-zj-23k"/>
                                 <exclude reference="Tqs-40-a1q"/>
                                 <exclude reference="ceU-Ij-Vib"/>
@@ -2843,7 +2843,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-lk-aW1">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YwJ-lk-aW1">
                                 <rect key="frame" x="19" y="104" width="562" height="377"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mb9-LR-zXq" customClass="RentalsCollectionViewFlowLayout" customModule="SeaHawk_Fitness" customModuleProvider="target">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -2892,7 +2892,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                     <rect key="frame" x="0.0" y="23" width="400" height="108"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-ck-nDq">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-ck-nDq">
                                 <rect key="frame" x="263" y="12" width="34" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="27" id="rrZ-Eh-LVs"/>
@@ -2960,11 +2960,11 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="1ea-tF-r4I"/>
                                 <exclude reference="cOP-2e-Fe2"/>
                                 <exclude reference="k0h-4r-uYa"/>
+                                <exclude reference="eMn-V6-t6c"/>
+                                <exclude reference="tz6-KD-3p8"/>
                                 <exclude reference="3ez-mW-Att"/>
                                 <exclude reference="aa8-9b-nMb"/>
                                 <exclude reference="x7N-Jl-83x"/>
-                                <exclude reference="eMn-V6-t6c"/>
-                                <exclude reference="tz6-KD-3p8"/>
                                 <exclude reference="B7h-hu-7C7"/>
                                 <exclude reference="l59-wV-qNC"/>
                                 <exclude reference="ygl-Ak-sJT"/>
@@ -2982,6 +2982,10 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <include reference="cOP-2e-Fe2"/>
                                 <include reference="k0h-4r-uYa"/>
                                 <exclude reference="nC4-yK-v4N"/>
+                                <exclude reference="XTd-LC-8YM"/>
+                                <include reference="eMn-V6-t6c"/>
+                                <include reference="tz6-KD-3p8"/>
+                                <exclude reference="vNl-tc-CVh"/>
                                 <exclude reference="2HZ-bH-Pvu"/>
                                 <include reference="3ez-mW-Att"/>
                                 <exclude reference="A79-X6-P3e"/>
@@ -2990,10 +2994,6 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="dS6-sU-DNr"/>
                                 <exclude reference="s2L-bN-PFk"/>
                                 <include reference="x7N-Jl-83x"/>
-                                <exclude reference="XTd-LC-8YM"/>
-                                <include reference="eMn-V6-t6c"/>
-                                <include reference="tz6-KD-3p8"/>
-                                <exclude reference="vNl-tc-CVh"/>
                                 <include reference="B7h-hu-7C7"/>
                                 <include reference="l59-wV-qNC"/>
                                 <exclude reference="w51-rg-3f6"/>
@@ -3029,13 +3029,13 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="etu-AE-D0R"/>
-        <segue reference="0R6-3K-lZA"/>
         <segue reference="FoL-ae-68Y"/>
-        <segue reference="T7L-xI-B9E"/>
+        <segue reference="K0d-aF-RvL"/>
         <segue reference="Zcj-SC-ElR"/>
-        <segue reference="7NV-lT-Ecb"/>
-        <segue reference="FhU-Vd-S0o"/>
         <segue reference="m3L-7H-uaW"/>
+        <segue reference="LhQ-TS-yg2"/>
+        <segue reference="FhU-Vd-S0o"/>
+        <segue reference="C0Y-ot-2iC"/>
+        <segue reference="7NV-lT-Ecb"/>
     </inferredMetricsTieBreakers>
 </document>

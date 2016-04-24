@@ -2,7 +2,7 @@
 //  EventsViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by Amanda Harman on 4/17/16.
+//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/17/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 

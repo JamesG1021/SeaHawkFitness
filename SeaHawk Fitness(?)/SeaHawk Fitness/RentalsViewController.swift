@@ -2,7 +2,7 @@
 //  RentalsViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones on 4/5/16.
+//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/5/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
