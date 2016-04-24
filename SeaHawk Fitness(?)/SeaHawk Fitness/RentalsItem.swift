@@ -17,13 +17,19 @@ class Rentals
     var equipPrice : NSInteger!
     var equipImage : UIImage!
     
+    let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~jsg6998/SeahawkFitness/Images/"
+    
     required init(json: JSON)
     {
-        
         equipID = json["equipID"].intValue
         equipName = json["equipName"].stringValue
+        equipPrice = json["equipPrice"].intValue
+
+        let requestPath = imageDirectoryURL + equipName.removeWhitespace() + ".jpg"
+        let url = NSURL(string: requestPath)!
+        let data = NSData(contentsOfURL: url)!
         
-        equipPrice = json["price"].intValue
-        
+        equipImage = UIImage(data : data)
+        equipImage = equipImage.scaleUIImageToSize(equipImage, size: CGSizeMake(150, 150))
     }
 }

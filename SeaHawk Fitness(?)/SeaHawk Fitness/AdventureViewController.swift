@@ -47,6 +47,9 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "AdventureCell")
         
+        let contentArea = UIImage(named: "ContentArea")!
+        view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
+        
         searchBar.placeholder = "What adventure are you looking for?"
         
         refreshButton.setTitle("Refresh Adventures", forState: UIControlState.Normal)
@@ -72,7 +75,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let trip = self.items[indexPath.row]
         
-        cell.setupCell( trip.name, date: trip.day, price: 10)
+        cell.setupCell( trip.name, date: trip.day, price: 10, image: trip.adventureImage)
         //cell.backgroundColor = UIColor.cyanColor()
         return cell
     }
@@ -107,16 +110,5 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         self.items.removeAll()
         getAdventures()
     }
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

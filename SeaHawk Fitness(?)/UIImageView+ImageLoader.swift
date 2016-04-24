@@ -11,13 +11,13 @@ import UIKit
 
 extension UIImageView
 {
-    func loadImageFromURL(RequestARGs: NSString)
+    func loadImageFromURL(imageName:String, imageSize:String)
     {
         let session = NSURLSession.sharedSession()
         let imageServiceURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/API/ImageService.php"
         //let postString = RequestARGs.dataUsingEncoding(NSUTF8StringEncoding)
         
-        let requestPath = imageServiceURL + (RequestARGs as String)
+       let requestPath = imageServiceURL + "?name=" + imageName + "&size=" + imageSize
         //print(requestPath)
         
         let imgURL: NSURL = NSURL(string: requestPath)!

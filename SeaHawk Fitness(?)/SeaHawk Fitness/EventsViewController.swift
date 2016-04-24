@@ -40,22 +40,17 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         let nib = UINib(nibName: "EventsCell", bundle: nil)
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "EventsCell")
+        
+        let contentArea = UIImage(named: "ContentArea")!
+        view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
+        
         searchBar.placeholder = "What event are you looking for?"
         refreshEvents.setTitle("Refresh Events", forState: UIControlState.Normal)
         
         getEvents()
-//        getImagesForModel()
-        
-        
-        
-
-        // Do any additional setup after loading the view.
+        //getImagesForModel()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
@@ -66,7 +61,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let event = self.items[indexPath.row]
         
-        cell.setupCell( event.eventName, date: event.day, time: event.time)
+        cell.setupCell( event.eventName, date: event.day, time: event.time, image: event.eventImage)
         return cell
         
 //        cell.eventImage.image = eventItem.equipImage

@@ -24,6 +24,7 @@ class RentalsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     func setupLayout() {
         minimumInteritemSpacing = 1
         minimumLineSpacing = 1
+        
         scrollDirection = .Vertical
     }
     
@@ -34,11 +35,12 @@ class RentalsCollectionViewFlowLayout: UICollectionViewFlowLayout {
         }
         get {
             let numberOfColumns: CGFloat = 2
-            let numberOfRows: CGFloat = 2
+            let numberOfRows: CGFloat = 2.4
             
-            let itemWidth = (CGRectGetWidth(self.collectionView!.frame) - (numberOfColumns - 1 )) / numberOfColumns
+            let itemWidth = (CGRectGetWidth(self.collectionView!.frame) - (numberOfColumns - 1)) / numberOfColumns
             let itemHeight = (CGRectGetHeight(self.collectionView!.frame) - (numberOfRows - 1)) / numberOfRows
             
+            print("Width: ", itemWidth, "Height: ", itemHeight)
             return CGSizeMake(itemWidth, itemHeight)
         }
     }

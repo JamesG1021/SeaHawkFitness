@@ -18,22 +18,22 @@ class EventsCell: UICollectionViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.backgroundColor = UIColor(red: 208/255, green: 240/255, blue: 220/255, alpha: 255/255).CGColor
-        layer.borderColor = UIColor(red: 178/255, green: 244/255, blue: 220/255, alpha: 255/255).CGColor
+        
+        layer.backgroundColor = UIColor(red: 238/255, green: 240/255, blue: 245/255, alpha: 255/255).CGColor
+        layer.borderColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 255/255).CGColor
+        
         layer.borderWidth = 2
-        layer.cornerRadius = 12
+        layer.cornerRadius = 16
+        
         layer.frame.size.height = super.frame.height
-        layer.frame.size.height = super.frame.width
+        layer.frame.size.width = super.frame.width
     }
     
     let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
     
     
-    func setupCell(name: String!, date: String!, time: String!){
-        //let imagePath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
-        //eventImage.loadImageFromURL(imagePath)
-
-        
+    func setupCell(name: String!, date: String!, time: String!, image: UIImage!){
+    
         eventName.text = name
         eventName.font = UIFont.boldSystemFontOfSize(18)
         
@@ -42,6 +42,16 @@ class EventsCell: UICollectionViewCell{
         
         eventTime.text = time
         eventTime.font = UIFont.systemFontOfSize(15)
+        
+        eventImage.image = UIImage.init(named: "NoImageFound.jpg")
+        eventImage.layer.cornerRadius = 10
+        eventImage.layer.borderWidth = 1
+        eventImage.layer.borderColor = UIColor(red: 110/255, green: 110/255, blue: 110/255, alpha: 255/255).CGColor
+        eventImage.layer.masksToBounds = true
+        
+        eventImage.image = image
+        eventImage.contentMode = UIViewContentMode.ScaleAspectFit
+        print ("Image Size:" , eventImage.image!.size)
         
     }
     

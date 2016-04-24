@@ -47,16 +47,15 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         updateButton.setTitle("Refresh Rentals", forState: UIControlState.Normal)
         
+        let contentArea = UIImage(named: "ContentArea")!
+        view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
+        
         getRentals()
         getImagesForModel()
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     @IBAction func updateRentals(sender: UIButton) {
         updateRentals()
     }
@@ -71,9 +70,9 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let rentalItem = self.items[indexPath.row]
         
-        cell.setupCell(rentalItem.equipName, price: rentalItem.equipID)
+        cell.setupCell(rentalItem.equipName, price: rentalItem.equipPrice, image: rentalItem.equipImage)
         
-        cell.rentalImage.image = rentalItem.equipImage
+        //cell.rentalImage.image = UIImage.init(named: "NoImageFound.jpg")
         
         print(cell.rentalImage.image)
         
@@ -89,7 +88,6 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func getRentals() {
-        
         JSONService.sharedInstance.getJSON (rentalsAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array {
                 for entry in results {
@@ -149,14 +147,5 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

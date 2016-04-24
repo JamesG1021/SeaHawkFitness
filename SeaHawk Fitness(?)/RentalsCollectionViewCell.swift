@@ -23,10 +23,8 @@ class RentalsCollectionCell : UICollectionViewCell
     var showingBack = false
     var initNumber:Int = 0
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+    let imageServiceURL = "http://webdev.cislabs.uncw.edu/~jsg6998/SeahawkFitness/API/ImageService.php"
+    /*
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -36,32 +34,48 @@ class RentalsCollectionCell : UICollectionViewCell
         
         self.contentView.addGestureRecognizer(singleTap)
         self.contentView.userInteractionEnabled = true
-
-        self.backgroundColor = UIColor.clearColor()
         
     }
+   */
+    override func awakeFromNib() {
+        layer.frame.size.height = super.frame.height
+        layer.frame.size.width = super.frame.width
+    }
     
-    func setupCell(name: String!, price: Int!)
+    func setupCell(name: String!, price: Int!, image: UIImage!)
     {
         let cellWidth = self.frame.width
         let cellHeight = self.frame.height
+        print ("Cell Width: ",cellWidth)
+        print ("Cell Height: ",cellHeight)
         
-        FRONT.layer.backgroundColor = UIColor(red: 208/255, green: 240/255, blue: 220/255, alpha: 255/255).CGColor
-        FRONT.layer.borderColor = UIColor(red: 178/255, green: 244/255, blue: 220/255, alpha: 255/255).CGColor
-        FRONT.layer.borderWidth = 2
-        FRONT.layer.cornerRadius = 12
+        self.backgroundColor = UIColor.clearColor()
         
-        BACK.layer.backgroundColor =  UIColor(red: 208/255, green: 240/255, blue: 220/255, alpha: 255/255).CGColor
-        BACK.layer.borderColor = UIColor(red: 178/255, green: 244/255, blue: 220/255, alpha: 255/255).CGColor
-        BACK.layer.borderWidth = 2
-        BACK.layer.cornerRadius = 12
+        FRONT.layer.backgroundColor = UIColor(red: 238/255, green: 240/255, blue: 243/255, alpha: 255/255).CGColor
+        FRONT.layer.borderColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 255/255).CGColor
+        FRONT.layer.borderWidth = 3
+        FRONT.layer.cornerRadius = 15
         
-        rentalImage.image = UIImage.init(named: "NoImageFound")
+        BACK.layer.backgroundColor =  UIColor(red: 238/255, green: 240/255, blue: 243/255, alpha: 255/255).CGColor
+        BACK.layer.borderColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 255/255).CGColor
+        BACK.layer.borderWidth = 3
+        BACK.layer.cornerRadius = 15
+        
+        
+        rentalImage.image = UIImage.init(named: "NoImageFound.jpg")
+        rentalImage.layer.cornerRadius = 10
+        rentalImage.layer.borderWidth = 1
+        rentalImage.layer.borderColor = UIColor(red: 110/255, green: 110/255, blue: 110/255, alpha: 255/255).CGColor
+        rentalImage.layer.masksToBounds = true
+        
+        rentalImage.image = image
+        rentalImage.contentMode = UIViewContentMode.ScaleAspectFit
+        print ("Image Size:" , rentalImage.image!.size)
         
         rentalName.text = name
         rentalName.font = UIFont.boldSystemFontOfSize(18)
         
-        rentalPrice.text = String(price)
+        rentalPrice.text = "$ " + String(price)
         rentalPrice.font = UIFont.systemFontOfSize(15)
         rentalPrice.textColor = UIColor.grayColor()
         

@@ -19,16 +19,22 @@ func makeDatabaseRequest(sender: UIView, API: NSString, EditARGs: NSString, Requ
                     print(entry)
                 } else {
                     if (API == "RentalService") {
+                        RentalItems.removeAll()
                         RentalItems.append(Rentals(json : entry))
                     } else if (API == "TrainersService") {
+                        InstructorsItems.removeAll()
                         InstructorsItems.append(Instructor(json : entry))
                     } else if (API == "StudentService") {
+                        StudentsItems.removeAll()
                         StudentsItems.append(Student(json : entry))
                     } else if (API == "GroupExerciseService") {
+                        ExerciseClassItems.removeAll()
                         ExerciseClassItems.append(GroupExerciseClass(json : entry))
                     } else if (API == "EventsService") {
+                        EventsItems.removeAll()
                         EventsItems.append(Event(json : entry))
                     } else if (API == "AdventuresService") {
+                        AdventuresItems.removeAll()
                         AdventuresItems.append(AdventuresTrip(json : entry))
                     } else {
                         print("Something Went very Wrong")

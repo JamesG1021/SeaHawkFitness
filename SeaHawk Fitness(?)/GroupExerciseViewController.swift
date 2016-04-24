@@ -8,51 +8,6 @@
 
 import UIKit
 
-class ExerciseClassCell : UITableViewCell
-{
-    
-    @IBOutlet weak var ExerciseClassName: UILabel!
-    @IBOutlet weak var ExerciseClassTimeframe: UILabel!
-    @IBOutlet weak var ExerciseClassLocation: UILabel!
-    @IBOutlet weak var ExerciseClassDescription: UITextView!
-    
-    
-    func setupCell(name: String!, startTime: String!, location: Int!, description: String!)
-    {
-        // Add end time to create a time range.
-        
-        ExerciseClassDescription.text = description
-        ExerciseClassDescription.hidden = true
-        
-        ExerciseClassName.text = name
-        ExerciseClassName.font = UIFont.boldSystemFontOfSize(18)
-        
-        ExerciseClassLocation.text = String(location)
-        ExerciseClassLocation.textColor = UIColor.grayColor()
-        ExerciseClassLocation.font = UIFont.systemFontOfSize(15)
-        
-        ExerciseClassTimeframe.text = startTime
-        ExerciseClassTimeframe.textColor = UIColor.grayColor()
-        ExerciseClassTimeframe.font = UIFont.systemFontOfSize(15)
-        
-        self.contentView.clipsToBounds = true;
-        
-    }
-}
-
-class ClassDescriptionCell : UITableViewCell
-{
-    @IBOutlet weak var ClassDescription: UITextView!
-    
-    @IBOutlet weak var MinimizeArrow: UIImageView!
-    
-    func setupCell(description: String!)
-    {
-        
-    }
-}
-
-
 class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -66,10 +21,19 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     
     var items = [GroupExerciseClass]()
     
+    var screenSize: CGRect!
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        screenSize = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
         
+        let contentArea = UIImage(named: "ContentArea")!
+        view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
         /*
         let tapSelector : Selector = #selector(self.selectCalenderItem(_:))
         let dblTapSelector : Selector = #selector(self.showDescription)
@@ -102,6 +66,9 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         tableView.registerNib(descNib, forCellReuseIdentifier: "CalenderDescriptionCell")
         tableView.registerNib(classNib, forCellReuseIdentifier: "CalenderItemCell")
         
+        tableView.layer.cornerRadius = 10
+        tableView.layer.masksToBounds = true
+        
         txt.placeholder = "What day would you like to see?"
         
         UpdateCalenderButton.setTitle("Update Calender", forState: UIControlState.Normal)
@@ -112,10 +79,6 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBAction func UpdateCalender(sender: UIButton) {
         updateCalender()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,13 +91,16 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         let exerciseClass = self.items[indexPath.row]
 
         cell.setupCell(exerciseClass.courseName,
-                       startTime: exerciseClass.time,
-                       location: exerciseClass.courseID,
+                       timeFrame: exerciseClass.timeFrame,
+                       location: exerciseClass.studio,
                        description: exerciseClass.description)
         
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.cyanColor()
-        cell.selectedBackgroundView = backgroundView
+        let selectedCell = UIView()
+        
+        let selectColor = UIImage(named: "SelectedCell")!
+        selectedCell.backgroundColor = UIColor(patternImage: selectColor.scaleUIImageToSize(selectColor, size: CGSizeMake(390, 62)))
+        
+        cell.selectedBackgroundView = selectedCell
         
         return cell
     }
@@ -143,21 +109,15 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ExerciseClassCell
         tableView.beginUpdates()
-        currentCell.ExerciseClassDescription.hidden = false
+        //currentCell.ExerciseClassDescription.hidden = false
         print(currentCell.ExerciseClassName.text)
         tableView.endUpdates()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 60
     }
  
-    
-    
     func getCalender() {
         JSONService.sharedInstance.getJSON (groupScheduleAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array {

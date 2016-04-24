@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AdventuresTrip
 {
@@ -17,6 +18,9 @@ class AdventuresTrip
     var instructorID: NSInteger!
     var enrolled: NSInteger!
     var capacity: NSInteger!
+    var adventureImage: UIImage!
+    
+    let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~jsg6998/SeahawkFitness/Images/"
     
     required init(json: JSON) {
         name = json["name"].stringValue
@@ -26,10 +30,16 @@ class AdventuresTrip
         instructorID = json["instructorID"].intValue
         enrolled = json["enrolled"].intValue
         capacity = json["capacity"].intValue
+        
+        let requestPath = imageDirectoryURL + name.removeWhitespace() + ".jpg"
+        let url = NSURL(string: requestPath)!
+        let data = NSData(contentsOfURL: url)!
+        
+        adventureImage = UIImage(data : data)
+        adventureImage = adventureImage.scaleUIImageToSize(adventureImage, size: CGSizeMake(520, 300))
     }
     
     // TODO: Implement Casting of time String to NSDate based format.
     // TODO: Implement Casting of day String to NSDate based format.
-    
     
 }

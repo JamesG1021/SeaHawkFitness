@@ -33,7 +33,6 @@
 		53F127511C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */; };
 		53F127521C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */; };
 		AD11894D1CB3F9CE0011AF91 /* String+Replace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11894C1CB3F9CE0011AF91 /* String+Replace.swift */; };
-		AD11894F1CB468920011AF91 /* RentalsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11894E1CB468920011AF91 /* RentalsCollectionViewLayout.swift */; };
 		AD271FAF1CAE13B10028F845 /* GroupExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */; };
 		AD271FB11CAE14C70028F845 /* JSONService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FB01CAE14C70028F845 /* JSONService.swift */; };
 		AD271FB31CAE15020028F845 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD271FB21CAE15020028F845 /* SwiftyJSON.swift */; };
@@ -47,6 +46,7 @@
 		AD584F881CC8549D00C4F2A3 /* DeleteStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD584F871CC8549D00C4F2A3 /* DeleteStudentsViewController.swift */; };
 		AD5FB60F1CB01D09006FEE05 /* TableViewCellBG_base.png in Resources */ = {isa = PBXBuildFile; fileRef = AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */; };
 		AD5FB6121CB0380C006FEE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5FB6101CB0380C006FEE05 /* Main.storyboard */; };
+		AD7DBA351CCC8C0B00ED3B0E /* GroupExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7DBA341CCC8C0B00ED3B0E /* GroupExerciseTableViewCell.swift */; };
 		AD8B83201CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B831F1CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift */; };
 		AD8B83221CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B83211CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift */; };
 		AD8B83251CC4394100B1C4FC /* RentalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8B83241CC4394100B1C4FC /* RentalsCollectionViewCell.swift */; };
@@ -59,11 +59,10 @@
 		AD9ACBF81CB37B2100E55C8A /* RentalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9ACBF71CB37B2100E55C8A /* RentalsViewController.swift */; };
 		AD9ACBFC1CB3821000E55C8A /* RentalsCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */; };
 		AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */; };
-		ADAF64FF1CC292B800EE65EF /* UIImage+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF64FE1CC292B800EE65EF /* UIImage+ImageLoader.swift */; };
+		ADAF64FF1CC292B800EE65EF /* UIImage+ImageTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */; };
 		ADAF65011CC3DAA400EE65EF /* NoImageFound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */; };
 		E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */; };
 		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
-		E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */; };
 		E0136BCC1CC8697100382DD5 /* ShowTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */; };
 		E0136BCE1CC86C1900382DD5 /* ShowTrainersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0136BCD1CC86C1900382DD5 /* ShowTrainersCell.xib */; };
 		E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E02E61BA1CA2333E00D2DD0F /* Media.xcassets */; };
@@ -129,7 +128,6 @@
 		53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary1_TealBgrnd.jpg; path = Images/UNCW_Secondary1_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
 		53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = UNCW_Secondary2_TealBgrnd.jpg; path = Images/UNCW_Secondary2_TealBgrnd.jpg; sourceTree = SOURCE_ROOT; };
 		AD11894C1CB3F9CE0011AF91 /* String+Replace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Replace.swift"; sourceTree = "<group>"; };
-		AD11894E1CB468920011AF91 /* RentalsCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupExerciseViewController.swift; path = ../GroupExerciseViewController.swift; sourceTree = "<group>"; };
 		AD271FB01CAE14C70028F845 /* JSONService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONService.swift; sourceTree = "<group>"; };
 		AD271FB21CAE15020028F845 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -143,6 +141,7 @@
 		AD584F871CC8549D00C4F2A3 /* DeleteStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteStudentsViewController.swift; sourceTree = "<group>"; };
 		AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableViewCellBG_base.png; sourceTree = "<group>"; };
 		AD5FB6111CB0380C006FEE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD7DBA341CCC8C0B00ED3B0E /* GroupExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		AD8B831F1CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		AD8B83211CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		AD8B83241CC4394100B1C4FC /* RentalsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RentalsCollectionViewCell.swift; path = ../RentalsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -155,11 +154,10 @@
 		AD9ACBF71CB37B2100E55C8A /* RentalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalsViewController.swift; sourceTree = "<group>"; };
 		AD9ACBFB1CB3821000E55C8A /* RentalsCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RentalsCollectionCell.xib; sourceTree = "<group>"; };
 		AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "../UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
-		ADAF64FE1CC292B800EE65EF /* UIImage+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageLoader.swift"; sourceTree = "<group>"; };
+		ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageTools.swift"; sourceTree = "<group>"; };
 		ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImageFound.jpg; sourceTree = "<group>"; };
 		E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
-		E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventuresCollectionViewLayout.swift; sourceTree = "<group>"; };
 		E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainersViewController.swift; sourceTree = "<group>"; };
 		E0136BCD1CC86C1900382DD5 /* ShowTrainersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowTrainersCell.xib; sourceTree = "<group>"; };
 		E02E61BA1CA2333E00D2DD0F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Images/Media.xcassets; sourceTree = SOURCE_ROOT; };
@@ -239,11 +237,9 @@
 				53F127431C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg */,
 				53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */,
 				53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */,
-				AD11894E1CB468920011AF91 /* RentalsCollectionViewLayout.swift */,
-				E00A98ED1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift */,
+				53E876A31C73C48C00A564DC /* AppDelegate.swift */,
 				AD271FB41CAE15150028F845 /* Services */,
 				AD9ACC031CB38EC600E55C8A /* Utils */,
-				53E876A31C73C48C00A564DC /* AppDelegate.swift */,
 				AD94AE751CAF3EB900CD1C8D /* Model */,
 				AD271FB51CAE15260028F845 /* UserViewControllers */,
 				AD36CA941CC6AE4E00AE9C0B /* AdminViewControllers */,
@@ -331,6 +327,7 @@
 		AD8B83261CC439C300B1C4FC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				AD7DBA341CCC8C0B00ED3B0E /* GroupExerciseTableViewCell.swift */,
 				AD36CA951CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift */,
 				AD8B83241CC4394100B1C4FC /* RentalsCollectionViewCell.swift */,
 				AD36CA971CC6AFF400AE9C0B /* EventsCollectionViewCell.swift */,
@@ -365,7 +362,7 @@
 			children = (
 				AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */,
 				AD11894C1CB3F9CE0011AF91 /* String+Replace.swift */,
-				ADAF64FE1CC292B800EE65EF /* UIImage+ImageLoader.swift */,
+				ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -530,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7DBA351CCC8C0B00ED3B0E /* GroupExerciseTableViewCell.swift in Sources */,
 				AD271FBB1CAE32640028F845 /* MainMenuViewController.swift in Sources */,
 				AD36CA981CC6AFF400AE9C0B /* EventsCollectionViewCell.swift in Sources */,
 				AD11894D1CB3F9CE0011AF91 /* String+Replace.swift in Sources */,
@@ -539,8 +537,7 @@
 				AD584F861CC84B6C00C4F2A3 /* GlobalArrays.swift in Sources */,
 				AD271FB71CAE16AC0028F845 /* GroupExerciseScheduleItem.swift in Sources */,
 				AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */,
-				ADAF64FF1CC292B800EE65EF /* UIImage+ImageLoader.swift in Sources */,
-				E00A98EE1CB59C550090DB52 /* AdventuresCollectionViewLayout.swift in Sources */,
+				ADAF64FF1CC292B800EE65EF /* UIImage+ImageTools.swift in Sources */,
 				AD271FAF1CAE13B10028F845 /* GroupExerciseViewController.swift in Sources */,
 				E0C894311CC5B2FD0075ADD0 /* AddStudentsViewController.swift in Sources */,
 				E0136BCC1CC8697100382DD5 /* ShowTrainersViewController.swift in Sources */,
@@ -565,7 +562,6 @@
 				AD8B83251CC4394100B1C4FC /* RentalsCollectionViewCell.swift in Sources */,
 				53E876AC1C73C48C00A564DC /* SeaHawk_Fitness.xcdatamodeld in Sources */,
 				53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */,
-				AD11894F1CB468920011AF91 /* RentalsCollectionViewLayout.swift in Sources */,
 				AD94AE7B1CAF3F5600CD1C8D /* RentalsItem.swift in Sources */,
 				E0351A161CC5D0B6006B83E3 /* StudentsItem.swift in Sources */,
 				AD8B83221CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift in Sources */,
