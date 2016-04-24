@@ -61,6 +61,7 @@
 		AD9ACC021CB38E7200E55C8A /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */; };
 		ADAF64FF1CC292B800EE65EF /* UIImage+ImageTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */; };
 		ADAF65011CC3DAA400EE65EF /* NoImageFound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */; };
+		ADD5881E1CCD543900D99677 /* HoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5881D1CCD543900D99677 /* HoursViewController.swift */; };
 		E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */; };
 		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
 		E0136BCC1CC8697100382DD5 /* ShowTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */; };
@@ -156,6 +157,7 @@
 		AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "../UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
 		ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageTools.swift"; sourceTree = "<group>"; };
 		ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImageFound.jpg; sourceTree = "<group>"; };
+		ADD5881D1CCD543900D99677 /* HoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursViewController.swift; sourceTree = "<group>"; };
 		E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
 		E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainersViewController.swift; sourceTree = "<group>"; };
@@ -221,22 +223,7 @@
 		53E876A21C73C48C00A564DC /* SeaHawk Fitness */ = {
 			isa = PBXGroup;
 			children = (
-				53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */,
-				53D453711C7D084D00112593 /* Personal Training Rates.png */,
-				53F127391C74F72A00E205A2 /* eventsScheduleButton_menu.png */,
-				53F1273A1C74F72A00E205A2 /* groupExerciseButton_menu.png */,
-				53F1273B1C74F72A00E205A2 /* hoursButton_menu.png */,
-				53F1273C1C74F72A00E205A2 /* personalTrainingButton_menu.png */,
-				53F1273D1C74F72A00E205A2 /* rentalsButton_menu.png */,
-				AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */,
-				53F1273E1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png */,
-				53F1273F1C74F72A00E205A2 /* SeahawkFitness_menu.png */,
-				53F127401C74F72A00E205A2 /* shAdventuresButton_menu.png */,
-				53F127411C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg */,
-				53F127421C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg */,
-				53F127431C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg */,
-				53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */,
-				53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */,
+				ADD5881C1CCD485C00D99677 /* SomeImages */,
 				53E876A31C73C48C00A564DC /* AppDelegate.swift */,
 				AD271FB41CAE15150028F845 /* Services */,
 				AD9ACC031CB38EC600E55C8A /* Utils */,
@@ -293,6 +280,7 @@
 				AD271FAE1CAE13B10028F845 /* GroupExerciseViewController.swift */,
 				E0EDAD9C1CC46FEE008D2E95 /* EventsViewController.swift */,
 				E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */,
+				ADD5881D1CCD543900D99677 /* HoursViewController.swift */,
 			);
 			name = UserViewControllers;
 			sourceTree = "<group>";
@@ -367,6 +355,29 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		ADD5881C1CCD485C00D99677 /* SomeImages */ = {
+			isa = PBXGroup;
+			children = (
+				53B01EBE1C766DE100D48838 /* SeahawkFitness_menu_blackTrim.png */,
+				53D453711C7D084D00112593 /* Personal Training Rates.png */,
+				53F127391C74F72A00E205A2 /* eventsScheduleButton_menu.png */,
+				53F1273A1C74F72A00E205A2 /* groupExerciseButton_menu.png */,
+				53F1273B1C74F72A00E205A2 /* hoursButton_menu.png */,
+				53F1273C1C74F72A00E205A2 /* personalTrainingButton_menu.png */,
+				53F1273D1C74F72A00E205A2 /* rentalsButton_menu.png */,
+				AD5FB60E1CB01D09006FEE05 /* TableViewCellBG_base.png */,
+				53F1273E1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png */,
+				53F1273F1C74F72A00E205A2 /* SeahawkFitness_menu.png */,
+				53F127401C74F72A00E205A2 /* shAdventuresButton_menu.png */,
+				53F127411C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg */,
+				53F127421C74F72A00E205A2 /* UNCW_Primary_TealBgrnd.jpg */,
+				53F127431C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg */,
+				53F127441C74F72A00E205A2 /* UNCW_Secondary1_TealBgrnd.jpg */,
+				53F127451C74F72A00E205A2 /* UNCW_Secondary2_TealBgrnd.jpg */,
+			);
+			name = SomeImages;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,7 +446,7 @@
 				TargetAttributes = {
 					53E8769F1C73C48C00A564DC = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = M66D476833;
+						DevelopmentTeam = N6XH5TX5R3;
 					};
 					53E876B61C73C48D00A564DC = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -554,6 +565,7 @@
 				AD271FB31CAE15020028F845 /* SwiftyJSON.swift in Sources */,
 				AD94AE771CAF3F1200CD1C8D /* AdventuresItem.swift in Sources */,
 				AD36CA961CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift in Sources */,
+				ADD5881E1CCD543900D99677 /* HoursViewController.swift in Sources */,
 				E0C894331CC5B81F0075ADD0 /* ShowStudentsViewController.swift in Sources */,
 				53C8B1C91CC6B97C002C556A /* AddTrainerViewController.swift in Sources */,
 				AD8B83201CC4002E00B1C4FC /* RentalsCollectionViewFlowLayout.swift in Sources */,
