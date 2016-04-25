@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializes the collection view cells and the labels that will corespond to the information.
 class AdventuresCollectionCell: UICollectionViewCell
 {
     @IBOutlet weak var adventureImage: UIImageView!
@@ -15,6 +15,7 @@ class AdventuresCollectionCell: UICollectionViewCell
     @IBOutlet weak var adventureDate: UILabel!
     @IBOutlet weak var adventurePrice: UILabel!
     
+    // specifies the nib that will be used for each cell
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,6 +31,11 @@ class AdventuresCollectionCell: UICollectionViewCell
     
     let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
     
+    // populates the cell with the correct data and image
+    // parameter name: the name of the adventure
+    // parameter date: the date of the adventure
+    // parameter price: the price of the adventure
+    // parameter image: the uiImage that is stored on the server that correseponds to this adventure.
     func setupCell(name: String!, date: String!, price: Int!, image: UIImage!){
 
         adventureName.text = name

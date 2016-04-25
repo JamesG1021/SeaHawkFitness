@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Initializes the flow layout for the Collection View
 class RentalsCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
     override init() {
