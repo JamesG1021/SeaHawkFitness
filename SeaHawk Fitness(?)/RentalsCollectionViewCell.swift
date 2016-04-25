@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Initializes the collection view and all labels needed for the page.
 class RentalsCollectionCell : UICollectionViewCell
 {
     
@@ -36,7 +37,8 @@ class RentalsCollectionCell : UICollectionViewCell
         
     }
     */
-   
+    
+    //***
     override func awakeFromNib() {
         layer.frame.size.height = super.frame.height
         layer.frame.size.width = super.frame.width
@@ -53,6 +55,10 @@ class RentalsCollectionCell : UICollectionViewCell
         
     }
     
+    // Populates the cell with the correct information
+    // parameter name: name of the equipment
+    // parameter price: price of the rental
+    // parameter image: The correct image for the equipment stored on the server.
     func setupCell(name: String!, price: Int!, image: UIImage!)
     {
         let cellWidth = self.frame.width
@@ -95,6 +101,7 @@ class RentalsCollectionCell : UICollectionViewCell
         
     }
     
+    // used to determine if the item has been tapped or not
     func tapped() {
         
         if showingBack {
@@ -111,6 +118,7 @@ class RentalsCollectionCell : UICollectionViewCell
         }
     }
     
+    // Button to reserve the equipment for rentals.
     @IBAction func ReserveNowButton(sender: AnyObject) {
     }
 }

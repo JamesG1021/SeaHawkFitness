@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+// View controller used to display the hours that the Rec Center is open
+// Initializes the page with the ability to scroll the image.
 class HoursViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var ScrollView: UIScrollView!
@@ -34,7 +35,7 @@ class HoursViewController: UIViewController, UIScrollViewDelegate {
         ScrollView.layer.cornerRadius = 8
         ScrollView.layer.masksToBounds = true
     }
-    
+    // Gives the page the functionality to zoom in on the image.
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.HoursView
     }

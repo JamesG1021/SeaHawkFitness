@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Initializes the events View Controller with the correct API as well as the collection view, text fields, and buttons
 class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -28,6 +29,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.collectionView.reloadData()
     }
     
+    // Determines what must load on the page every time it's accessed as well as set the screen constraints
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         //getImagesForModel()
     }
     
+    //***
     override func viewWillAppear(animated: Bool) {
         
         collectionView.dataSource = self
@@ -67,11 +70,14 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
 
-    
+    // creates the collection view to be used by the page
+    // parameter collectionView: specifies which ui view to use for the page
+    // parameter numberOfItemsInSection section: an int that is equal to the number of items in the list.
+    // returns the number of items in that list.
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return EventsItems.count
     }
-    
+    //***
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: EventsCell = (collectionView.dequeueReusableCellWithReuseIdentifier("EventsCell", forIndexPath: indexPath) as? EventsCell)!
         
@@ -83,6 +89,9 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
 //        cell.eventImage.image = eventItem.equipImage
     }
     
+    // Determines what item the user has selected on that page and then prints out the name, date, time and description for further scheduling use.
+    // parameter collectionView: specifies which ui view to use for the page
+    // parameter didSelectItemAtIndexPath indexPath: the current item that is selected in the list.
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         //let selectedCell:UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
@@ -96,21 +105,28 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         print("Event Description" + selectedEvent.description)
     }
     
+    // Determines what item the user has deselected on that page
+    // parameter collectionView: specifies which ui view to use for the page
+    // parameter didDeselectItemAtIndexPath indexPath: the item in the list that is no longer being selected.
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         //let cellToDeselect:UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
         //cellToDeselect.contentView.backgroundColor = UIColor.clearColor()
     }
     
+    // retrieves the list of events from the list
     func getEvents(){
         makeDatabaseRequest(self.view, API: eventsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
+    // Allows the user to search events based on name
+    // parameter sender: links to the button used to submit the querry
     @IBAction func updateEvents(sender: UIButton) {
        let eventName = searchBar?.text
         RequestARGs = "name=" + eventName!
         getEvents()
     }
     
+    // ****
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

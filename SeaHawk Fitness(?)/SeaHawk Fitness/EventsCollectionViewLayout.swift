@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Initializes the flow Layout for the collection view
 class EventsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()

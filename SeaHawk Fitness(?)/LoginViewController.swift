@@ -8,7 +8,7 @@
 
 import UIKit
 
-//
+// Sets up the View Controller for the Login page and specifies which API is to be used as well as sets the default values for the input and administrator check. Also holds the variables for the buttons, text fields, labels and the segmented control button. 
 class LoginViewController: UIViewController {
     
     let loginAPI = "LoginService"

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Initialzies the table view cels and the labels that will relate to the data populating the cells.
 class ExerciseClassCell : UITableViewCell
 {
     
@@ -17,6 +17,11 @@ class ExerciseClassCell : UITableViewCell
     //@IBOutlet weak var ExerciseClassDescription: UITextView!
     
     
+    // Puts the information pertaining to each cell in the correct place.
+    // parameter name: the name of the group exercise
+    // parameter time: the time the exercise takes place
+    // parameter location: the studio in which the exercise will take place.
+    // parameter description: A string describing the course that is being viewed.
     func setupCell(name: String!, timeFrame: String!, location: String!, description: String!)
     {
         // Add end time to create a time range.
@@ -43,6 +48,7 @@ class ExerciseClassCell : UITableViewCell
     }
 }
 
+// creates the tableview that will hold the description for the course.
 class ClassDescriptionCell : UITableViewCell
 {
     @IBOutlet weak var ClassDescription: UITextView!

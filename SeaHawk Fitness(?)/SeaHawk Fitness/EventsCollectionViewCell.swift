@@ -8,14 +8,16 @@
 
 import UIKit
 
+// initializes the events cell with the proper labels.
 class EventsCell: UICollectionViewCell{
+    
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     
-    
+    //***
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -31,7 +33,11 @@ class EventsCell: UICollectionViewCell{
     
     let imageDirectoryURL = "http://webdev.cislabs.uncw.edu/~wj8170/SeahawkFitness/Images/"
     
-    
+    // Populates the cell with the correct data
+    // parameter name: The name of the event
+    // parameter date: the date of the event
+    // parameter time: the time that the event is being held
+    // parameter image: the image to be used for the cell stored on the server.
     func setupCell(name: String!, date: String!, time: String!, image: UIImage!){
     
         eventName.text = name
