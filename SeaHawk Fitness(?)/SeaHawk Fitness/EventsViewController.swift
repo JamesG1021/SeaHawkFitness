@@ -84,13 +84,21 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        //let selectedCell:UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
+        //selectedCell.contentView.backgroundColor = UIColor(red: 90/256, green: 255/256, blue: 255/256, alpha: 0.45)
+        
         let selectedEvent = EventsItems[indexPath.row]
         
         print("Event Name = " + selectedEvent.eventName)
         print("Event Date = " + selectedEvent.day)
         print("Event Time = " + selectedEvent.time)
         print("Event Description" + selectedEvent.description)
-        
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        //let cellToDeselect:UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
+        //cellToDeselect.contentView.backgroundColor = UIColor.clearColor()
     }
     
     func getEvents(){
@@ -116,6 +124,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.view.endEditing(true)
     }
 
+    @IBAction func PresentInfoScreen(sender: AnyObject) {
+    }
 
     
     

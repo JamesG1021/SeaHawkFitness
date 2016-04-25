@@ -63,6 +63,8 @@
 		ADAF65011CC3DAA400EE65EF /* NoImageFound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */; };
 		ADD5881E1CCD543900D99677 /* HoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5881D1CCD543900D99677 /* HoursViewController.swift */; };
 		ADD588221CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD588211CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift */; };
+		ADD588241CCDBF0100D99677 /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADD588231CCDBF0100D99677 /* InfoView.xib */; };
+		ADD588261CCDC06B00D99677 /* InfoViewPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD588251CCDC06B00D99677 /* InfoViewPopup.swift */; };
 		E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */; };
 		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
 		E0136BCC1CC8697100382DD5 /* ShowTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */; };
@@ -160,6 +162,8 @@
 		ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImageFound.jpg; sourceTree = "<group>"; };
 		ADD5881D1CCD543900D99677 /* HoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursViewController.swift; sourceTree = "<group>"; };
 		ADD588211CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardHacks.swift"; sourceTree = "<group>"; };
+		ADD588231CCDBF0100D99677 /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
+		ADD588251CCDC06B00D99677 /* InfoViewPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewPopup.swift; sourceTree = "<group>"; };
 		E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
 		E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainersViewController.swift; sourceTree = "<group>"; };
@@ -317,6 +321,7 @@
 		AD8B83261CC439C300B1C4FC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ADD588251CCDC06B00D99677 /* InfoViewPopup.swift */,
 				AD7DBA341CCC8C0B00ED3B0E /* GroupExerciseTableViewCell.swift */,
 				AD36CA951CC6AF8600AE9C0B /* AdventuresCollectionViewCell.swift */,
 				AD8B83241CC4394100B1C4FC /* RentalsCollectionViewCell.swift */,
@@ -329,6 +334,7 @@
 				E0C894361CC5B8E00075ADD0 /* ShowAdventuresCell.xib */,
 				E0136BCD1CC86C1900382DD5 /* ShowTrainersCell.xib */,
 				E0C894381CC5B8F10075ADD0 /* ShowStudentsCell.xib */,
+				ADD588231CCDBF0100D99677 /* InfoView.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				53F1274E1C74F72A00E205A2 /* UNCW_Primary_1ClrBlkBgrnd_Logo.jpg in Resources */,
 				53E876AE1C73C48C00A564DC /* Assets.xcassets in Resources */,
 				53F1274B1C74F72A00E205A2 /* Screen Shot 2016-02-17 at 11.51.37 AM.png in Resources */,
+				ADD588241CCDBF0100D99677 /* InfoView.xib in Resources */,
 				ADAF65011CC3DAA400EE65EF /* NoImageFound.jpg in Resources */,
 				53F127501C74F72A00E205A2 /* UNCW_Secondary1_1ClrWhiteBgrnd.jpg in Resources */,
 				E02E61BB1CA2333E00D2DD0F /* Media.xcassets in Resources */,
@@ -580,6 +587,7 @@
 				53E876A41C73C48C00A564DC /* AppDelegate.swift in Sources */,
 				AD94AE7B1CAF3F5600CD1C8D /* RentalsItem.swift in Sources */,
 				E0351A161CC5D0B6006B83E3 /* StudentsItem.swift in Sources */,
+				ADD588261CCDC06B00D99677 /* InfoViewPopup.swift in Sources */,
 				AD8B83221CC40E4F00B1C4FC /* AdventuresCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

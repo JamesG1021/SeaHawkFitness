@@ -127,6 +127,8 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         self.view.endEditing(true)
     }
 
+    @IBAction func PresentInfoView(sender: AnyObject) {
+    }
     
     func getImagesForModel() {
         

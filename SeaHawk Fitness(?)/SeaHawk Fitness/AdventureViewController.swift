@@ -128,5 +128,7 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         self.view.endEditing(true)
     }
 
+    @IBAction func PresentInfoView(sender: AnyObject) {
+    }
 
 }

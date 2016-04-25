@@ -16,16 +16,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lxl-Sg-Ur7">
-                        <rect key="frame" x="183" y="238" width="73" height="21"/>
+                        <rect key="frame" x="143" y="238" width="82" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="73" id="e4y-4a-0gW"/>
+                            <constraint firstAttribute="width" constant="82" id="e4y-4a-0gW"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAb-nt-0Gs">
-                        <rect key="frame" x="275" y="238" width="50" height="21"/>
+                        <rect key="frame" x="240" y="238" width="85" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -47,14 +47,14 @@
                 <constraint firstItem="CcG-ye-IYC" firstAttribute="bottom" secondItem="1ZJ-ye-lmY" secondAttribute="bottomMargin" id="D6k-nn-BBc"/>
                 <constraint firstItem="CcG-ye-IYC" firstAttribute="top" secondItem="ZfI-7X-13n" secondAttribute="bottom" constant="22" id="FoE-CF-v22"/>
                 <constraint firstItem="eAb-nt-0Gs" firstAttribute="trailing" secondItem="1ZJ-ye-lmY" secondAttribute="trailingMargin" id="M5h-hr-uiY"/>
-                <constraint firstItem="eAb-nt-0Gs" firstAttribute="leading" secondItem="lxl-Sg-Ur7" secondAttribute="trailing" constant="19" id="N78-y1-8y9"/>
+                <constraint firstItem="eAb-nt-0Gs" firstAttribute="leading" secondItem="lxl-Sg-Ur7" secondAttribute="trailing" constant="15" id="N78-y1-8y9"/>
                 <constraint firstItem="ZfI-7X-13n" firstAttribute="top" secondItem="1ZJ-ye-lmY" secondAttribute="top" id="TS5-A4-3hb"/>
                 <constraint firstItem="ZfI-7X-13n" firstAttribute="leading" secondItem="1ZJ-ye-lmY" secondAttribute="leading" id="V6o-8J-JnJ"/>
-                <constraint firstAttribute="trailing" secondItem="lxl-Sg-Ur7" secondAttribute="trailing" constant="77" id="Xgm-iI-SmA"/>
+                <constraint firstAttribute="trailing" secondItem="lxl-Sg-Ur7" secondAttribute="trailing" constant="108" id="Xgm-iI-SmA"/>
                 <constraint firstItem="eAb-nt-0Gs" firstAttribute="baseline" secondItem="lxl-Sg-Ur7" secondAttribute="baseline" id="a0R-Bx-NvD"/>
                 <constraint firstItem="CcG-ye-IYC" firstAttribute="leading" secondItem="1ZJ-ye-lmY" secondAttribute="leading" constant="14" id="bKj-V6-ffT"/>
                 <constraint firstItem="CcG-ye-IYC" firstAttribute="baseline" secondItem="lxl-Sg-Ur7" secondAttribute="baseline" id="bTK-Vo-w3p"/>
-                <constraint firstItem="lxl-Sg-Ur7" firstAttribute="leading" secondItem="CcG-ye-IYC" secondAttribute="trailing" constant="16" id="mHB-fG-8RY"/>
+                <constraint firstItem="lxl-Sg-Ur7" firstAttribute="leading" secondItem="CcG-ye-IYC" secondAttribute="trailing" constant="-24" id="mHB-fG-8RY"/>
             </constraints>
             <size key="customSize" width="379" height="236"/>
             <connections>

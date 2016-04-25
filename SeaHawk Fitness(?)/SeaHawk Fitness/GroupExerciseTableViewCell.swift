@@ -22,7 +22,7 @@ class ExerciseClassCell : UITableViewCell
         // Add end time to create a time range.
         
         let baseCell = UIImage(named: "BaseCell")!
-        self.backgroundColor = UIColor(patternImage: baseCell.scaleUIImageToSize(baseCell, size: CGSizeMake(390, 62)))
+        self.backgroundColor = UIColor(patternImage: baseCell.scaleUIImageToSize(baseCell, size: CGSizeMake(354, 62)))
         
         //ExerciseClassDescription.text = description
         //ExerciseClassDescription.hidden = true

@@ -23,12 +23,11 @@ class RentalsCollectionCell : UICollectionViewCell
     var showingBack = false
     var initNumber:Int = 0
     
-    let imageServiceURL = "http://webdev.cislabs.uncw.edu/~jsg6998/SeahawkFitness/API/ImageService.php"
     /*
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        let singleTap = UITapGestureRecognizer()
+        let singleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapped")
         
         singleTap.numberOfTouchesRequired = 1
         
@@ -36,10 +35,22 @@ class RentalsCollectionCell : UICollectionViewCell
         self.contentView.userInteractionEnabled = true
         
     }
-   */
+    */
+   
     override func awakeFromNib() {
         layer.frame.size.height = super.frame.height
         layer.frame.size.width = super.frame.width
+        
+        FRONT.layer.backgroundColor = UIColor(red: 238/255, green: 240/255, blue: 243/255, alpha: 255/255).CGColor
+        FRONT.layer.borderColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 255/255).CGColor
+        FRONT.layer.borderWidth = 3
+        FRONT.layer.cornerRadius = 15
+        
+        BACK.layer.backgroundColor =  UIColor(red: 238/255, green: 240/255, blue: 243/255, alpha: 255/255).CGColor
+        BACK.layer.borderColor = UIColor(red: 55/255, green: 55/255, blue: 55/255, alpha: 255/255).CGColor
+        BACK.layer.borderWidth = 3
+        BACK.layer.cornerRadius = 15
+        
     }
     
     func setupCell(name: String!, price: Int!, image: UIImage!)
@@ -88,11 +99,15 @@ class RentalsCollectionCell : UICollectionViewCell
         
         if showingBack {
             NSLog("showBack")
-            UIView.transitionFromView(BACK, toView: FRONT, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
+            UIView.transitionFromView(BACK, toView: FRONT, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
+            
             showingBack = false
+            
         } else {
-            UIView.transitionFromView(FRONT, toView: BACK, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            UIView.transitionFromView(FRONT, toView: BACK, duration: 0.5, options: UIViewAnimationOptions.TransitionFlipFromRight, completion: nil)
+            
             showingBack = true
+
         }
     }
     
