@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Initializes the Group Exercise View Controller with the correct API as well as the table view, text fields, and buttons
 class GroupExerciseViewController: UIViewController, UITableViewDataSource,
 UITableViewDelegate, UITextFieldDelegate {
     
@@ -30,7 +30,7 @@ UITableViewDelegate, UITextFieldDelegate {
         
         self.tableView.reloadData()
     }
-    
+    // Determines what must load on the group exercise page whenever it is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +63,7 @@ UITableViewDelegate, UITextFieldDelegate {
         
         // Do any additional setup after loading the view.
     }
-    
+    //***
     override func viewWillAppear(animated: Bool) {
 
         self.tableView.dataSource = self
@@ -89,15 +89,21 @@ UITableViewDelegate, UITextFieldDelegate {
         
 
     }
-    
+    // Updates the calender whenever the button is pressed.
+    //parameter sender: links to the UIButton that refreshes the calender.
     @IBAction func UpdateCalender(sender: UIButton) {
         updateCalender()
     }
     
+    // creates the Table view for the page
+    // parameters UITableView: loads the Table view
+    // parameters numberOfRowsInSection section: an int telling how many items need to be displayed on the page
+    // returns the count of items in the list of Group Exercise.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ExerciseClassItems.count
     }
     
+    //***
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ExerciseClassCell = (tableView.dequeueReusableCellWithIdentifier("CalenderItemCell") as? ExerciseClassCell)!
         
@@ -115,7 +121,7 @@ UITableViewDelegate, UITextFieldDelegate {
         
         return cell
     }
-    
+    //***
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ExerciseClassCell
@@ -124,21 +130,22 @@ UITableViewDelegate, UITextFieldDelegate {
         print(currentCell.ExerciseClassName.text)
         //tableView.endUpdates()
     }
-    
+    //***
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
     }
- 
+    // Makes the request to the API to get the calender containing the group Schedule
     func getCalender() {
         makeDatabaseRequest(self.view, API: groupScheduleAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
+    // Updates the calender based on what day the user enters into the text field.
     func updateCalender() {
         let day = txt?.text
         RequestARGs = "day=" + day!
         getCalender()
     }
-    
+    //***
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -151,7 +158,7 @@ UITableViewDelegate, UITextFieldDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    //***
     @IBAction func PresentInfoView(sender: AnyObject) {
     }
     
@@ -178,7 +185,7 @@ UITableViewDelegate, UITextFieldDelegate {
         
     }
     */
-    
+    // Displays the description of the course you are looking at.
     func showDescription()
     {
         print("show cell description")

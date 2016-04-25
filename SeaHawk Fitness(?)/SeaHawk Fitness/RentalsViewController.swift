@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Sets up the Rentals View Controller and specifies which API to use for the requests made, the use of the collection view, text fields, buttons, and the size of the icons thats will appear.
 class RentalsViewController:
 UIViewController, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
@@ -25,11 +26,13 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
+    // Refreshes the rentals page
+    // -Parameter notifications: Information that needs to be broadcasted elsewhere in the app.
     func refreshList(notification: NSNotification){
         
         self.collectionView.reloadData()
     }
-    
+    // Determines what must load on the page whenever this page is opened. sets the screen size, the collection view cells and the UI Image that is to be used.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +54,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         // Do any additional setup after loading the view.
     }
     
+    //***
     override func viewWillAppear(animated: Bool) {
         
         collectionView.dataSource = self
@@ -72,15 +76,22 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         }
         //getImagesForModel()
     }
-
+    
+    // updates the rentals page upon request 
+    // parameter sender: Links to button to create the request to refresh.
     @IBAction func updateRentals(sender: UIButton) {
         updateRentals()
     }
     
+    // creates the collection view for the page
+    // parameters collectionView: loads the UICollection view
+    // parameters numberOfItemsInSection section: an int telling how many items need to be displayed on the page
+    // returns the count of items in the list of rentals.
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return RentalItems.count
     }
     
+    //**
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: RentalsCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("RentalCell", forIndexPath: indexPath) as? RentalsCollectionCell)!
@@ -96,6 +107,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         return cell
     }
     
+    // adds functionality to select item on the page
+    // paramater collectionView: loads the UICollection View
+    // parameter didSelectItemAtIndexPath indexPath: finds the item at the selected index to display it as selected so it can return the name, id and price of the rental for further use.
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let selectedRental = RentalItems[indexPath.row]
         
@@ -104,16 +118,17 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         print("Rental Price = ", selectedRental.equipPrice)
     }
     
+    // retrieves the list of rentals
     func getRentals() {
         makeDatabaseRequest(self.view, API: rentalsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
-    
+    // updates the list of rentals
     func updateRentals() {
         let rentalName = searchBar?.text
         RequestARGs = "equipName=" + rentalName!
         getRentals()
     }
-    
+    // ***
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -126,10 +141,11 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    //***
     @IBAction func PresentInfoView(sender: AnyObject) {
     }
     
+    // Contacts the Webdev server to retrieve the appropriate image for the current item.
     func getImagesForModel() {
         
         let session = NSURLSession.sharedSession()
