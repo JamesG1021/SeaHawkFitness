@@ -16,13 +16,18 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     @IBOutlet weak var updateButton: UIButton!
     
     let rentalsAPI = "RentalService"
-    var RequestARGs = ""
     
-    var items = [Rentals]()
+    var RequestARGs = ""
+    var EditARGs = ""
 
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    
+    func refreshList(notification: NSNotification){
+        
+        self.collectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +37,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.backgroundColor = UIColor.clearColor()
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         
         let layout: UICollectionViewFlowLayout = RentalsCollectionViewFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: false)
@@ -43,18 +45,31 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         let nib = UINib(nibName: "RentalsCollectionCell", bundle: nil)
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "RentalCell")
         
+        let contentArea = UIImage(named: "ContentArea")!
+        view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        
+        collectionView.backgroundColor = UIColor.clearColor()
+        collectionView.layer.cornerRadius = 8
+        collectionView.layer.masksToBounds = true
         
         searchBar.placeholder = "What did you want to rent today?"
         
         updateButton.setTitle("Refresh Rentals", forState: UIControlState.Normal)
         
-        let contentArea = UIImage(named: "ContentArea")!
-        view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
-        
-        getRentals()
-        getImagesForModel()
-
-        // Do any additional setup after loading the view.
+        // This avoids a database recall by checking to see if the model is populated
+        if RentalItems.count == 0 {
+            getRentals()
+        }
+        //getImagesForModel()
     }
 
     @IBAction func updateRentals(sender: UIButton) {
@@ -62,14 +77,14 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return RentalItems.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: RentalsCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("RentalCell", forIndexPath: indexPath) as? RentalsCollectionCell)!
         
-        let rentalItem = self.items[indexPath.row]
+        let rentalItem = RentalItems[indexPath.row]
         
         cell.setupCell(rentalItem.equipName, price: rentalItem.equipPrice, image: rentalItem.equipImage)
         
@@ -81,7 +96,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let selectedRental = items[indexPath.row]
+        let selectedRental = RentalItems[indexPath.row]
         
         print("Rental Name = " + selectedRental.equipName)
         print("Rental ID = ", selectedRental.equipID)
@@ -89,23 +104,12 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func getRentals() {
-        JSONService.sharedInstance.getJSON (rentalsAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(Rentals(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.collectionView!.reloadData()
-                })
-            }
-        })
+        makeDatabaseRequest(self.view, API: rentalsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
     func updateRentals() {
         let rentalName = searchBar?.text
         RequestARGs = "equipName=" + rentalName!
-        self.items.removeAll()
         getRentals()
     }
     
@@ -116,7 +120,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let imageSize = "150"
     
-        for rentalItem in items {
+        for rentalItem in RentalItems {
             
             let RequestARGs = "?size=" + imageSize + "&name=" + rentalItem.equipName.removeWhitespace()
             let requestPath = imageServiceURL + RequestARGs

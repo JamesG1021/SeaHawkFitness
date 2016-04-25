@@ -3,36 +3,47 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowStudentsCell" rowHeight="110" id="p3c-HX-2VW" customClass="ShowStudentsCell" customModule="SeaHawk_Fitness" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="593" height="110"/>
+            <rect key="frame" x="0.0" y="0.0" width="352" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3c-HX-2VW" id="1LR-PV-LdL">
-                <rect key="frame" x="0.0" y="0.0" width="593" height="109.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="352" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77i-UN-NDt">
-                        <rect key="frame" x="33" y="8" width="256" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feD-kg-PPJ">
+                        <rect key="frame" x="19" y="44" width="199" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feD-kg-PPJ">
-                        <rect key="frame" x="33" y="55" width="285" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77i-UN-NDt">
+                        <rect key="frame" x="232" y="44" width="105" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="mOK-VF-oGB"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="feD-kg-PPJ" firstAttribute="leading" secondItem="1LR-PV-LdL" secondAttribute="leadingMargin" constant="11" id="4Lt-xb-ne4"/>
+                    <constraint firstItem="feD-kg-PPJ" firstAttribute="baseline" secondItem="77i-UN-NDt" secondAttribute="baseline" id="Dwr-Yc-glp"/>
+                    <constraint firstItem="77i-UN-NDt" firstAttribute="leading" secondItem="feD-kg-PPJ" secondAttribute="trailing" constant="14" id="FN3-ra-97o"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="77i-UN-NDt" secondAttribute="trailing" constant="7" id="VuK-Q5-2iA"/>
+                    <constraint firstItem="feD-kg-PPJ" firstAttribute="centerY" secondItem="1LR-PV-LdL" secondAttribute="centerY" id="qnD-yP-4Ve"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="studentID" destination="77i-UN-NDt" id="Ig0-gA-ZJ7"/>
                 <outlet property="studentName" destination="feD-kg-PPJ" id="lkM-Bj-Rk5"/>
             </connections>
-            <point key="canvasLocation" x="509.5" y="280"/>
+            <point key="canvasLocation" x="389" y="280"/>
         </tableViewCell>
     </objects>
 </document>

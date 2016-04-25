@@ -14,6 +14,10 @@ class ShowAdventuresCell: UITableViewCell{
     
     func setupCell(name: String!){
         adventureName.text = name
+        
+        let baseCell = UIImage(named: "BaseCell")!
+        self.backgroundColor = UIColor(patternImage: baseCell.scaleUIImageToSize(baseCell, size: CGSizeMake(340, 110)))
+        
         self.contentView.clipsToBounds = true;
     }
 }
@@ -21,14 +25,22 @@ class ShowAdventuresCell: UITableViewCell{
 class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var tableView: UITableView!
 
-    let adventuresAPI = "SHAdventuresService"
-    var RequestARGs = ""
+    let adventuresAPI = "AdventuresService"
     
-    var items = [AdventuresTrip]()
+    var RequestARGs = ""
+    var EditARGs = ""
+    
+    
+    func refreshList(notification: NSNotification){
+        
+        self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -40,7 +52,10 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
         let nib = UINib(nibName:"ShowAdventuresCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "ShowAdventuresCell")
         
-        getAdventures()
+        if AdventuresItems.count == 0 {
+            getAdventures()
+        }
+        
         
     }
 
@@ -49,12 +64,12 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return AdventuresItems.count
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ShowAdventuresCell = (tableView.dequeueReusableCellWithIdentifier("ShowAdventuresCell") as? ShowAdventuresCell)!
         
-        let adventure = self.items[indexPath.row]
+        let adventure = AdventuresItems[indexPath.row]
         
         cell.setupCell(adventure.name)
         
@@ -70,25 +85,11 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
         tableView.endUpdates()
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 110
     }
     
     func getAdventures(){
-        JSONService.sharedInstance.getJSON(adventuresAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(AdventuresTrip(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
-
+        makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
 

@@ -143,6 +143,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jlz-gC-sdj">
                                 <rect key="frame" x="0.0" y="52" width="600" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="528" id="0Uw-F2-qxw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Uw-F2-qxw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0Uw-F2-qxw"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEc-No-jdM">
                                 <rect key="frame" x="72" y="14" width="46" height="30"/>
@@ -155,6 +168,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jlz-gC-sdj" secondAttribute="bottom" constant="20" symbolic="YES" id="Dzw-hy-LmJ"/>
+                            <constraint firstItem="jlz-gC-sdj" firstAttribute="top" secondItem="SEc-No-jdM" secondAttribute="bottom" constant="8" symbolic="YES" id="QPg-D7-lcC"/>
+                            <constraint firstItem="jlz-gC-sdj" firstAttribute="leading" secondItem="MlF-Hl-kXY" secondAttribute="leadingMargin" id="RMG-iV-dLe"/>
+                            <constraint firstItem="jlz-gC-sdj" firstAttribute="trailing" secondItem="MlF-Hl-kXY" secondAttribute="trailingMargin" id="ave-FQ-lC4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dzw-hy-LmJ"/>
+                                <exclude reference="QPg-D7-lcC"/>
+                                <exclude reference="RMG-iV-dLe"/>
+                                <exclude reference="ave-FQ-lC4"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Dzw-hy-LmJ"/>
+                                <include reference="QPg-D7-lcC"/>
+                                <include reference="RMG-iV-dLe"/>
+                                <include reference="ave-FQ-lC4"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="jlz-gC-sdj" id="sft-ZT-BVx"/>
@@ -162,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajh-oD-WGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2944" y="976"/>
+            <point key="canvasLocation" x="-2944.5" y="976"/>
         </scene>
         <!--Delete Trainer-->
         <scene sceneID="4z9-bN-yid">
@@ -1165,6 +1200,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IKo-E6-Mry">
                                 <rect key="frame" x="0.0" y="82" width="600" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="491" id="J51-ml-09o"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J51-ml-09o"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="J51-ml-09o"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdu-SJ-vuD">
                                 <rect key="frame" x="87" y="28" width="46" height="30"/>
@@ -1177,6 +1225,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="IKo-E6-Mry" firstAttribute="top" secondItem="Rdu-SJ-vuD" secondAttribute="bottom" constant="26" id="1bW-mx-uqo"/>
+                            <constraint firstItem="IKo-E6-Mry" firstAttribute="leading" secondItem="kv2-oR-J2D" secondAttribute="leadingMargin" id="T96-PR-9tx"/>
+                            <constraint firstItem="Qzg-gr-SUB" firstAttribute="top" secondItem="IKo-E6-Mry" secondAttribute="bottom" constant="25" id="lKS-Sd-NdG"/>
+                            <constraint firstItem="IKo-E6-Mry" firstAttribute="trailing" secondItem="kv2-oR-J2D" secondAttribute="trailingMargin" id="o4i-MK-m9Y"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1bW-mx-uqo"/>
+                                <exclude reference="T96-PR-9tx"/>
+                                <exclude reference="o4i-MK-m9Y"/>
+                                <exclude reference="lKS-Sd-NdG"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="1bW-mx-uqo"/>
+                                <include reference="T96-PR-9tx"/>
+                                <include reference="o4i-MK-m9Y"/>
+                                <include reference="lKS-Sd-NdG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="IKo-E6-Mry" id="LDH-s9-FjM"/>
@@ -1184,7 +1254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CWV-DJ-LYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130" y="3115"/>
+            <point key="canvasLocation" x="-130.5" y="3115"/>
         </scene>
         <!--Add Adventures -->
         <scene sceneID="z5T-e9-WgC">
@@ -1514,6 +1584,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sQJ-9n-Lo6">
                                 <rect key="frame" x="0.0" y="65" width="600" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="515" id="kim-3h-Wzt"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="kim-3h-Wzt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="kim-3h-Wzt"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4r-qW-DGv">
                                 <rect key="frame" x="90" y="20" width="46" height="30"/>
@@ -1525,6 +1608,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="sQJ-9n-Lo6" firstAttribute="leading" secondItem="IJX-1b-LA7" secondAttribute="leadingMargin" id="Blm-fY-n68"/>
+                            <constraint firstItem="sQJ-9n-Lo6" firstAttribute="top" secondItem="a4r-qW-DGv" secondAttribute="bottom" constant="15" id="CrC-Ma-x5l"/>
+                            <constraint firstAttribute="bottom" secondItem="sQJ-9n-Lo6" secondAttribute="bottom" constant="20" symbolic="YES" id="kxu-nL-7xB"/>
+                            <constraint firstItem="sQJ-9n-Lo6" firstAttribute="trailing" secondItem="IJX-1b-LA7" secondAttribute="trailingMargin" id="udQ-aG-MIu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Blm-fY-n68"/>
+                                <exclude reference="CrC-Ma-x5l"/>
+                                <exclude reference="kxu-nL-7xB"/>
+                                <exclude reference="udQ-aG-MIu"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Blm-fY-n68"/>
+                                <include reference="CrC-Ma-x5l"/>
+                                <include reference="kxu-nL-7xB"/>
+                                <include reference="udQ-aG-MIu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="sQJ-9n-Lo6" id="0bE-wa-2fw"/>
@@ -1537,7 +1642,7 @@
         <!--Main Menu-->
         <scene sceneID="33e-iJ-FiG">
             <objects>
-                <viewController title="Main Menu" id="vyf-IO-cjW" sceneMemberID="viewController">
+                <viewController title="Main Menu" id="vyf-IO-cjW" customClass="MainMenuViewController" customModule="SeaHawk_Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AYQ-IV-QY9"/>
                         <viewControllerLayoutGuide type="bottom" id="cTU-Zn-Em8"/>
@@ -1934,18 +2039,12 @@
                                 <state key="normal" title="Small Group Training">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="129" y="320" width="143" height="30"/>
-                                </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aZ-Td-WqG">
                                 <rect key="frame" x="190" y="295" width="220" height="30"/>
                                 <state key="normal" title="Individual and Partner Packages">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="90" y="279" width="220" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="77R-oY-QOc" kind="show" id="ctj-lY-en7"/>
                                 </connections>
@@ -1955,18 +2054,12 @@
                                 <state key="normal" title="Registration Form">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="139" y="366" width="122" height="30"/>
-                                </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEL-ba-aTf">
                                 <rect key="frame" x="244" y="257" width="112" height="30"/>
                                 <state key="normal" title="Training Policies">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="144" y="241" width="112" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="oU1-J6-Blu" kind="show" id="9Wq-MF-Z2P"/>
                                 </connections>
@@ -2024,7 +2117,9 @@
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="centerX" secondItem="6xr-bF-jbK" secondAttribute="centerX" id="Hai-KU-NAz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEL-ba-aTf" secondAttribute="trailing" constant="224" id="I1a-Em-tbX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" id="Jds-Zh-YhR"/>
-                            <constraint firstItem="bEL-ba-aTf" firstAttribute="top" secondItem="Qf2-m1-TeK" secondAttribute="bottom" constant="235" id="Km1-cj-0U9"/>
+                            <constraint firstItem="bEL-ba-aTf" firstAttribute="top" secondItem="Qf2-m1-TeK" secondAttribute="bottom" constant="235" id="Km1-cj-0U9">
+                                <variation key="widthClass=compact" constant="221"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="sVW-Xf-ecD" secondAttribute="trailing" constant="219" id="KmA-SJ-e1m"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leadingMargin" id="L9H-cu-mpk"/>
                             <constraint firstItem="bJN-3c-xNp" firstAttribute="top" secondItem="sVW-Xf-ecD" secondAttribute="bottom" id="Nj9-At-MfB"/>
@@ -2032,7 +2127,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="0aZ-Td-WqG" secondAttribute="trailing" id="Ojc-Kq-mgn"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" id="Omr-mt-S0c"/>
                             <constraint firstItem="sVW-Xf-ecD" firstAttribute="top" secondItem="6xr-bF-jbK" secondAttribute="bottom" id="P1E-PT-6Rs"/>
-                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leading" constant="192" id="PZj-gZ-NiS"/>
+                            <constraint firstItem="0aZ-Td-WqG" firstAttribute="leading" secondItem="F68-2h-hFu" secondAttribute="leading" constant="192" id="PZj-gZ-NiS">
+                                <variation key="widthClass=compact" constant="90"/>
+                            </constraint>
                             <constraint firstItem="6xr-bF-jbK" firstAttribute="top" secondItem="0aZ-Td-WqG" secondAttribute="bottom" id="PrL-sn-mLv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6xr-bF-jbK" secondAttribute="trailing" id="RHE-y4-GRj"/>
                             <constraint firstItem="0aZ-Td-WqG" firstAttribute="centerX" secondItem="6xr-bF-jbK" secondAttribute="centerX" id="RQR-28-CQE"/>
@@ -2241,14 +2338,24 @@
                                     <action selector="UpdateCalender:" destination="oKb-K6-NMV" eventType="touchUpInside" id="cF7-GJ-NLb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpT-x6-bXW">
-                                <rect key="frame" x="0.0" y="517" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R7n-yK-cyQ">
                                 <rect key="frame" x="0.0" y="51" width="600" height="465"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="395" id="jdZ-Ut-h6B">
+                                        <variation key="widthClass=compact" constant="405"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jdZ-Ut-h6B"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jdZ-Ut-h6B"/>
+                                    </mask>
+                                </variation>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top Bar" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-0R-aLE">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -2272,7 +2379,8 @@
                                         <exclude reference="g3C-Q1-x74"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="11" y="559" width="28" height="31"/>
                                     <mask key="constraints">
                                         <include reference="dHM-h3-EOq"/>
                                         <include reference="g3C-Q1-x74"/>
@@ -2282,61 +2390,85 @@
                                     <segue destination="vyf-IO-cjW" kind="show" id="iu0-Jf-wUM"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="SearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="SpT-x6-bXW">
+                                <rect key="frame" x="0.0" y="517" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="dMR-ns-dxk">
+                                        <variation key="widthClass=compact" constant="52"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dMR-ns-dxk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dMR-ns-dxk"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.1215686351" green="0.47843140360000003" blue="0.44705885649999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="oc0-0R-aLE" firstAttribute="trailing" secondItem="R7n-yK-cyQ" secondAttribute="trailing" id="2Lo-i7-BvD"/>
-                            <constraint firstItem="bFZ-O2-2zu" firstAttribute="leading" secondItem="R7n-yK-cyQ" secondAttribute="leading" id="3SL-aF-WaP">
-                                <variation key="widthClass=compact" constant="-1"/>
+                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="leading" secondItem="oc0-0R-aLE" secondAttribute="leading" id="4oy-L7-fqJ">
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="SpT-x6-bXW" firstAttribute="leading" secondItem="ifq-el-u7k" secondAttribute="leading" id="6Pi-YM-Hfa"/>
                             <constraint firstItem="3HY-WE-nlq" firstAttribute="bottom" secondItem="meA-eQ-hmR" secondAttribute="top" id="A6r-1B-bCK">
                                 <variation key="widthClass=compact" constant="-11"/>
                             </constraint>
-                            <constraint firstItem="bFZ-O2-2zu" firstAttribute="top" secondItem="SpT-x6-bXW" secondAttribute="bottom" constant="11" id="Gm6-14-i9B"/>
+                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="top" secondItem="oc0-0R-aLE" secondAttribute="bottom" constant="8" symbolic="YES" id="FeE-wh-iXz">
+                                <variation key="widthClass=compact" constant="6"/>
+                            </constraint>
+                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="top" secondItem="ifq-el-u7k" secondAttribute="top" constant="93" id="HOw-9J-f4s">
+                                <variation key="widthClass=compact" constant="91"/>
+                            </constraint>
                             <constraint firstItem="meA-eQ-hmR" firstAttribute="top" secondItem="bFZ-O2-2zu" secondAttribute="bottom" constant="7" id="JJV-r3-rPp">
                                 <variation key="widthClass=compact" constant="10"/>
                             </constraint>
+                            <constraint firstItem="bFZ-O2-2zu" firstAttribute="top" secondItem="SpT-x6-bXW" secondAttribute="bottom" constant="8" symbolic="YES" id="JQG-zz-Wwj">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="SpT-x6-bXW" firstAttribute="top" secondItem="R7n-yK-cyQ" secondAttribute="bottom" constant="3" id="LFq-k1-rGQ">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstItem="3HY-WE-nlq" firstAttribute="top" secondItem="SpT-x6-bXW" secondAttribute="bottom" constant="6" id="LT5-FI-bkN">
+                                <variation key="widthClass=compact" constant="1"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="3HY-WE-nlq" secondAttribute="trailing" constant="45" id="Lgz-t0-vsF"/>
-                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="centerX" secondItem="SpT-x6-bXW" secondAttribute="centerX" id="OQE-MS-xQ8"/>
-                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="top" secondItem="KYP-hu-hdz" secondAttribute="bottom" constant="79" id="X2n-YO-pLt">
-                                <variation key="widthClass=compact" constant="82"/>
+                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="trailing" secondItem="oc0-0R-aLE" secondAttribute="trailing" id="P1n-SC-E3a">
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="3HY-WE-nlq" firstAttribute="top" secondItem="SpT-x6-bXW" secondAttribute="bottom" constant="3" id="f2x-zC-zKK">
-                                <variation key="widthClass=compact" constant="9"/>
+                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="centerX" secondItem="ifq-el-u7k" secondAttribute="centerX" id="QiS-nF-nxB"/>
+                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="leading" secondItem="ifq-el-u7k" secondAttribute="leadingMargin" constant="-8" id="SgD-HL-nI5">
+                                <variation key="widthClass=compact" constant="-8"/>
                             </constraint>
+                            <constraint firstItem="SpT-x6-bXW" firstAttribute="centerX" secondItem="R7n-yK-cyQ" secondAttribute="centerX" id="Un8-yg-MEg"/>
                             <constraint firstItem="oc0-0R-aLE" firstAttribute="top" secondItem="ifq-el-u7k" secondAttribute="topMargin" constant="-4" id="fGd-8e-OGu"/>
-                            <constraint firstItem="SpT-x6-bXW" firstAttribute="top" secondItem="R7n-yK-cyQ" secondAttribute="bottom" constant="50" id="fUd-pJ-B38">
-                                <variation key="widthClass=compact" constant="35"/>
-                            </constraint>
-                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="centerX" secondItem="ifq-el-u7k" secondAttribute="centerX" id="hJk-AA-a9a"/>
-                            <constraint firstItem="oc0-0R-aLE" firstAttribute="leading" secondItem="R7n-yK-cyQ" secondAttribute="leading" id="p6W-Gz-0NK"/>
-                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="top" secondItem="oc0-0R-aLE" secondAttribute="bottom" constant="7" id="sQL-jJ-8hT">
-                                <variation key="widthClass=compact" constant="17"/>
-                            </constraint>
-                            <constraint firstItem="R7n-yK-cyQ" firstAttribute="leading" secondItem="ifq-el-u7k" secondAttribute="leadingMargin" constant="-8" id="sqG-rR-XRI"/>
+                            <constraint firstItem="SpT-x6-bXW" firstAttribute="leading" secondItem="ifq-el-u7k" secondAttribute="leading" id="nzS-xH-1N4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="oc0-0R-aLE"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2Lo-i7-BvD"/>
                                 <exclude reference="fGd-8e-OGu"/>
-                                <exclude reference="p6W-Gz-0NK"/>
-                                <exclude reference="OQE-MS-xQ8"/>
-                                <exclude reference="X2n-YO-pLt"/>
-                                <exclude reference="hJk-AA-a9a"/>
-                                <exclude reference="sQL-jJ-8hT"/>
-                                <exclude reference="sqG-rR-XRI"/>
-                                <exclude reference="6Pi-YM-Hfa"/>
-                                <exclude reference="fUd-pJ-B38"/>
-                                <exclude reference="3SL-aF-WaP"/>
-                                <exclude reference="Gm6-14-i9B"/>
+                                <exclude reference="4oy-L7-fqJ"/>
+                                <exclude reference="FeE-wh-iXz"/>
+                                <exclude reference="HOw-9J-f4s"/>
+                                <exclude reference="P1n-SC-E3a"/>
+                                <exclude reference="QiS-nF-nxB"/>
+                                <exclude reference="SgD-HL-nI5"/>
+                                <exclude reference="LFq-k1-rGQ"/>
+                                <exclude reference="Un8-yg-MEg"/>
+                                <exclude reference="nzS-xH-1N4"/>
+                                <exclude reference="JQG-zz-Wwj"/>
                                 <exclude reference="JJV-r3-rPp"/>
                                 <exclude reference="A6r-1B-bCK"/>
+                                <exclude reference="LT5-FI-bkN"/>
                                 <exclude reference="Lgz-t0-vsF"/>
-                                <exclude reference="f2x-zC-zKK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -2344,22 +2476,21 @@
                                 <include reference="oc0-0R-aLE"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2Lo-i7-BvD"/>
                                 <include reference="fGd-8e-OGu"/>
-                                <include reference="p6W-Gz-0NK"/>
-                                <include reference="OQE-MS-xQ8"/>
-                                <include reference="X2n-YO-pLt"/>
-                                <include reference="hJk-AA-a9a"/>
-                                <include reference="sQL-jJ-8hT"/>
-                                <include reference="sqG-rR-XRI"/>
-                                <include reference="6Pi-YM-Hfa"/>
-                                <include reference="fUd-pJ-B38"/>
-                                <include reference="3SL-aF-WaP"/>
-                                <include reference="Gm6-14-i9B"/>
+                                <include reference="4oy-L7-fqJ"/>
+                                <include reference="FeE-wh-iXz"/>
+                                <include reference="HOw-9J-f4s"/>
+                                <include reference="P1n-SC-E3a"/>
+                                <include reference="QiS-nF-nxB"/>
+                                <include reference="SgD-HL-nI5"/>
+                                <include reference="LFq-k1-rGQ"/>
+                                <include reference="Un8-yg-MEg"/>
+                                <include reference="nzS-xH-1N4"/>
+                                <include reference="JQG-zz-Wwj"/>
                                 <include reference="JJV-r3-rPp"/>
                                 <include reference="A6r-1B-bCK"/>
+                                <include reference="LT5-FI-bkN"/>
                                 <include reference="Lgz-t0-vsF"/>
-                                <include reference="f2x-zC-zKK"/>
                             </mask>
                         </variation>
                     </view>
@@ -2628,10 +2759,12 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                     </mask>
                                 </variation>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="38R-mQ-Eaj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="SearchBar" disabledBackground="SearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="38R-mQ-Eaj">
                                 <rect key="frame" x="0.0" y="483" width="600" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Emx-jz-IZf"/>
+                                    <constraint firstAttribute="height" constant="30" id="Emx-jz-IZf">
+                                        <variation key="widthClass=compact" constant="56"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -2649,7 +2782,9 @@ All training sessions will be a maximum of 60 minutes in length</string>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ej-TU-U6O">
                                 <rect key="frame" x="231" y="20" width="34" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="31" id="nCY-W9-CKr"/>
+                                    <constraint firstAttribute="width" constant="31" id="nCY-W9-CKr">
+                                        <variation key="widthClass=compact" constant="26"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" image="BackArrow">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2686,17 +2821,17 @@ All training sessions will be a maximum of 60 minutes in length</string>
                             <constraint firstAttribute="trailing" secondItem="Qfg-Hj-ksI" secondAttribute="trailing" id="LsK-Pf-GgI"/>
                             <constraint firstItem="3Ej-TU-U6O" firstAttribute="leading" secondItem="izp-oH-ELn" secondAttribute="leadingMargin" constant="-6" id="Pwm-Tl-A7v"/>
                             <constraint firstItem="Qfg-Hj-ksI" firstAttribute="top" secondItem="GvX-7x-pOK" secondAttribute="bottom" constant="3" id="SPf-SU-QJy">
-                                <variation key="widthClass=compact" constant="13"/>
+                                <variation key="widthClass=compact" constant="3"/>
                             </constraint>
                             <constraint firstItem="GvX-7x-pOK" firstAttribute="trailing" secondItem="Qfg-Hj-ksI" secondAttribute="trailing" id="SjH-o8-eyg"/>
                             <constraint firstItem="3Ej-TU-U6O" firstAttribute="top" secondItem="4jj-zq-aPo" secondAttribute="top" id="VET-Ia-waa">
-                                <variation key="widthClass=compact" constant="-1"/>
+                                <variation key="widthClass=compact" constant="5"/>
                             </constraint>
                             <constraint firstItem="Qfg-Hj-ksI" firstAttribute="trailing" secondItem="38R-mQ-Eaj" secondAttribute="trailing" id="WnP-wj-NJt">
                                 <variation key="widthClass=compact" constant="-200"/>
                             </constraint>
                             <constraint firstItem="Qfg-Hj-ksI" firstAttribute="top" secondItem="GF8-BX-bc3" secondAttribute="bottom" constant="76" id="X6N-jZ-EWz">
-                                <variation key="widthClass=compact" constant="81"/>
+                                <variation key="widthClass=compact" constant="71"/>
                             </constraint>
                             <constraint firstItem="VWP-h7-CRI" firstAttribute="top" secondItem="3Ej-TU-U6O" secondAttribute="bottom" constant="8" symbolic="YES" id="Y4O-vP-oFF">
                                 <variation key="widthClass=compact" constant="9"/>
@@ -2714,13 +2849,15 @@ All training sessions will be a maximum of 60 minutes in length</string>
                             </constraint>
                             <constraint firstItem="38R-mQ-Eaj" firstAttribute="centerX" secondItem="Qfg-Hj-ksI" secondAttribute="centerX" id="nZ5-ty-2Mf"/>
                             <constraint firstItem="38R-mQ-Eaj" firstAttribute="top" secondItem="Qfg-Hj-ksI" secondAttribute="bottom" constant="11" id="pL1-Oj-epV">
-                                <variation key="widthClass=compact" constant="32"/>
+                                <variation key="widthClass=compact" constant="2"/>
                             </constraint>
                             <constraint firstItem="Qfg-Hj-ksI" firstAttribute="centerY" secondItem="izp-oH-ELn" secondAttribute="centerY" id="ry8-wq-eu0">
-                                <variation key="widthClass=compact" constant="-8.5"/>
+                                <variation key="widthClass=compact" constant="-7.5"/>
                             </constraint>
                             <constraint firstItem="Qfg-Hj-ksI" firstAttribute="leading" secondItem="izp-oH-ELn" secondAttribute="leadingMargin" constant="-5" id="sE8-Ic-Nit"/>
-                            <constraint firstItem="4jj-zq-aPo" firstAttribute="top" secondItem="38R-mQ-Eaj" secondAttribute="bottom" constant="11" id="yLC-pt-LdU"/>
+                            <constraint firstItem="4jj-zq-aPo" firstAttribute="top" secondItem="38R-mQ-Eaj" secondAttribute="bottom" constant="11" id="yLC-pt-LdU">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -2800,29 +2937,6 @@ All training sessions will be a maximum of 60 minutes in length</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-9g-Mv7">
-                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="163" id="s3g-dP-XDu"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="s3g-dP-XDu"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="187" y="550" width="163" height="38"/>
-                                    <mask key="constraints">
-                                        <include reference="s3g-dP-XDu"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="updateAdventures:" destination="nek-8d-lkt" eventType="touchUpInside" id="nQS-Ve-kzZ"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-mo-Gqx">
                                 <rect key="frame" x="20" y="68" width="560" height="440"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2834,10 +2948,23 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-Di-Ouh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="SearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="Ny2-Di-Ouh">
                                 <rect key="frame" x="0.0" y="516" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jDR-dQ-bUl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jDR-dQ-bUl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jDR-dQ-bUl"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Top Bar" translatesAutoresizingMaskIntoConstraints="NO" id="Dd2-aK-pEA">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -2845,8 +2972,12 @@ All training sessions will be a maximum of 60 minutes in length</string>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7o-N2-Cyl">
                                 <rect key="frame" x="268" y="5" width="34" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="TYH-ub-yJf"/>
-                                    <constraint firstAttribute="width" constant="29" id="X5B-KG-kmQ"/>
+                                    <constraint firstAttribute="height" constant="38" id="TYH-ub-yJf">
+                                        <variation key="widthClass=compact" constant="32"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="29" id="X5B-KG-kmQ">
+                                        <variation key="widthClass=compact" constant="27"/>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Back" image="BackArrow">
                                     <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2867,27 +2998,57 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                     <segue destination="vyf-IO-cjW" kind="show" id="kWM-y4-He8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-9g-Mv7">
+                                <rect key="frame" x="0.0" y="539" width="600" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="s3g-dP-XDu"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="s3g-dP-XDu"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="187" y="554" width="163" height="38"/>
+                                    <mask key="constraints">
+                                        <include reference="s3g-dP-XDu"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="updateAdventures:" destination="nek-8d-lkt" eventType="touchUpInside" id="nQS-Ve-kzZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529411764705" green="0.52068965517241383" blue="0.45533352349560502" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Luu-mo-Gqx" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leading" constant="20" id="2uz-GK-SOf"/>
+                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leading" id="3lJ-G6-9gs"/>
                             <constraint firstItem="Dd2-aK-pEA" firstAttribute="top" secondItem="fdm-ve-zoI" secondAttribute="top" id="5qN-IE-6Le"/>
+                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="top" secondItem="Luu-mo-Gqx" secondAttribute="bottom" constant="38" id="6uT-ID-Mrp">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="Luu-mo-Gqx" firstAttribute="leading" secondItem="Ny2-Di-Ouh" secondAttribute="leading" constant="20" id="8oh-Cj-tb5"/>
                             <constraint firstItem="Luu-mo-Gqx" firstAttribute="trailing" secondItem="fdm-ve-zoI" secondAttribute="trailingMargin" id="9SN-bD-4Xu"/>
                             <constraint firstItem="Ny2-Di-Ouh" firstAttribute="trailing" secondItem="hBY-9g-Mv7" secondAttribute="trailing" id="AVh-FV-gzN">
                                 <variation key="widthClass=compact" constant="82"/>
                             </constraint>
                             <constraint firstItem="Ny2-Di-Ouh" firstAttribute="top" secondItem="Luu-mo-Gqx" secondAttribute="bottom" constant="8" symbolic="YES" id="CRr-uh-B8f"/>
-                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leading" id="Ce9-Gn-TaA"/>
+                            <constraint firstItem="p7o-N2-Cyl" firstAttribute="top" secondItem="Ny2-Di-Ouh" secondAttribute="bottom" constant="2" id="Dpc-KM-Kyw">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="Luu-mo-Gqx" firstAttribute="top" secondItem="p7o-N2-Cyl" secondAttribute="bottom" constant="33" id="GQp-x8-Q0P">
                                 <variation key="widthClass=compact" constant="-532"/>
                             </constraint>
                             <constraint firstItem="Luu-mo-Gqx" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leadingMargin" id="GWR-ll-lLn"/>
                             <constraint firstAttribute="trailing" secondItem="Luu-mo-Gqx" secondAttribute="trailing" constant="20" id="H9h-dX-AY4"/>
-                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="centerX" secondItem="Luu-mo-Gqx" secondAttribute="centerX" id="IZq-JJ-AjS"/>
                             <constraint firstItem="Dd2-aK-pEA" firstAttribute="leading" secondItem="Luu-mo-Gqx" secondAttribute="leading" id="IeR-LQ-3eF"/>
-                            <constraint firstItem="Luu-mo-Gqx" firstAttribute="top" secondItem="Dd2-aK-pEA" secondAttribute="bottom" constant="3" id="JZQ-h6-cXu"/>
-                            <constraint firstItem="hBY-9g-Mv7" firstAttribute="top" secondItem="Ny2-Di-Ouh" secondAttribute="bottom" constant="4" id="P36-zj-23k"/>
+                            <constraint firstItem="Luu-mo-Gqx" firstAttribute="top" secondItem="Dd2-aK-pEA" secondAttribute="bottom" constant="3" id="JZQ-h6-cXu">
+                                <variation key="widthClass=compact" constant="1"/>
+                            </constraint>
+                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="centerX" secondItem="Luu-mo-Gqx" secondAttribute="centerX" id="Jeu-M7-5Xx"/>
                             <constraint firstItem="bRs-6P-rv4" firstAttribute="top" secondItem="Ny2-Di-Ouh" secondAttribute="bottom" constant="54" id="Tkh-gr-0vs"/>
                             <constraint firstItem="hBY-9g-Mv7" firstAttribute="top" secondItem="Luu-mo-Gqx" secondAttribute="bottom" constant="31" id="Tqs-40-a1q"/>
                             <constraint firstItem="p7o-N2-Cyl" firstAttribute="top" secondItem="fdm-ve-zoI" secondAttribute="topMargin" constant="5" id="Xr5-7W-7Bs">
@@ -2902,14 +3063,12 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <variation key="widthClass=compact" constant="45"/>
                             </constraint>
                             <constraint firstItem="bRs-6P-rv4" firstAttribute="top" secondItem="p7o-N2-Cyl" secondAttribute="bottom" constant="8" symbolic="YES" id="nLa-PO-pHg"/>
-                            <constraint firstItem="p7o-N2-Cyl" firstAttribute="top" secondItem="Ny2-Di-Ouh" secondAttribute="bottom" constant="8" symbolic="YES" id="rRl-nb-MOk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hBY-9g-Mv7" secondAttribute="trailing" constant="30" id="s0a-c4-amY"/>
                             <constraint firstItem="Ny2-Di-Ouh" firstAttribute="leading" secondItem="hBY-9g-Mv7" secondAttribute="leading" id="u5k-lw-4wj">
                                 <variation key="widthClass=compact" constant="-140"/>
                             </constraint>
-                            <constraint firstItem="Ny2-Di-Ouh" firstAttribute="top" secondItem="Luu-mo-Gqx" secondAttribute="bottom" constant="28" id="uUp-M6-Scb"/>
                             <constraint firstItem="Luu-mo-Gqx" firstAttribute="top" secondItem="E18-By-pAy" secondAttribute="bottom" constant="32" id="vau-vh-jfO">
-                                <variation key="widthClass=compact" constant="79"/>
+                                <variation key="widthClass=compact" constant="77"/>
                             </constraint>
                             <constraint firstItem="p7o-N2-Cyl" firstAttribute="leading" secondItem="fdm-ve-zoI" secondAttribute="leadingMargin" constant="-8" id="yvU-u5-Nia"/>
                         </constraints>
@@ -2925,12 +3084,11 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <exclude reference="GWR-ll-lLn"/>
                                 <exclude reference="JZQ-h6-cXu"/>
                                 <exclude reference="vau-vh-jfO"/>
-                                <exclude reference="Ce9-Gn-TaA"/>
-                                <exclude reference="IZq-JJ-AjS"/>
-                                <exclude reference="uUp-M6-Scb"/>
-                                <exclude reference="rRl-nb-MOk"/>
+                                <exclude reference="3lJ-G6-9gs"/>
+                                <exclude reference="6uT-ID-Mrp"/>
+                                <exclude reference="Jeu-M7-5Xx"/>
+                                <exclude reference="Dpc-KM-Kyw"/>
                                 <exclude reference="yvU-u5-Nia"/>
-                                <exclude reference="P36-zj-23k"/>
                                 <exclude reference="s0a-c4-amY"/>
                                 <exclude reference="nLa-PO-pHg"/>
                             </mask>
@@ -2952,17 +3110,16 @@ All training sessions will be a maximum of 60 minutes in length</string>
                                 <include reference="JZQ-h6-cXu"/>
                                 <exclude reference="eZo-1p-xvd"/>
                                 <include reference="vau-vh-jfO"/>
+                                <include reference="3lJ-G6-9gs"/>
+                                <include reference="6uT-ID-Mrp"/>
                                 <exclude reference="AVh-FV-gzN"/>
                                 <exclude reference="CRr-uh-B8f"/>
-                                <include reference="Ce9-Gn-TaA"/>
-                                <include reference="IZq-JJ-AjS"/>
+                                <include reference="Jeu-M7-5Xx"/>
                                 <exclude reference="u5k-lw-4wj"/>
-                                <include reference="uUp-M6-Scb"/>
+                                <include reference="Dpc-KM-Kyw"/>
                                 <exclude reference="Xr5-7W-7Bs"/>
                                 <exclude reference="gUc-WU-a0g"/>
-                                <include reference="rRl-nb-MOk"/>
                                 <include reference="yvU-u5-Nia"/>
-                                <include reference="P36-zj-23k"/>
                                 <exclude reference="Tqs-40-a1q"/>
                                 <exclude reference="ceU-Ij-Vib"/>
                                 <include reference="s0a-c4-amY"/>
@@ -3178,6 +3335,7 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="Hours" width="813" height="1056"/>
         <image name="Personal Training Rates.png" width="784" height="450"/>
         <image name="SeahawkFitness_menu.png" width="247" height="107"/>
+        <image name="SearchBar" width="776" height="150"/>
         <image name="Top Bar" width="1560" height="465"/>
         <image name="UNCW_Primary_TealBgrnd.jpg" width="1748" height="1748"/>
         <image name="eventsScheduleButton_menu.png" width="267" height="49"/>
@@ -3188,12 +3346,12 @@ All training sessions will be a maximum of 60 minutes in length</string>
         <image name="shAdventuresButton_menu.png" width="267" height="47"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K0d-aF-RvL"/>
-        <segue reference="FoL-ae-68Y"/>
+        <segue reference="T7L-xI-B9E"/>
         <segue reference="FhU-Vd-S0o"/>
         <segue reference="Zcj-SC-ElR"/>
-        <segue reference="LhQ-TS-yg2"/>
-        <segue reference="eAm-d8-k8v"/>
+        <segue reference="kWM-y4-He8"/>
+        <segue reference="etu-AE-D0R"/>
+        <segue reference="ZZd-Ud-DlX"/>
         <segue reference="7NV-lT-Ecb"/>
         <segue reference="m3L-7H-uaW"/>
     </inferredMetricsTieBreakers>

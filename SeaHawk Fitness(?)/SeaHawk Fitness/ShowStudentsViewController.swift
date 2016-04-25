@@ -17,6 +17,9 @@ class ShowStudentsCell : UITableViewCell{
         studentID.text = studentId
         studentName.text = name
  
+        let baseCell = UIImage(named: "BaseCell")!
+        self.backgroundColor = UIColor(patternImage: baseCell.scaleUIImageToSize(baseCell, size: CGSizeMake(340, 62)))
+        
         self.contentView.clipsToBounds = true;
     }
 }
@@ -77,11 +80,9 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
         tableView.endUpdates()
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 60
     }
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
+
     
     func getStudents(){
         

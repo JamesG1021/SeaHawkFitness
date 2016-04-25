@@ -19,14 +19,18 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     // ---------- API STRINGS
     let adventuresAPI = "AdventuresService"
+    
     var RequestARGs = ""
-
-    // ---------- MODEL OBJECTS ARRAY
-    var items = [AdventuresTrip]()
+    var EditARGs = ""
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
+    
+    func refreshList(notification: NSNotification){
+        
+        self.collectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +40,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.backgroundColor = UIColor.clearColor()
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         
         let layout: UICollectionViewFlowLayout = AdventuresCollectionViewFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: false)
@@ -50,14 +51,27 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
         let contentArea = UIImage(named: "ContentArea")!
         view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.backgroundColor = UIColor.clearColor()
+        collectionView.layer.cornerRadius = 8
+        collectionView.layer.masksToBounds = true
         
         searchBar.placeholder = "What adventure are you looking for?"
         
         refreshButton.setTitle("Refresh Adventures", forState: UIControlState.Normal)
         
-        getAdventures()
+        if AdventuresItems.count == 0 {
+            getAdventures()
+        }
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -68,13 +82,13 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return AdventuresItems.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: AdventuresCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("AdventureCell", forIndexPath: indexPath) as? AdventuresCollectionCell)!
         
-        let trip = self.items[indexPath.row]
+        let trip = AdventuresItems[indexPath.row]
         
         cell.setupCell( trip.name, date: trip.day, price: 10, image: trip.adventureImage)
         //cell.backgroundColor = UIColor.cyanColor()
@@ -82,7 +96,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let selectectedAdventure = items[indexPath.row]
+        let selectectedAdventure = AdventuresItems[indexPath.row]
         
         print("Adventure Name = " + selectectedAdventure.name)
         print("Adventure Description = " + selectectedAdventure.description)
@@ -92,15 +106,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     
     func getAdventures(){
-        JSONService.sharedInstance.getJSON (adventuresAPI, ReqARGs: RequestARGs, onCompletion: {(json:JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(AdventuresTrip(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(), {self.collectionView!.reloadData()})
-            }
-        })
+        makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
             
 
@@ -108,7 +114,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     @IBAction func updateAdventures(sender: UIButton) {
         let adventureName = searchBar?.text
         RequestARGs = "name=" + adventureName!
-        self.items.removeAll()
+        AdventuresItems.removeAll()
         getAdventures()
     }
 

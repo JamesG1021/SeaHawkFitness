@@ -17,14 +17,19 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var UpdateCalenderButton: UIButton!
     
     let groupScheduleAPI = "GroupExerciseService"
-    var RequestARGs = ""
     
-    var items = [GroupExerciseClass]()
+    var RequestARGs = ""
+    var EditARGs = ""
     
     var screenSize: CGRect!
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
 
+    func refreshList(notification: NSNotification){
+        
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -33,8 +38,11 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         screenWidth = screenSize.width
         screenHeight = screenSize.height
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
+        
         let contentArea = UIImage(named: "ContentArea")!
         view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
+        
         /*
         let tapSelector : Selector = #selector(self.selectCalenderItem(_:))
         let dblTapSelector : Selector = #selector(self.showDescription)
@@ -74,7 +82,10 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         
         UpdateCalenderButton.setTitle("Update Calender", forState: UIControlState.Normal)
         
-        getCalender()
+        if ExerciseClassItems.count == 0 {
+            getCalender()
+        }
+        
 
     }
     
@@ -83,13 +94,13 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return ExerciseClassItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ExerciseClassCell = (tableView.dequeueReusableCellWithIdentifier("CalenderItemCell") as? ExerciseClassCell)!
         
-        let exerciseClass = self.items[indexPath.row]
+        let exerciseClass = ExerciseClassItems[indexPath.row]
 
         cell.setupCell(exerciseClass.courseName,
                        timeFrame: exerciseClass.timeFrame,
@@ -97,10 +108,8 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
                        description: exerciseClass.description)
         
         let selectedCell = UIView()
-        
         let selectColor = UIImage(named: "SelectedCell")!
         selectedCell.backgroundColor = UIColor(patternImage: selectColor.scaleUIImageToSize(selectColor, size: CGSizeMake(390, 62)))
-        
         cell.selectedBackgroundView = selectedCell
         
         return cell
@@ -109,10 +118,10 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ExerciseClassCell
-        tableView.beginUpdates()
+        //tableView.beginUpdates()
         //currentCell.ExerciseClassDescription.hidden = false
         print(currentCell.ExerciseClassName.text)
-        tableView.endUpdates()
+        //tableView.endUpdates()
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -120,25 +129,16 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     }
  
     func getCalender() {
-        JSONService.sharedInstance.getJSON (groupScheduleAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
-            if let results = json.array {
-                for entry in results {
-                    self.items.append(GroupExerciseClass(json: entry))
-                    print(entry)
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                })
-            }
-        })
+        makeDatabaseRequest(self.view, API: groupScheduleAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
     func updateCalender() {
         let day = txt?.text
         RequestARGs = "day=" + day!
-        self.items.removeAll()
         getCalender()
     }
+    
+    
     /*
     func selectCalenderItem(recognizer : UIGestureRecognizer) {
         print("add cell to calender")

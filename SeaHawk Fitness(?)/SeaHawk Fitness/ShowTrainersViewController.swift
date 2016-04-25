@@ -18,6 +18,9 @@ class ShowTrainersCell : UITableViewCell{
         instructorID.text = instructorId
         instructorName.text = name
 
+        let baseCell = UIImage(named: "BaseCell")!
+        self.backgroundColor = UIColor(patternImage: baseCell.scaleUIImageToSize(baseCell, size: CGSizeMake(340, 62)))
+        
         self.contentView.clipsToBounds = true;
     }
 }
@@ -51,7 +54,6 @@ class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITab
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         
-        InstructorsItems.removeAll()
         getTrainers()
     }
 
@@ -68,7 +70,7 @@ class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITab
         let cell: ShowTrainersCell = (tableView.dequeueReusableCellWithIdentifier("ShowTrainersCell") as? ShowTrainersCell)!
         
         let trainer = InstructorsItems[indexPath.row]
-        
+        print(trainer.instructorID)
         cell.setupCell(String(trainer.instructorID), name: trainer.name)
         
         let backgroundView = UIView()
@@ -76,17 +78,16 @@ class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITab
         cell.selectedBackgroundView = backgroundView
         return cell
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ShowTrainersCell
         tableView.beginUpdates()
         print(currentCell.instructorName.text)
         tableView.endUpdates()
     }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return 60
     }
     
     func getTrainers(){
