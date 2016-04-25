@@ -38,7 +38,7 @@ class RentalsCollectionCell : UICollectionViewCell
     }
     */
     
-    //***
+    // Sets the border style, corner constraints , bordar size and color as well as background color for the cells.
     override func awakeFromNib() {
         layer.frame.size.height = super.frame.height
         layer.frame.size.width = super.frame.width

@@ -17,7 +17,7 @@ class EventsCell: UICollectionViewCell{
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     
-    //***
+    // Sets the border style, frame constraints, bordar size and color as well as background color for the cells. 
     override func awakeFromNib() {
         super.awakeFromNib()
         
