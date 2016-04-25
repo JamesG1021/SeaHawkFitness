@@ -2,12 +2,14 @@
 //  eventsItem.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones on 4/1/16.
+//  Created by Weston E Jones, James Stinson Gray, Amanda Harman on 4/1/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 import Foundation
 import UIKit
 
+
+// Parses the JSON created for the events page for the  eventID, time, day, description and eventName and stores the information into a list. As well as connnects to the webdev server to fetch correct eventImage.
 class Event
 {
     var eventId: NSInteger!

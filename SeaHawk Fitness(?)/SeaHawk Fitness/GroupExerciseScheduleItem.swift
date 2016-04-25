@@ -2,12 +2,13 @@
 //  GroupExerciseScheduleItem.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones on 3/31/16.
+//  Created by Weston E Jones, James Stinson Gray, Amanda Harman on 3/31/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
 import Foundation
 
+//Creates a list by parsing the JSON file created by PHP and populates it with the courseID, courseName, startTime, endTime, studio, description, day and timeFrame values.
 class GroupExerciseClass
 {
     var courseID: NSInteger!

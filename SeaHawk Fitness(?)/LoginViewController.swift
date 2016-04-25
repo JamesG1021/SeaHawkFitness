@@ -8,6 +8,7 @@
 
 import UIKit
 
+//
 class LoginViewController: UIViewController {
     
     let loginAPI = "LoginService"
@@ -26,7 +27,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var AdministrativeSegmentedController: UISegmentedControl!
     
     @IBOutlet weak var ErrorMessageField: UILabel!
-    
+    // Determines what must load on the page whenever this view (login page) is loaded. contains the text fields to enter username and password as well as the hidden error message. 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -39,16 +40,18 @@ class LoginViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    // function for the button "Skip" on the login page to allow non-users to log into the app.
     @IBAction func UseAsGuest(sender: UIButton)
     {
             skipLogin()
     }
+    // checks for memory errors
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // Hides the error message for the login page and displays the appropriate error if either the username or password field is empty.
     @IBAction func LoginButton(sender: UIButton)
     {
         ErrorMessageField.hidden = true
@@ -87,7 +90,7 @@ class LoginViewController: UIViewController {
         
         
     }
-
+    // Determines whether the UISegmentedControl is either in the user or administrator positions.
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch AdministrativeSegmentedController.selectedSegmentIndex
         {
@@ -112,11 +115,12 @@ class LoginViewController: UIViewController {
     }
     */
     
-    
+    // Allows a user who is not in the database access the user side of the app, cannot perform any transactions though
     func skipLogin() {
         self.performSegueWithIdentifier("EnterMainMenuSegue", sender: nil)
     }
     
+    // Checks to see if the username and password fields match up with those of the Admin table in the database and if true lets them proceed to the admin pages
     func adminLogin() {
         let username = LoginTextField.text
         let password = PasswordTextField.text
@@ -145,6 +149,7 @@ class LoginViewController: UIViewController {
         })
     }
     
+    // Checks to see if the username and password fields match up with those of the student table in the database and if so allows the user to access the user side of the app with "full" functionality.
     func studentLogin() {
         
         let username = LoginTextField.text

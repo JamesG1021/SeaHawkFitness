@@ -2,13 +2,14 @@
 //  GroupExerciseScheduleItem.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones on 3/31/16.
+//  Created by Weston E Jones, James Stinson Gray, Amanda Harman on 3/31/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
+// Creates a list by parsing the JSON file created by PHP and populates it with the name, day, time, description, instructorID, enrolled, and capacity values. As well as connects to the webdev server to fetch the correct image for the Seahawk Adventures event.
 class AdventuresTrip
 {
     var name: String!

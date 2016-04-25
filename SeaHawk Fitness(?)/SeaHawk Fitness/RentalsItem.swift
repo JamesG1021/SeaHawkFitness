@@ -2,13 +2,14 @@
 //  rentalsItem.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones on 4/1/16.
+//  Created by James S. Gray, Weston E Jones, Amanda Harman on 4/1/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
+// Parses the Rentals JSON file for the equipID, equipName and equipPrice and stores them into a list. As well retrives the image used in the cell for the rentals page from the webdev server. 
 class Rentals
 {
 
