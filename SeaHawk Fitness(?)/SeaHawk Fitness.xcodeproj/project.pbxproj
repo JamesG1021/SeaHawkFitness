@@ -62,6 +62,7 @@
 		ADAF64FF1CC292B800EE65EF /* UIImage+ImageTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */; };
 		ADAF65011CC3DAA400EE65EF /* NoImageFound.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */; };
 		ADD5881E1CCD543900D99677 /* HoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5881D1CCD543900D99677 /* HoursViewController.swift */; };
+		ADD588221CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD588211CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift */; };
 		E00A98EA1CB58B3B0090DB52 /* AdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */; };
 		E00A98EC1CB58D490090DB52 /* AdventuresCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */; };
 		E0136BCC1CC8697100382DD5 /* ShowTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */; };
@@ -158,6 +159,7 @@
 		ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageTools.swift"; sourceTree = "<group>"; };
 		ADAF65001CC3DAA400EE65EF /* NoImageFound.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImageFound.jpg; sourceTree = "<group>"; };
 		ADD5881D1CCD543900D99677 /* HoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoursViewController.swift; sourceTree = "<group>"; };
+		ADD588211CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardHacks.swift"; sourceTree = "<group>"; };
 		E00A98E91CB58B3B0090DB52 /* AdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdventureViewController.swift; sourceTree = "<group>"; };
 		E00A98EB1CB58D490090DB52 /* AdventuresCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdventuresCollectionCell.xib; sourceTree = "<group>"; };
 		E0136BCB1CC8697100382DD5 /* ShowTrainersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainersViewController.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				AD9ACC011CB38E7200E55C8A /* UIImageView+ImageLoader.swift */,
 				AD11894C1CB3F9CE0011AF91 /* String+Replace.swift */,
 				ADAF64FE1CC292B800EE65EF /* UIImage+ImageTools.swift */,
+				ADD588211CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				AD94AE7D1CAF425D00CD1C8D /* Instructor.swift in Sources */,
 				AD9ACBF81CB37B2100E55C8A /* RentalsViewController.swift in Sources */,
 				E0EDAD9F1CC477D7008D2E95 /* EventsCollectionViewLayout.swift in Sources */,
+				ADD588221CCDB5ED00D99677 /* UIViewController+KeyboardHacks.swift in Sources */,
 				E0EDAD9D1CC46FEE008D2E95 /* EventsViewController.swift in Sources */,
 				AD271FB11CAE14C70028F845 /* JSONService.swift in Sources */,
 				AD584F881CC8549D00C4F2A3 /* DeleteStudentsViewController.swift in Sources */,

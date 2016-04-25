@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class EventsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var refreshEvents: UIButton!
@@ -30,7 +30,6 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -59,6 +58,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.registerNib(nib, forCellWithReuseIdentifier: "EventsCell")
         
         searchBar.placeholder = "What event are you looking for?"
+        searchBar.delegate = self
+        
         refreshEvents.setTitle("Refresh Events", forState: UIControlState.Normal)
         
         if EventsItems.count == 0 {
@@ -101,6 +102,20 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         RequestARGs = "name=" + eventName!
         getEvents()
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
 
     
     

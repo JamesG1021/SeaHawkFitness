@@ -8,7 +8,8 @@
 
 import UIKit
 
-class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class GroupExerciseViewController: UIViewController, UITableViewDataSource,
+UITableViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -32,7 +33,6 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -79,6 +79,7 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         tableView.layer.masksToBounds = true
         
         txt.placeholder = "What day would you like to see?"
+        txt.delegate = self
         
         UpdateCalenderButton.setTitle("Update Calender", forState: UIControlState.Normal)
         
@@ -137,6 +138,20 @@ class GroupExerciseViewController: UIViewController, UITableViewDataSource, UITa
         RequestARGs = "day=" + day!
         getCalender()
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
     
     
     /*

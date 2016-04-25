@@ -9,7 +9,8 @@
 import UIKit
 
 class AdventureViewController:
-UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,
+UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
 
     
     // ---------  OUTLETS
@@ -34,7 +35,6 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         
         screenSize = UIScreen.mainScreen().bounds
         screenWidth = screenSize.width
@@ -65,6 +65,7 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         collectionView.layer.masksToBounds = true
         
         searchBar.placeholder = "What adventure are you looking for?"
+        searchBar.delegate = self
         
         refreshButton.setTitle("Refresh Adventures", forState: UIControlState.Normal)
         
@@ -73,7 +74,6 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         }
 
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -104,12 +104,9 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         
     }
     
-    
     func getAdventures(){
         makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
-            
-
     
     @IBAction func updateAdventures(sender: UIButton) {
         let adventureName = searchBar?.text
@@ -117,5 +114,19 @@ UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         AdventuresItems.removeAll()
         getAdventures()
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    /**
+     * Called when the user click on the view (outside the UITextField).
+     */
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
 
 }
