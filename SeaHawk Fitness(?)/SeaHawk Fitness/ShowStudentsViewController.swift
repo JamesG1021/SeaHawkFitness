@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Initializes the table view cells to be displayed on the view controller
 class ShowStudentsCell : UITableViewCell{
     
     @IBOutlet weak var studentID: UILabel!
@@ -23,7 +23,7 @@ class ShowStudentsCell : UITableViewCell{
         self.contentView.clipsToBounds = true;
     }
 }
-
+// initializes the table view and specifies which API is to be used
 class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
@@ -35,12 +35,14 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
     
     var items = [Student]()
     
+    // Specifies what must load on the page each and everytime it is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
+    // Sepcifies what must be loaded on the page anytime a user tries to access it via segue
     override func viewWillAppear(animated: Bool) {
         
         self.tableView.dataSource = self
@@ -53,14 +55,21 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
         StudentsItems.removeAll()
         getStudents()
     }
-
+    // checks for memory loss
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // creates the table view
+    // parameter table view: the ui table view to be used
+    // parameter numberOfRowsInSection section: an int representing the number of rows to be displayed in the table view
+    // returns studentsItems.count, the number of items that will ultimately be displayed
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return StudentsItems.count
     }
+    //part of creating the table view
+    // parameter TableView: the uitableview that is being modified
+    // parameter cellForRowAtIndexPath indexPath: the correlating index for which the API will pull information from
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ShowStudentsCell = (tableView.dequeueReusableCellWithIdentifier("ShowStudentsCell") as? ShowStudentsCell)!
         
@@ -73,23 +82,26 @@ class ShowStudentsViewController: UIViewController, UITableViewDelegate, UITable
         cell.selectedBackgroundView = backgroundView
         return cell
     }
+    // ***
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ShowStudentsCell
         tableView.beginUpdates()
         print(currentCell.studentName.text)
         tableView.endUpdates()
     }
+    // ***
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
     }
 
-    
+    // Makes the request to the mySQL database to populate the students table
     func getStudents(){
         
         makeDatabaseRequest(self.view, API: studentsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
-
+    // refreshes the list uppon notification
+    // parameters notification: refers to the button press of reload page for the show students table.
     func refreshList(notification: NSNotification){
         
         self.tableView.reloadData()
