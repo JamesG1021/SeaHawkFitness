@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// *** 
 class ShowTrainersCell : UITableViewCell{
     
 
@@ -25,7 +25,7 @@ class ShowTrainersCell : UITableViewCell{
     }
 }
 
-
+// ***
 class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
     
@@ -37,13 +37,14 @@ class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITab
     var EditARGs = ""
     
     var items = [Instructor]()
-    
+    // specifies what functions must load whenever this page is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
+    // determines what must load on the page when the user accesses this page via a segue
     override func viewWillAppear(animated: Bool) {
         
         self.tableView.dataSource = self
@@ -56,16 +57,17 @@ class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITab
         
         getTrainers()
     }
-
+    // checks for memory loses
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // ***
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return InstructorsItems.count
     }
+    // ***
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ShowTrainersCell = (tableView.dequeueReusableCellWithIdentifier("ShowTrainersCell") as? ShowTrainersCell)!
         
@@ -78,24 +80,25 @@ class ShowTrainersViewController: UIViewController, UITableViewDataSource, UITab
         cell.selectedBackgroundView = backgroundView
         return cell
     }
-    
+    // ***
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ShowTrainersCell
         tableView.beginUpdates()
         print(currentCell.instructorName.text)
         tableView.endUpdates()
     }
-    
+    // ***
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
     }
-    
+    // retrieves the list of trainers from the datbase throug ha php request.
     func getTrainers(){
         
         makeDatabaseRequest(self.view, API: trainersAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
-    
+    // Refreshes the trainers from the database
+    // parameter Notification: The notification relating to the press of the refresh button
     func refreshList(notification: NSNotification){
         
         self.tableView.reloadData()
