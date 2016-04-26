@@ -1,5 +1,5 @@
 #This file is used to populate the tables inside the database
-
+start transaction;
 #Populate the admin table
 insert into admin values
 (123456789, 'SFAdmin');
@@ -241,6 +241,7 @@ insert into attending values
 (950000008, '03-21-16', '9:00am');
 insert into attending values
 (950000006, '03-21-16', '9:00am');
+commit;
 
 #turn on foreign key checking after the tables have been populated
 SET FOREIGN_KEY_CHECKS=1;
