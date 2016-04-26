@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializes the view controller for the addition of equipment to the rentals page.
 class AddEquipmentViewController: UIViewController {
 
     @IBOutlet weak var equipmentIDField: UITextField!
@@ -22,22 +22,26 @@ class AddEquipmentViewController: UIViewController {
     var EditARGs = ""
     
     var validInput: Bool = false
-    
+    // what must be loaded each time the page is accessed
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
         // Do any additional setup after loading the view.
     }
-
+    // checks for any memory loss
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // submits the commit when the button is pressed
+    // parameter sender: the uibutton linked to the command
     @IBAction func submitButtonPressed(sender: UIButton) {
         checkFormFilled()
     }
+    
+    // Makes the request to the database to add equipment to the rentals page
     func addEquipment() {
         EditARGs = "insertion"
         RequestARGs = "equipName=" + nameField.text! + "&equipID=" + equipmentIDField.text! + "&equipPrice=" + priceField!.text!
@@ -50,7 +54,7 @@ class AddEquipmentViewController: UIViewController {
         
     }
     
-    
+    // makes sure that all the needed values have been entered correctly to avoid nulls
     func checkFormFilled() {
         messageLabel.hidden = true
         

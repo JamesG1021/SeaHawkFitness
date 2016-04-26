@@ -7,18 +7,19 @@
 //
 
 import UIKit
-
+// initializes the view controller for the landing page after logging in
 class MainMenuViewController: UIViewController {
     
     var FirstEnter = true
-    
+
+    // specifies what must load whenever this page is opened.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
-
+    // makes sure that there are no loses in memory
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

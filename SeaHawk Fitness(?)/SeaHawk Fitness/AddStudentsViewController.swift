@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializes the view controller for the add students page
 class AddStudentsViewController: UIViewController {
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var studentIDLabel: UILabel!
@@ -26,6 +26,7 @@ class AddStudentsViewController: UIViewController {
     
     var validInput: Bool = false
     
+    // specifies what must load whenever the page is accessed
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -39,17 +40,19 @@ class AddStudentsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    // checks for memory loss
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // checks to see if the button was pressed for submission
+    //parameter sender: the uibutton that will submit the commit
     @IBAction func addButtonPressed(sender: UIButton) {
         
         checkFormFilled()
     }
     
+    // the call to the database to insert students into the database
     func addStudent() {
         EditARGs = "insertion"
         RequestARGs = "name=" + nameField.text! + "&studentID=" + studentIDField.text!
@@ -61,7 +64,7 @@ class AddStudentsViewController: UIViewController {
         makeDatabaseRequest(self.view, API: studentsAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
-    
+    // makes sure that the page was filled out completely and correctly.
     func checkFormFilled() {
         messageLabel.hidden = true
         

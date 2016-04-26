@@ -44,7 +44,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         //getImagesForModel()
     }
     
-    //***
+    // specifies what the page must load whenever a user is segueing into it.
     override func viewWillAppear(animated: Bool) {
         
         collectionView.dataSource = self

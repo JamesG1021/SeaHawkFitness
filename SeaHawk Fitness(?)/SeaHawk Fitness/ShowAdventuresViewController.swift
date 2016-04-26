@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializes the table view cells that are to be displayed on the table view controller
 class ShowAdventuresCell: UITableViewCell{
     
     @IBOutlet weak var adventureName: UILabel!
@@ -21,7 +21,7 @@ class ShowAdventuresCell: UITableViewCell{
         self.contentView.clipsToBounds = true;
     }
 }
-
+// initializes the table view controller and specifies which API it will be using
 class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var tableView: UITableView!
 
@@ -35,7 +35,7 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
         
         self.tableView.reloadData()
     }
-    
+    // Specifies what must load on the page each and everytime it is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -44,7 +44,7 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
 
         // Do any additional setup after loading the view.
     }
-    
+    // activated whenever the user traverses a segue to the page
     override func viewWillAppear(animated: Bool) {
         
         self.tableView.dataSource = self
@@ -58,14 +58,20 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
         
         
     }
-
+    // makes sure that there were no issues within memory
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // creates the tableview 
+    // parameters tableView: the UI table view to be used
+    // parameters numberOfRowsInSection section: an int representing the number of rows.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AdventuresItems.count
     }
+    // creates the tableview
+    // parameters tableView: the UI table view to be used
+    // parameters cellForRowAtIndexPath indexPath: where to find the data in the list
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ShowAdventuresCell = (tableView.dequeueReusableCellWithIdentifier("ShowAdventuresCell") as? ShowAdventuresCell)!
         
@@ -78,16 +84,23 @@ class ShowAdventuresViewController: UIViewController, UITableViewDataSource, UIT
         cell.selectedBackgroundView = backgroundView
         return cell
     }
+    // creates the tableview
+    // parameters tableView: the UI table view to be used
+    // parameters didSelectRowAtIndexPath indexPath: where to find the data in the list
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ShowAdventuresCell
         tableView.beginUpdates()
         print(currentCell.adventureName.text)
         tableView.endUpdates()
     }
+    // determines the height for each row
+    // parameter tableView: the ui table view
+    // parameter heightForRowAtIndexPath indexPath: the place where you are determining the height.
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 110
     }
     
+    // makes request to the database to populate the table view.
     func getAdventures(){
         makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }

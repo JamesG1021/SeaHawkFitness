@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//***
+// ***
 class InfoViewPopup: UIView {
 
     @IBOutlet var InfoTitle: UILabel!

@@ -8,6 +8,7 @@
 
 import UIKit
 
+// initializes the view controller for the add adventure page
 class AddAdventuresViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
@@ -21,6 +22,7 @@ class AddAdventuresViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     
+    // specifies what must load every time the page is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -29,12 +31,15 @@ class AddAdventuresViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
+    
+    // checks for memory loss
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // allows a user to press a button
+    // parameter sender: the ui button to be pressed.
     @IBAction func addButtonPresssed(sender: UIButton) {
     }
 

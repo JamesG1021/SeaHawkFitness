@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializs the view controller and designates which API it should use.
 class DeleteEquipmentViewController: UIViewController {
 
     @IBOutlet weak var equipmentIDField: UITextField!
@@ -23,22 +23,26 @@ class DeleteEquipmentViewController: UIViewController {
     
     var validInput: Bool = false
     
+    // Specifies what must be loaded every time this page is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    // checks to see if there was a memory issue
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+    // makes sure the form has been filled out correctly on button press
+    // parameter sender: the button that is pressed to commit the deletion
     @IBAction func submitButtonPressed(sender: UIButton) {
         checkFormFilled()
     }
+    // Makes the call to the database to delete equipment
     func deleteEquipment() {
         
         EditARGs = "deletion"
@@ -51,6 +55,7 @@ class DeleteEquipmentViewController: UIViewController {
         makeDatabaseRequest(self.view, API: equipmentAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
+    // makes sure that the form has been completely and properly filled out.
     func checkFormFilled() {
         messageLabel.hidden = true
         

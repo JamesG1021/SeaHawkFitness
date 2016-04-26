@@ -54,7 +54,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         // Do any additional setup after loading the view.
     }
     
-    //***
+    // specifies that what the view needs to load whenever a user segues into this page.
     override func viewWillAppear(animated: Bool) {
         
         collectionView.dataSource = self

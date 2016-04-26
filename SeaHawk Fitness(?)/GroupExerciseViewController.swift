@@ -63,7 +63,7 @@ UITableViewDelegate, UITextFieldDelegate {
         
         // Do any additional setup after loading the view.
     }
-    //***
+    // specifies what the page must load whenever a user segues into this page
     override func viewWillAppear(animated: Bool) {
 
         self.tableView.dataSource = self

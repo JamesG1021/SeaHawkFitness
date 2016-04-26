@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializes the view controller and specifies which API should be used for this page
 class AdventureViewController:
 UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,
 UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
@@ -28,11 +28,14 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
+    // reloads the data in the collection view
+    // parameter notification: the notification that the page need to be reloaded
     func refreshList(notification: NSNotification){
         
         self.collectionView.reloadData()
     }
     
+    // specifies what must be loaded on the page whenever it is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +57,7 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
 
         // Do any additional setup after loading the view.
     }
-    
+    // specifies what the page should display whenever a user segues into it.
     override func viewWillAppear(animated: Bool) {
         
         collectionView.dataSource = self
@@ -74,17 +77,17 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         }
 
     }
-
+    // attempts to detect for loss of memory
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // ***
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return AdventuresItems.count
     }
-    
+    // ***
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: AdventuresCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("AdventureCell", forIndexPath: indexPath) as? AdventuresCollectionCell)!
         
@@ -95,6 +98,7 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         return cell
     }
     
+    // ***
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let selectectedAdventure = AdventuresItems[indexPath.row]
         
@@ -104,10 +108,13 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         
     }
     
+    // Makes the reuqest to the database to populate the adventures page.
     func getAdventures(){
         makeDatabaseRequest(self.view, API: adventuresAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
+    // button to update the sa_adventures page
+    // parameter sender: the button that when pressed requests for a refresh
     @IBAction func updateAdventures(sender: UIButton) {
         let adventureName = searchBar?.text
         RequestARGs = "name=" + adventureName!
@@ -115,6 +122,7 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         getAdventures()
     }
     
+    // ***
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -127,7 +135,8 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
+    // ***
     @IBAction func PresentInfoView(sender: AnyObject) {
     }
 

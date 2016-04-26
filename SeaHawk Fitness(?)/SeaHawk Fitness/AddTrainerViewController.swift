@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// initializes the view controller for the addition of trainers.
 class AddTrainerViewController: UIViewController {
 
     @IBOutlet weak var TrainerID: UITextField!
@@ -23,22 +23,25 @@ class AddTrainerViewController: UIViewController {
     
     var validInput: Bool = false
 
-
+    // what must be loaded whenever this page is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
-
+    // checks to make sure there is no memory loss
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // submits the commit whenever the button is pressed
+    // parameter sender: the ui button that when depressed sends the commit.
     @IBAction func submitButtonPressed(sender: UIButton) {
         checkFormFilled()
         
     }
+    
+    // makes the call to the database to add a trainer.
     func addTrainer() {
         EditARGs = "insertion"
         RequestARGs = "name=" + TrainerName.text! + "&instructorID=" + TrainerID.text!
@@ -50,6 +53,7 @@ class AddTrainerViewController: UIViewController {
         makeDatabaseRequest(self.view, API: trainerAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
     }
     
+    // verifies that all forms have been filled properly
     func checkFormFilled() {
         messageLabel.hidden = true
         

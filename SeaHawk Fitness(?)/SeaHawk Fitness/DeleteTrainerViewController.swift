@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Initializes the view controller and and specifies which API to use
 class DeleteTrainerViewController: UIViewController {
     
     let trainersAPI = "TrainersService"
@@ -21,22 +22,27 @@ class DeleteTrainerViewController: UIViewController {
     @IBOutlet weak var trainerIDField: UITextField!
     @IBOutlet weak var messageLabel: UILabel!
     
+    // Specifies what must be included on the page every time it is accessed.
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    // checks to see if there were any memory issues
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // Makes sure the form was filled out properly and completely on button press
+    // parameter sender: the button that commits the deletion to the database
     @IBAction func submitButtonPressed(sender: UIButton) {
         checkFormFilled()
     }
     
+    // makes the call to the database to delete a trainer
     func deleteTrainer() {
         
         EditARGs = "deletion"
@@ -49,7 +55,7 @@ class DeleteTrainerViewController: UIViewController {
         makeDatabaseRequest(self.view, API: trainersAPI, EditARGs: EditARGs, RequestARGs: RequestARGs)
         
     }
-    
+    // makes sure that the forms have been properly filled out.
     func checkFormFilled() {
         messageLabel.hidden = true
         

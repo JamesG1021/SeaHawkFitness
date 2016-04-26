@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Initializes the view controller and designates which API it will use.
 class DeleteStudentsViewController: UIViewController {
     
     let studentsAPI = "StudentService"
@@ -21,22 +22,27 @@ class DeleteStudentsViewController: UIViewController {
     @IBOutlet var studentNameField: UITextField!
     @IBOutlet var messageLabel: UILabel!
     
+    // Specifies what must load whenever the page is accessed.
     override func viewDidLoad() {
         super.loadView()
         self.hideKeyboardWhenTappedAround()
         
     }
     
+    // Just checks for memory warnings and errors
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // Checks to make sure that the form was filled on button press
+    // Parameter sender: the button that is pressed to submit the deletion
     @IBAction func submitButtonPressed(sender: AnyObject)
     {
         checkFormFilled()
     }
     
+    // makes the request to the database to delete a student entity
     func deleteStudent() {
         
         EditARGs = "deletion"
@@ -50,6 +56,7 @@ class DeleteStudentsViewController: UIViewController {
         
     }
     
+    // Makes sure the form is filled out fully and correctly
     func checkFormFilled() {
         messageLabel.hidden = true
         
@@ -82,7 +89,7 @@ class DeleteStudentsViewController: UIViewController {
         }
     }
 
-    
+    // the cancel button which was supposed to send the request to the database to perform a rollback.
     @IBAction func cancelButtonPressed(sender: AnyObject)
     {
         
