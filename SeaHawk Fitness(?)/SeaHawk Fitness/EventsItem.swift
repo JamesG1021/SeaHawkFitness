@@ -2,7 +2,9 @@
 //  eventsItem.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones, James Stinson Gray, Amanda Harman on 4/1/16.
+//
+//  Created by Weston E Jones, James Stinson Gray  on 4/1/16.
+//
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 import Foundation

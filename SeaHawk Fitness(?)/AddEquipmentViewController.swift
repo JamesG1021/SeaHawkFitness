@@ -2,7 +2,7 @@
 //  AddEquipmentViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/20/16.
+//  Created by Weston E Jones, Architecture by James Stinson Gray on 4/19/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 

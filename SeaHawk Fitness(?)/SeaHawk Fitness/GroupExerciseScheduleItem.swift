@@ -2,7 +2,7 @@
 //  GroupExerciseScheduleItem.swift
 //  SeaHawk Fitness
 //
-//  Created by Weston E Jones, James Stinson Gray, Amanda Harman on 3/31/16.
+//  Created by Weston E Jones, James Stinson Grayon 3/31/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 

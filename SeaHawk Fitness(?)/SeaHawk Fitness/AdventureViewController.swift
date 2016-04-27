@@ -2,7 +2,7 @@
 //  AdventureViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/6/16.
+//  Created by Weston E Jones, James Stinson Gray  on 4/6/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
@@ -98,7 +98,7 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         return cell
     }
     
-    // ***
+    // *** Required Function of CollectionViews: determines selected cell at click
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let selectectedAdventure = AdventuresItems[indexPath.row]
         
@@ -122,7 +122,7 @@ UITextFieldDelegate, UICollectionViewDelegateFlowLayout{
         getAdventures()
     }
     
-    // ***
+    // *** Used to dismiss the keyboard on enter.
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

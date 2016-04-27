@@ -2,7 +2,7 @@
 //  RentalsViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/5/16.
+//  Created by Weston E Jones, James Stinson Gray  on 4/05/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
@@ -27,7 +27,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
     var screenHeight: CGFloat!
     
     // Refreshes the rentals page
-    // -Parameter notifications: Information that needs to be broadcasted elsewhere in the app.
+    // -Parameter notifications: Information that will return from async call to notify this page its ready for refresh
     func refreshList(notification: NSNotification){
         
         self.collectionView.reloadData()
@@ -91,7 +91,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         return RentalItems.count
     }
     
-    //**
+    //** This is a required function for creating a collection view.  It describes what each cell going into the collectionView looks like
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell: RentalsCollectionCell = (collectionView.dequeueReusableCellWithReuseIdentifier("RentalCell", forIndexPath: indexPath) as? RentalsCollectionCell)!
@@ -128,7 +128,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
         RequestARGs = "equipName=" + rentalName!
         getRentals()
     }
-    // ***
+    // *** Class function of TextField delegate to describe when the keyboard should close
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -141,11 +141,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITextFieldDeleg
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
-    //***
+    //***  Not implemented.  Will be implemented using a popup view.
     @IBAction func PresentInfoView(sender: AnyObject) {
     }
     
     // Contacts the Webdev server to retrieve the appropriate image for the current item.
+    // Not being utlized.  This will be worth implementing.
     func getImagesForModel() {
         
         let session = NSURLSession.sharedSession()

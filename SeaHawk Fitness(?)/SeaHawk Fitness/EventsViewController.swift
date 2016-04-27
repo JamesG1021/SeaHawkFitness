@@ -2,7 +2,7 @@
 //  EventsViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/17/16.
+//  Created by Weston E Jones, James Stinson Gray  on 4/17/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
@@ -40,6 +40,7 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
         let contentArea = UIImage(named: "ContentArea")!
         view.backgroundColor = UIColor(patternImage: contentArea.scaleUIImageToSize(contentArea, size: CGSizeMake(screenWidth, screenHeight)))
         
+        // Uses Notification center to recieve notification from the makeRequest file
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshList:", name:"refreshMyData", object: nil)
         //getImagesForModel()
     }
@@ -77,7 +78,8 @@ class EventsViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return EventsItems.count
     }
-    //***
+    
+    //*** Class Function of CollectionViewDelegate  REQUIRED
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: EventsCell = (collectionView.dequeueReusableCellWithReuseIdentifier("EventsCell", forIndexPath: indexPath) as? EventsCell)!
         

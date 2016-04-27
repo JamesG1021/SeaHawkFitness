@@ -2,7 +2,7 @@
 //  UIViewController+KeyboardHacks.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Weston E Jones on 4/24/16.
+//  Created by James Stinson Gray on 4/24/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 

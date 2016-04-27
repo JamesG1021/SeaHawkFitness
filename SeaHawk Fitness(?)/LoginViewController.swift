@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/1/16.
+//  Created by Weston E Jones, James Stinson Gray  on 4/1/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var AdministrativeSegmentedController: UISegmentedControl!
     
     @IBOutlet weak var ErrorMessageField: UILabel!
+    
     // Determines what must load on the page whenever this view (login page) is loaded. contains the text fields to enter username and password as well as the hidden error message. 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +91,7 @@ class LoginViewController: UIViewController {
         
         
     }
+    
     // Determines whether the UISegmentedControl is either in the user or administrator positions.
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch AdministrativeSegmentedController.selectedSegmentIndex
@@ -127,6 +129,7 @@ class LoginViewController: UIViewController {
         
         RequestARGs = "username=" + username! + "&password=" + password! + "&admin=true"
         
+        // This Series makes an asyncronyous call to the web server to check the username and password for validity.
         JSONService.sharedInstance.getJSON (loginAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array {
                 for entry in results {
@@ -157,6 +160,7 @@ class LoginViewController: UIViewController {
         
         RequestARGs = "username=" + username! + "&password=" + password!
         
+        // This Series makes an asyncronyous call to the web server to check the username and password for validity.
         JSONService.sharedInstance.getJSON (loginAPI, ReqARGs: RequestARGs, onCompletion: { (json: JSON) in
             if let results = json.array{
                 for entry in results {

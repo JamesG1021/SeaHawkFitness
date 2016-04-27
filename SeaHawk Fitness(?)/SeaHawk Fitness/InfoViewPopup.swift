@@ -7,7 +7,8 @@
 //
 
 import UIKit
-// ***
+// *** This XIB will be used to create a re-usable InfoView Popup that will be populated 
+//     with data on each page that calls it
 class InfoViewPopup: UIView {
 
     @IBOutlet var InfoTitle: UILabel!

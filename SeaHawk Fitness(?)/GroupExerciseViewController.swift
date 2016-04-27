@@ -2,7 +2,7 @@
 //  GroupExerciseViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 3/31/16.
+//  Created by Weston E Jones, James Stinson Gray  on 3/31/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
@@ -103,7 +103,7 @@ UITableViewDelegate, UITextFieldDelegate {
         return ExerciseClassItems.count
     }
     
-    //***
+    //*** Class function for setting up rows in a tableview REQUIRED
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ExerciseClassCell = (tableView.dequeueReusableCellWithIdentifier("CalenderItemCell") as? ExerciseClassCell)!
         
@@ -121,7 +121,7 @@ UITableViewDelegate, UITextFieldDelegate {
         
         return cell
     }
-    //***
+    //*** Class function for tableviews.  Determines what row has been selected in tableview REQUIRED
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
         let currentCell = tableView.cellForRowAtIndexPath(indexPath) as! ExerciseClassCell
@@ -130,7 +130,7 @@ UITableViewDelegate, UITextFieldDelegate {
         print(currentCell.ExerciseClassName.text)
         //tableView.endUpdates()
     }
-    //***
+    //*** Class function for tableviews.  Setups up default height for a tableview cell.
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
     }
@@ -145,7 +145,7 @@ UITableViewDelegate, UITextFieldDelegate {
         RequestARGs = "day=" + day!
         getCalender()
     }
-    //***
+    //***  Class function of UITextField Delegate  tells keyboard to dismiss on enter
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

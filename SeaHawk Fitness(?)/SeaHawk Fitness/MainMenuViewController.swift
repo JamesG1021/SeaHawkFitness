@@ -2,7 +2,7 @@
 //  MainMenuViewController.swift
 //  SeaHawk Fitness
 //
-//  Created by James Stinson Gray, Amanda H Harman, Weston E Jones on 4/1/16.
+//  Created by James Stinson Gray on 4/1/16.
 //  Copyright © 2016 James Stinson Gray. All rights reserved.
 //
 
